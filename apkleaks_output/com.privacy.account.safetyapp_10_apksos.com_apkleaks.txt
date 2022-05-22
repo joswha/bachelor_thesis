@@ -1,0 +1,295 @@
+[Authorization_Basic]
+- basic =
+- basic constraint
+- basic constraints
+- basic constraints.
+
+[IP_Address]
+- 0.0.0.0
+- 2.2.0.5
+
+[JSON_Web_Token]
+- 1.0.0-alpha27
+- 1.1.0-rc01
+
+[LinkFinder]
+- /proc/self/fd
+- /v1/{resource=**}:getAcl
+- /v2/acls/{resource=**}:getAcl
+- /v2/{resource=**}
+- /v2/{resource=**}:getAcl
+- AES/CBC/PKCS5Padding
+- AES/CBC/PKCS7Padding
+- AES/GCM/NoPadding
+- Accounts.txt
+- aegis.json
+- backup/aegis.json
+- com/nulabinc/zxcvbn/matchers/dictionarys/
+- com/nulabinc/zxcvbn/matchers/keyboards/
+- com/nulabinc/zxcvbn/messages
+- databases/PhoneFactor
+- databases/databases
+- dvorak.txt
+- http://fsf.org/
+- http://ns.adobe.com/xap/1.0/\u0000
+- http://psdev.de/LicensesDialog
+- http://schemas.android.com/apk/res/android
+- http://scripts.sil.org/OFL
+- http://www.gnu.org/licenses/
+- http://www.gnu.org/licenses/lgpl.html
+- http://www.gnu.org/philosophy/why-not-lgpl.html
+- http://www.w3.org/1999/xlink
+- http://www.w3.org/2000/svg
+- http://www.w3.org/TR/SVG11/feature#
+- http://xml.org/sax/features/external-general-entities
+- http://xml.org/sax/features/external-parameter-entities
+- http://xml.org/sax/properties/lexical-handler
+- http://xmlpull.org/v1/doc/features.html#process-docdecl
+- http://xmlpull.org/v1/doc/features.html#process-namespaces
+- http://zavoloklom.github.io/material-design-iconic-font/
+- https://play.google.com/about/play-terms/index.html
+- https://play.google.com/store
+- jis.txt
+- keypad.txt
+- mac_keypad.txt
+- pack.json
+- qwerty.txt
+- shared_prefs/TOTP_Authenticator_Preferences.xml
+- shared_prefs/tokens.xml
+
+[Authorization_Basic]
+- basic =
+- basic constraint
+- basic constraints
+- basic constraints.
+
+[IP_Address]
+- 0.0.0.0
+- 2.2.0.5
+
+[JSON_Web_Token]
+- 1.0.0-alpha27
+- 1.1.0-rc01
+
+[LinkFinder]
+- /proc/self/fd
+- /v1/{resource=**}:getAcl
+- /v2/acls/{resource=**}:getAcl
+- /v2/{resource=**}
+- /v2/{resource=**}:getAcl
+- AES/CBC/PKCS5Padding
+- AES/CBC/PKCS7Padding
+- AES/GCM/NoPadding
+- Accounts.txt
+- aegis.json
+- backup/aegis.json
+- com/nulabinc/zxcvbn/matchers/dictionarys/
+- com/nulabinc/zxcvbn/matchers/keyboards/
+- com/nulabinc/zxcvbn/messages
+- databases/PhoneFactor
+- databases/databases
+- dvorak.txt
+- http://fsf.org/
+- http://ns.adobe.com/xap/1.0/\u0000
+- http://psdev.de/LicensesDialog
+- http://schemas.android.com/apk/res/android
+- http://scripts.sil.org/OFL
+- http://www.gnu.org/licenses/
+- http://www.gnu.org/licenses/lgpl.html
+- http://www.gnu.org/philosophy/why-not-lgpl.html
+- http://www.w3.org/1999/xlink
+- http://www.w3.org/2000/svg
+- http://www.w3.org/TR/SVG11/feature#
+- http://xml.org/sax/features/external-general-entities
+- http://xml.org/sax/features/external-parameter-entities
+- http://xml.org/sax/properties/lexical-handler
+- http://xmlpull.org/v1/doc/features.html#process-docdecl
+- http://xmlpull.org/v1/doc/features.html#process-namespaces
+- http://zavoloklom.github.io/material-design-iconic-font/
+- https://play.google.com/about/play-terms/index.html
+- https://play.google.com/store
+- jis.txt
+- keypad.txt
+- mac_keypad.txt
+- pack.json
+- qwerty.txt
+- shared_prefs/TOTP_Authenticator_Preferences.xml
+- shared_prefs/tokens.xml
+
+[Authorization_Basic]
+- basic =
+- basic constraint
+- basic constraints
+- basic constraints.
+
+[IP_Address]
+- 0.0.0.0
+- 2.2.0.5
+
+[JSON_Web_Token]
+- 1.0.0-alpha27
+- 1.1.0-rc01
+
+[LinkFinder]
+- /proc/self/fd
+- /v1/{resource=**}:getAcl
+- /v2/acls/{resource=**}:getAcl
+- /v2/{resource=**}
+- /v2/{resource=**}:getAcl
+- AES/CBC/PKCS5Padding
+- AES/CBC/PKCS7Padding
+- AES/GCM/NoPadding
+- Accounts.txt
+- aegis.json
+- backup/aegis.json
+- com/nulabinc/zxcvbn/matchers/dictionarys/
+- com/nulabinc/zxcvbn/matchers/keyboards/
+- com/nulabinc/zxcvbn/messages
+- databases/PhoneFactor
+- databases/databases
+- dvorak.txt
+- http://fsf.org/
+- http://ns.adobe.com/xap/1.0/\u0000
+- http://psdev.de/LicensesDialog
+- http://schemas.android.com/apk/res/android
+- http://scripts.sil.org/OFL
+- http://www.gnu.org/licenses/
+- http://www.gnu.org/licenses/lgpl.html
+- http://www.gnu.org/philosophy/why-not-lgpl.html
+- http://www.w3.org/1999/xlink
+- http://www.w3.org/2000/svg
+- http://www.w3.org/TR/SVG11/feature#
+- http://xml.org/sax/features/external-general-entities
+- http://xml.org/sax/features/external-parameter-entities
+- http://xml.org/sax/properties/lexical-handler
+- http://xmlpull.org/v1/doc/features.html#process-docdecl
+- http://xmlpull.org/v1/doc/features.html#process-namespaces
+- http://zavoloklom.github.io/material-design-iconic-font/
+- https://play.google.com/about/play-terms/index.html
+- https://play.google.com/store
+- jis.txt
+- keypad.txt
+- mac_keypad.txt
+- pack.json
+- qwerty.txt
+- shared_prefs/TOTP_Authenticator_Preferences.xml
+- shared_prefs/tokens.xml
+
+[Authorization_Basic]
+- basic =
+- basic constraint
+- basic constraints
+- basic constraints.
+
+[IP_Address]
+- 0.0.0.0
+- 2.2.0.5
+
+[JSON_Web_Token]
+- 1.0.0-alpha27
+- 1.1.0-rc01
+
+[LinkFinder]
+- /proc/self/fd
+- /v1/{resource=**}:getAcl
+- /v2/acls/{resource=**}:getAcl
+- /v2/{resource=**}
+- /v2/{resource=**}:getAcl
+- AES/CBC/PKCS5Padding
+- AES/CBC/PKCS7Padding
+- AES/GCM/NoPadding
+- Accounts.txt
+- aegis.json
+- backup/aegis.json
+- com/nulabinc/zxcvbn/matchers/dictionarys/
+- com/nulabinc/zxcvbn/matchers/keyboards/
+- com/nulabinc/zxcvbn/messages
+- databases/PhoneFactor
+- databases/databases
+- dvorak.txt
+- http://fsf.org/
+- http://ns.adobe.com/xap/1.0/\u0000
+- http://psdev.de/LicensesDialog
+- http://schemas.android.com/apk/res/android
+- http://scripts.sil.org/OFL
+- http://www.gnu.org/licenses/
+- http://www.gnu.org/licenses/lgpl.html
+- http://www.gnu.org/philosophy/why-not-lgpl.html
+- http://www.w3.org/1999/xlink
+- http://www.w3.org/2000/svg
+- http://www.w3.org/TR/SVG11/feature#
+- http://xml.org/sax/features/external-general-entities
+- http://xml.org/sax/features/external-parameter-entities
+- http://xml.org/sax/properties/lexical-handler
+- http://xmlpull.org/v1/doc/features.html#process-docdecl
+- http://xmlpull.org/v1/doc/features.html#process-namespaces
+- http://zavoloklom.github.io/material-design-iconic-font/
+- https://play.google.com/about/play-terms/index.html
+- https://play.google.com/store
+- jis.txt
+- keypad.txt
+- mac_keypad.txt
+- pack.json
+- qwerty.txt
+- shared_prefs/TOTP_Authenticator_Preferences.xml
+- shared_prefs/tokens.xml
+
+[Authorization_Basic]
+- basic =
+- basic constraint
+- basic constraints
+- basic constraints.
+
+[IP_Address]
+- 0.0.0.0
+- 2.2.0.5
+
+[JSON_Web_Token]
+- 1.0.0-alpha27
+- 1.1.0-rc01
+
+[LinkFinder]
+- /proc/self/fd
+- /v1/{resource=**}:getAcl
+- /v2/acls/{resource=**}:getAcl
+- /v2/{resource=**}
+- /v2/{resource=**}:getAcl
+- AES/CBC/PKCS5Padding
+- AES/CBC/PKCS7Padding
+- AES/GCM/NoPadding
+- Accounts.txt
+- aegis.json
+- backup/aegis.json
+- com/nulabinc/zxcvbn/matchers/dictionarys/
+- com/nulabinc/zxcvbn/matchers/keyboards/
+- com/nulabinc/zxcvbn/messages
+- databases/PhoneFactor
+- databases/databases
+- dvorak.txt
+- http://fsf.org/
+- http://ns.adobe.com/xap/1.0/\u0000
+- http://psdev.de/LicensesDialog
+- http://schemas.android.com/apk/res/android
+- http://scripts.sil.org/OFL
+- http://www.gnu.org/licenses/
+- http://www.gnu.org/licenses/lgpl.html
+- http://www.gnu.org/philosophy/why-not-lgpl.html
+- http://www.w3.org/1999/xlink
+- http://www.w3.org/2000/svg
+- http://www.w3.org/TR/SVG11/feature#
+- http://xml.org/sax/features/external-general-entities
+- http://xml.org/sax/features/external-parameter-entities
+- http://xml.org/sax/properties/lexical-handler
+- http://xmlpull.org/v1/doc/features.html#process-docdecl
+- http://xmlpull.org/v1/doc/features.html#process-namespaces
+- http://zavoloklom.github.io/material-design-iconic-font/
+- https://play.google.com/about/play-terms/index.html
+- https://play.google.com/store
+- jis.txt
+- keypad.txt
+- mac_keypad.txt
+- pack.json
+- qwerty.txt
+- shared_prefs/TOTP_Authenticator_Preferences.xml
+- shared_prefs/tokens.xml
+

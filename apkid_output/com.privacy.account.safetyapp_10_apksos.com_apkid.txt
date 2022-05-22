@@ -1,0 +1,4 @@
+[+] APKiD 2.1.3 :: from RedNaga :: rednaga.io
+[*] com.privacy.account.safetyapp_10_apksos.com.apk!classes.dex
+ |-> anti_vm : Build.FINGERPRINT check, Build.MANUFACTURER check
+ |-> compiler : r8
