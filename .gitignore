@@ -1,2 +1,4 @@
 *.apk
 *.json
+.DS_STORE
+__pycache__
