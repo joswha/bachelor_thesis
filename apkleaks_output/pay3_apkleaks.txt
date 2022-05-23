@@ -1,0 +1,49 @@
+[Google_API_Key]
+- AIzaSyCWwt5l57UmksWi-YaL0NdWqu2xVpHYdSg
+
+[JSON_Web_Token]
+- version=17.0.0
+
+[LinkFinder]
+- /cmdline
+- /proc/
+- /proc/self/fd/
+- /usr/xpg4/bin/df
+- Date/Time
+- activity_choser_model_history.xml
+- content://com.google.android.gms.chimera/
+- http://schemas.android.com/apk/res/android
+- https://plus.google.com/
+- https://www.freeprivacypolicy.com/privacy/view/2398228f779813a868d24ce1f3eb85ad
+- https://www.googleapis.com/auth/appstate
+- https://www.googleapis.com/auth/datastoremobile
+- https://www.googleapis.com/auth/drive
+- https://www.googleapis.com/auth/drive.appdata
+- https://www.googleapis.com/auth/drive.apps
+- https://www.googleapis.com/auth/drive.file
+- https://www.googleapis.com/auth/fitness.activity.read
+- https://www.googleapis.com/auth/fitness.activity.write
+- https://www.googleapis.com/auth/fitness.blood_glucose.read
+- https://www.googleapis.com/auth/fitness.blood_glucose.write
+- https://www.googleapis.com/auth/fitness.blood_pressure.read
+- https://www.googleapis.com/auth/fitness.blood_pressure.write
+- https://www.googleapis.com/auth/fitness.body.read
+- https://www.googleapis.com/auth/fitness.body.write
+- https://www.googleapis.com/auth/fitness.body_temperature.read
+- https://www.googleapis.com/auth/fitness.body_temperature.write
+- https://www.googleapis.com/auth/fitness.location.read
+- https://www.googleapis.com/auth/fitness.location.write
+- https://www.googleapis.com/auth/fitness.nutrition.read
+- https://www.googleapis.com/auth/fitness.nutrition.write
+- https://www.googleapis.com/auth/fitness.oxygen_saturation.read
+- https://www.googleapis.com/auth/fitness.oxygen_saturation.write
+- https://www.googleapis.com/auth/fitness.reproductive_health.read
+- https://www.googleapis.com/auth/fitness.reproductive_health.write
+- https://www.googleapis.com/auth/games
+- https://www.googleapis.com/auth/games.firstparty
+- https://www.googleapis.com/auth/games_lite
+- https://www.googleapis.com/auth/plus.login
+- https://www.googleapis.com/auth/plus.me
+- languages.json
+- share_history.xml
+

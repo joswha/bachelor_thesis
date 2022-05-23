@@ -18,20 +18,20 @@ def run_apkid(_name):
     """
     Runs apkid on the apk file.
     """
-    print(f"Running apkid on {_name}")
+    print(f"Running apkid on apps/{_name}")
 
     # Run apkid
-    apkid_cmd = f"apkid -v {_name} > apkid_output/{_name[:-4]}_apkid.txt"
+    apkid_cmd = f"apkid -v apps/{_name} > apkid_output/{_name[:-4]}_apkid.txt"
     subprocess.call(apkid_cmd, shell = True)
 
 def run_apkleaks(_name):
     """
     Runs apkleaks on the apk file.
     """
-    print(f"Running apkleaks on {_name}")
+    print(f"Running apkleaks on apps/{_name}")
 
     # Run apkleaks
-    apkleaks_cmd = f"apkleaks -f {_name} -o apkleaks_output/{_name[:-4]}_apkleaks.txt"
+    apkleaks_cmd = f"apkleaks -f apps/{_name} -o apkleaks_output/{_name[:-4]}_apkleaks.txt"
     subprocess.call(apkleaks_cmd, shell = True)
 
 def run_d_check(_name):
@@ -41,7 +41,7 @@ def run_d_check(_name):
     print(f"Running dex2jar and dependency-check on {_name}")
 
     # Run dex2jar
-    d2j_cmd = f"d2j-dex2jar {_name} -o temp_jar/{_name[:-4]}.jar"
+    d2j_cmd = f"d2j-dex2jar apps/{_name} -o temp_jar/{_name[:-4]}.jar"
     subprocess.call(d2j_cmd, shell = True)
 
     # Run dependency-check
@@ -64,7 +64,7 @@ def run_mobsf(_name):
     """
     Runs mobsf on the apk file.
     """
-    RESP = upload(_name)
+    RESP = upload(f"apps/{_name}")
     scan(RESP)
     json_resp(RESP)
     pdf(RESP, _name[:-4])
@@ -86,7 +86,7 @@ def create_output_folders():
 if __name__ == "__main__":
 
     # List all the apk files form current working directory.
-    apk_files = [f for f in os.listdir(".") if f.endswith(".apk")]
+    apk_files = [f for f in os.listdir("apps/") if f.endswith(".apk")]
 
     # Create output folders, if they don't exist.
     create_output_folders()
