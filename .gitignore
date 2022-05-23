@@ -1,4 +1,5 @@
-*.apk
 *.json
 .DS_STORE
-__pycache__
+__pycache__/
+mbsf_output/
+.vscode/
