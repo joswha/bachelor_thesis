@@ -2,7 +2,5 @@
 .DS_STORE
 __pycache__/
 .vscode/
-*.pdf
-*_output/
 apps/
 temp_jar/
