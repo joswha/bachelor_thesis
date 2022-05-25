@@ -1,5 +1,7 @@
 *.json
 .DS_STORE
 __pycache__/
-mbsf_output/
 .vscode/
+*.pdf
+*_output/
+apps/
