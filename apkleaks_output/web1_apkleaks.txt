@@ -1,0 +1,125 @@
+[Amazon_AWS_S3_Bucket]
+- a6522.s3-website-us
+- adstracking.s3-website-us
+- myadserve.s3-website-us
+- trafficads.s3-website-us
+
+[Amazon_AWS_S3_Bucket]
+- admarvel.s3.amazonaws.com
+- advice-ads.s3.amazonaws.com
+- advrts.s3.amazonaws.com
+- adzerk-www.s3.amazonaws.com
+- airpushmarketing.s3.amazonaws.com
+- analyticsengine.s3.amazonaws.com
+- arabmistress.s3.amazonaws.com
+- blamads-assets.s3.amazonaws.com
+- bo-videos.s3.amazonaws.com
+- cadreon.s3.amazonaws.com
+- campaign-tapad.s3.amazonaws.com
+- cd-ladsp-com.s3.amazonaws.com
+- ce2-dev-trk.s3.amazonaws.com
+- ce2-dev.s3.amazonaws.com
+- center.s3.amazonaws.com
+- chartaca.com.s3.amazonaws.com
+- com.djinnworks.sdm.s3.amazonaws.com
+- convertglobal.s3.amazonaws.com
+- demandmedia.s3.amazonaws.com
+- deskwww.s3.amazonaws.com
+- epowernetworktrackerimages.s3.amazonaws.com
+- evs-hosted-14facd241e1c08.s3.amazonaws.com
+- forumwarz.s3.amazonaws.com
+- gateways.s3.amazonaws.com
+- getbarometer.s3.amazonaws.com
+- getsidecar.s3.amazonaws.com
+- gfaf-banners.s3.amazonaws.com
+- homad-global-configs-eu-fra.schneevonmorgen.com.s3.amazonaws.com
+- html5adkit.plusmo.s3.amazonaws.com
+- iacpromotion.s3.amazonaws.com
+- immassets.s3.amazonaws.com
+- inneractive-assets.s3.amazonaws.com
+- inpref.s3.amazonaws.com
+- interactive-assets.s3.amazonaws.com
+- kkastatic.s3.amazonaws.com
+- kraken-measurements.s3.amazonaws.com
+- livechat.s3.amazonaws.com
+- loved-by.s3.amazonaws.com
+- ltassrv.com.s3.amazonaws.com
+- magnify360-cdn.s3.amazonaws.com
+- matchbin-assets.s3.amazonaws.com
+- news-whistleout.s3.amazonaws.com
+- nxa-ls.s3.amazonaws.com
+- optimizely.s3.amazonaws.com
+- rich-agent.s3.amazonaws.com
+- s3-tracking.synthasite.net.s3.amazonaws.com
+- sana.newsinc.com.s3.amazonaws.com
+- sdsbucket.s3.amazonaws.com
+- spyhunter-download.s3.amazonaws.com
+- strikeadcdn.s3.amazonaws.com
+- thetradedesk-tags.s3.amazonaws.com
+- tree-pixel-log.s3.amazonaws.com
+- twitter-badges.s3.amazonaws.com
+- vice-ads.s3.amazonaws.com
+- whistleout.s3.amazonaws.com
+- yc-ads.s3.amazonaws.com
+
+[Authorization_Basic]
+- basic whitelist
+
+[IP_Address]
+- 127.0.0.1
+
+[JSON_Web_Token]
+- 1.0.0-beta01
+- 1.0.0-rc01
+- 1.1.0-rc01
+- 1.2.0-alpha04
+
+[LinkFinder]
+- /...
+- /ac/
+- /app_bin/tor
+- /complete/search
+- /favicon.ico
+- /index.html
+- /nx/ac
+- /proc/self/fd/
+- BookmarksExport.txt
+- bookmarks.html
+- downloads.html
+- history.html
+- homepage.html
+- hosts.txt
+- http://acrdevelopment.org/lightning/faq
+- http://en.wikipedia.org/
+- http://hosts-file.net/
+- http://jetsli.de/crawler
+- http://jsoup.org/license
+- http://schemas.android.com/apk/res/android
+- http://twitter.com/RestainoAnthony
+- http://www.apache.org/licenses/LICENSE-2.0
+- http://www.ask.com/web?qsrc=0&o=0&l=dir&qo=LightningBrowser&q=
+- http://www.gnu.org/licenses/lgpl.html
+- http://www.mozilla.org/MPL/2.0/
+- http://www.w3.org/1999/xhtml\
+- https://duckduckgo.com/
+- https://duckduckgo.com/?t=lightning&q=
+- https://duckduckgo.com/lite/?t=lightning&q=
+- https://github.com/anthonycr/Lightning-Browser/releases
+- https://search.naver.com/search.naver?ie=utf8&query=
+- https://search.yahoo.com/search?p=
+- https://startpage.com/do/m/mobilesearch?language=english&query=
+- https://startpage.com/do/search?language=english&query=
+- https://twitter.com/
+- https://twitter.com/RestainoAnthony
+- https://www.baidu.com/s?wd=
+- https://www.bing.com/search?q=
+- https://www.facebook.com/l.php?u=
+- https://www.google.com
+- https://www.google.com/
+- https://www.google.com/search?client=lightning&ie=UTF-8&oe=UTF-8&q=
+- https://www.google.com/url?
+- https://www.wikipedia.org/
+- https://yandex.ru/yandsearch?lr=21411&text=
+- local_hosts.txt
+- message/rfc822
+

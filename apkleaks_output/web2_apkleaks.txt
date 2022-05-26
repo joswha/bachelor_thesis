@@ -1,0 +1,78 @@
+[Authorization_Basic]
+- basic =
+- basic ==
+
+[IP_Address]
+- 0.0.0.0
+- 127.0.0.1
+- 192.168.50.1
+
+[JSON_Web_Token]
+- androidGradlePluginVersion=7.0.4
+
+[LinkFinder]
+- /...
+- /data/data/hosts\
+- /envelope/
+- /index.html
+- /packet.properties
+- /pcap4j.properties
+- /proc/self/exe
+- /proc/self/fd/
+- /proc/version
+- /system
+- /system/app/Superuser.apk
+- /system/xbin/which
+- CRITIC/ECP
+- M/d/yy
+- META-INF/services/
+- adaway-backup.json
+- content://org.adaway/user/hosts
+- content://org.adaway/user/hosts\
+- dns_log.txt
+- gnu/kfreebsd
+- http://creativecommons.org/ns#
+- http://en.wikipedia.org/wiki/Hosts_file
+- http://forum.hosts-file.net/viewforum.php?f=9
+- http://hosts-file.net
+- http://purl.org/dc/dcmitype/StillImage
+- http://purl.org/dc/elements/1.1/
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+- http://www.addictivetips.com/mobile/what-is-s-off-how-to-gain-it-on-htc-android-phones-with-unrevoked-forever/
+- http://www.inkscape.org/namespaces/inkscape
+- http://www.w3.org/1999/02/22-rdf-syntax-ns#
+- http://www.w3.org/1999/xlink
+- http://www.w3.org/2000/svg
+- https://8dac17b798fb45e492278a678c5ab028@o209266.ingest.sentry.io/1331667
+- https://adaway.org
+- https://adaway.org/hosts.txt
+- https://adaway.org/hosts.txt\
+- https://api.github.com/gists/
+- https://api.github.com/repos/
+- https://app.adaway.org/adaway.apk?versionCode=
+- https://app.adaway.org/manifest.json
+- https://gist.githubusercontent.com
+- https://github.com/AdAway/AdAway
+- https://github.com/AdAway/AdAway/wiki/HostsSources
+- https://github.com/AdAway/AdAway/wiki/ProblematicApps
+- https://github.com/AdAway/adaway.github.io/issues
+- https://github.com/sponsors/PerfectSlayer
+- https://gitlab.com/
+- https://gitlab.com/api/v4/projects/
+- https://isabrowser.adaway.org/
+- https://paypal.me/BruceBUJON
+- https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext
+- https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext\
+- https://raw.githubusercontent.com/
+- https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+- https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts\
+- market://details?id=jp.sblo.pandora.jota
+- org/slf4j/impl/StaticLoggerBinder
+- preferences.xml
+- session.json
+- test.html
+- /proc/self/exe
+- content://org.adaway/user/hosts
+

@@ -86,8 +86,7 @@ def create_output_folders():
 if __name__ == "__main__":
 
     # List all the apk files form current working directory.
-    # apk_files = [f for f in os.listdir("apps/") if f.endswith(".apk")]
-    apk_files = ["pay5.apk", "pay3.apk"]
+    apk_files = [f for f in os.listdir("apps/") if f.endswith(".apk")]
 
     # Create output folders, if they don't exist.
     create_output_folders()

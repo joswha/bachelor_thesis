@@ -1,0 +1,5 @@
+[+] APKiD 2.1.3 :: from RedNaga :: rednaga.io
+[*] apps/web2.apk!classes.dex
+ |-> anti_debug : Debug.isDebuggerConnected() check
+ |-> anti_vm : Build.FINGERPRINT check, Build.HARDWARE check, Build.MANUFACTURER check, Build.MODEL check, Build.PRODUCT check, Build.TAGS check, possible VM check
+ |-> compiler : r8 without marker (suspicious)

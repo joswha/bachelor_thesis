@@ -1,0 +1,47 @@
+[Google_API_Key]
+- AIzaSyCWwt5l57UmksWi-YaL0NdWqu2xVpHYdSg
+
+[IP_Address]
+- 127.0.0.1
+
+[JSON_Web_Token]
+- version=18.0.0
+- version=18.0.1
+
+[LinkFinder]
+- /...
+- /NULL 
+- /NULL
+- /cmdline
+- /index.html
+- /proc/
+- /proc/self/fd/
+- /usr/xpg4/bin/df
+- IBA_CTR_DRBG.txt
+- M/d/yy
+- activity_choser_model_history.xml
+- company.json
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- https://app1.paybycard.by/test/mPos/rsa/flex_content_test.do
+- https://merchant.tapxphone.com/manuals/IBA_TXP_DOC_MANUAL_USER_1.6%20User%20Manual.pdf
+- https://plus.google.com/
+- https://tapxphone.com/license-agreement-en/
+- https://tapxphone.com/license-agreement-ru/
+- https://www.googleapis.com/auth/appstate
+- https://www.googleapis.com/auth/datastoremobile
+- https://www.googleapis.com/auth/drive
+- https://www.googleapis.com/auth/drive.appdata
+- https://www.googleapis.com/auth/drive.apps
+- https://www.googleapis.com/auth/drive.file
+- https://www.googleapis.com/auth/games
+- https://www.googleapis.com/auth/games.firstparty
+- https://www.googleapis.com/auth/games_lite
+- https://www.googleapis.com/auth/plus.login
+- https://www.googleapis.com/auth/plus.me
+- languages.json
+- mark/reset
+- okio/Okio
+- okio/Okio__JvmOkioKt
+- share_history.xml
+

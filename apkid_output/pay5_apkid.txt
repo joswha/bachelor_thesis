@@ -1,0 +1,27 @@
+[+] APKiD 2.1.3 :: from RedNaga :: rednaga.io
+[*] apps/pay5.apk!classes.dex
+ |-> anti_vm : Build.BOARD check, Build.FINGERPRINT check, Build.HARDWARE check, Build.MANUFACTURER check, Build.MODEL check, Build.PRODUCT check, SIM operator check, network operator name check, possible Build.SERIAL check
+ |-> compiler : r8
+[*] apps/pay5.apk!classes2.dex
+ |-> compiler : r8
+[*] apps/pay5.apk!classes3.dex
+ |-> anti_vm : possible VM check
+ |-> compiler : r8 without marker (suspicious)
+[*] apps/pay5.apk!classes4.dex
+ |-> anti_vm : Build.BOARD check, Build.FINGERPRINT check, Build.MANUFACTURER check, Build.MODEL check, Build.PRODUCT check, device ID check, network operator name check, possible Build.SERIAL check, possible VM check
+ |-> compiler : r8 without marker (suspicious)
+[*] apps/pay5.apk!classes5.dex
+ |-> anti_debug : Debug.isDebuggerConnected() check
+ |-> anti_vm : Build.BOARD check, Build.FINGERPRINT check, Build.MANUFACTURER check, Build.MODEL check, Build.PRODUCT check, Build.TAGS check, SIM operator check, network operator name check
+ |-> compiler : r8 without marker (suspicious)
+[*] apps/pay5.apk!classes6.dex
+ |-> anti_vm : Build.FINGERPRINT check, Build.MANUFACTURER check, possible Build.SERIAL check
+ |-> compiler : r8 without marker (suspicious)
+[*] apps/pay5.apk!classes7.dex
+ |-> anti_debug : Debug.isDebuggerConnected() check
+ |-> anti_vm : Build.BOARD check, Build.FINGERPRINT check, Build.HARDWARE check, Build.ID check, Build.MANUFACTURER check, Build.MODEL check, Build.PRODUCT check, Build.TAGS check, possible VM check, possible ro.secure check
+ |-> compiler : r8 without marker (suspicious)
+[*] apps/pay5.apk!classes8.dex
+ |-> compiler : r8 without marker (suspicious)
+[*] apps/pay5.apk!classes9.dex
+ |-> compiler : r8 without marker (suspicious)
