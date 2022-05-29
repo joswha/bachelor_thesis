@@ -3,6 +3,7 @@ import sys
 import subprocess
 from mobsftester import *
 
+# pylint: disable=pointless-string-statement
 """
 Program that handles running the following tools, saving outputs in a subsequent folder:
 
@@ -50,15 +51,18 @@ def run_d_check(_name):
     d_check_cmd_html = f"dependency-check -s temp_jar/{_name[:-4]}.jar -f HTML -o dependencycheck_output/{_name[:-4]}"
     subprocess.call(d_check_cmd_html, shell = True)
 
-# def run_flowdroid(_name):
-    # """
-    # Runs flowdroid on the apk file.
-    # """
-    # print(f"Running flowdroid on {_name}")
+def run_flowdroid(_name):
+    """
+    Runs flowdroid on the apk file.
+    """
+    print(f"Running flowdroid on {_name}")
 
-    # # Run flowdroid
-    # flowdroid_cmd = f"flowdroid -i {_name} -o flowdroid_output/{_name[:-4]}_flowdroid.txt"
-    # subprocess.call(flowdroid_cmd, shell = True)
+    flow_droid_folder = "/Users/vlad/Desktop/THESIS/FlowDroid-2.10"
+
+    # Run flowdroid
+    # flowdroid -a ../bachelor_thesis/apps/cam3.apk -p /Users/vlad/Library/Android/sdk/platforms -s soot-infoflow-android/SourcesAndSinks.txt
+    flowdroid_cmd = f"java -jar {flow_droid_folder}/soot-infoflow-cmd/target/soot-infoflow-cmd-jar-with-dependencies.jar -s {flow_droid_folder}/soot-infoflow-android/SourcesAndSinks.txt -a apps/{_name} -p /Users/vlad/Library/Android/sdk/platforms -o flowdroid_output/{_name[:-4]}_flowdroid.xml"
+    subprocess.call(flowdroid_cmd, shell = True)
 
 def run_mobsf(_name):
     """
@@ -70,6 +74,9 @@ def run_mobsf(_name):
     pdf(RESP, _name[:-4])
 
 def create_output_folders():
+    """
+    Creates the output folders.
+    """
     if not os.path.exists("apkid_output"):
         os.makedirs("apkid_output")
     if not os.path.exists("apkleaks_output"):
@@ -93,7 +100,10 @@ if __name__ == "__main__":
 
     # Run the tools on all the apk files.
     for apk in apk_files:
-        run_apkid(apk)
-        run_apkleaks(apk)
-        run_d_check(apk)
-        run_mobsf(apk)
+        if apk == "all1.apk" or apk == "web2.apk":
+            continue
+        # run_apkid(apk)
+        # run_apkleaks(apk)
+        # run_d_check(apk)
+        # run_mobsf(apk)
+        run_flowdroid(apk)
