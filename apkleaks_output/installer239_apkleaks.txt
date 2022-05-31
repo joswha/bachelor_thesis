@@ -1,0 +1,248 @@
+[Artifactory_Password]
+-  APDUException
+
+[Authorization_Basic]
+- basic =
+- basic constraint
+- basic constraints
+- basic constraints.
+
+[IP_Address]
+- 0.100.1.1
+- 0.100.1.2
+- 0.4.0.1
+- 1.3.1.1
+- 1.3.132.0
+- 1.3.133.1
+- 1.3.14.3
+- 1.3.14.7
+- 1.3.36.3
+- 1.3.36.8
+- 1.3.6.1
+- 1.9.4.1
+- 10.0.2.2
+- 11.61.1.1
+- 2.5.1.5
+- 2.5.24.7
+- 2.5.29.1
+- 2.5.29.2
+- 2.5.29.3
+- 2.5.29.4
+- 2.5.29.5
+- 2.5.29.9
+- 2.5.4.1
+- 2.5.4.2
+- 2.5.4.3
+- 2.5.4.4
+- 2.5.4.5
+- 2.5.4.6
+- 2.5.4.7
+- 2.5.4.8
+- 2.5.4.9
+- 2.5.8.1
+- 3.1.2.1
+- 33.7.66.1
+- 33.7.66.3
+- 4.2.1.1
+- 4.7.1.1
+- 40.1.101.3
+- 49.1.1.1
+- 49.1.1.2
+- 49.1.1.4
+- 49.1.1.5
+- 49.1.12.1
+- 49.1.7.1
+- 49.1.7.2
+- 49.1.7.3
+- 49.1.7.4
+- 49.1.7.5
+- 49.1.7.6
+- 49.1.9.1
+- 62.1.10.1
+
+[LinkFinder]
+- /CBC
+- /CCM
+- /CFB
+- /EAX
+- /GCM
+- /GCTR
+- /HMAC
+- /OCB
+- /OFB
+- /OpenPGPCFB
+- /PGPCFBwithIV
+- /RFC3211Wrap
+- /SIC
+- /SSL3MAC
+- /assets/
+- /com/vsmcartcard
+- /data/data
+- /res/
+- /res/xml/accessoryservices.xml
+- ATTRIBUTECERTIFICATE/LDAP
+- CERTIFICATE/LDAP
+- CERTIFICATEPAIR/LDAP
+- CRL/LDAP
+- DESEDEMAC/CFB8
+- DESMAC/CFB8
+- ELGAMAL/PKCS1
+- FileTransferProfileJAR/FileTransferCallbackReceiver
+- FileTransferProfileJAR/SAFileTransfer
+- FileTransferProfileJAR/SAFileTransferIncomingRequestReceiver
+- FileTransferProfileJAR/SAFileTransferManager
+- FileTransferProfileJAR/SAft
+- HMACSHA512/224
+- HMACSHA512/256
+- MD5withRSA/ISO9796-2
+- RC2MAC/CFB8
+- RC5MAC/CFB8
+- RIPEMD160withRSA/ISO9796-2
+- RSA/ECB/NoPadding
+- RSA/ECB/OAEPPadding
+- RSA/ECB/PKCS1Padding
+- RSA/ISO9796-1
+- RSA/OAEP
+- RSA/PKCS1
+- SHA-512/224
+- SHA-512/256
+- SHA1withRSA/ISO9796-2
+- SHA1withRSA/PSS
+- SHA224withRSA/PSS
+- SHA256withRSA/PSS
+- SHA384withRSA/PSS
+- SHA512/224
+- SHA512/256
+- SHA512withRSA/PSS
+- SKIPJACKMAC/CFB8
+- activity_choser_model_history.xml
+- http://schemas.android.com/apk/res/android
+- https://frankmorgner.github.io/vsmartcard/virtualsmartcard/README.html
+- https://play.google.com/store/apps/details?id=com.samsung.android.gearoplugin
+- market://details?id=com.samsung.android.gearoplugin
+- share_history.xml
+
+[Artifactory_Password]
+-  APDUException
+
+[Authorization_Basic]
+- basic =
+- basic constraint
+- basic constraints
+- basic constraints.
+
+[IP_Address]
+- 0.100.1.1
+- 0.100.1.2
+- 0.4.0.1
+- 1.3.1.1
+- 1.3.132.0
+- 1.3.133.1
+- 1.3.14.3
+- 1.3.14.7
+- 1.3.36.3
+- 1.3.36.8
+- 1.3.6.1
+- 1.9.4.1
+- 10.0.2.2
+- 11.61.1.1
+- 2.5.1.5
+- 2.5.24.7
+- 2.5.29.1
+- 2.5.29.2
+- 2.5.29.3
+- 2.5.29.4
+- 2.5.29.5
+- 2.5.29.9
+- 2.5.4.1
+- 2.5.4.2
+- 2.5.4.3
+- 2.5.4.4
+- 2.5.4.5
+- 2.5.4.6
+- 2.5.4.7
+- 2.5.4.8
+- 2.5.4.9
+- 2.5.8.1
+- 3.1.2.1
+- 33.7.66.1
+- 33.7.66.3
+- 4.2.1.1
+- 4.7.1.1
+- 40.1.101.3
+- 49.1.1.1
+- 49.1.1.2
+- 49.1.1.4
+- 49.1.1.5
+- 49.1.12.1
+- 49.1.7.1
+- 49.1.7.2
+- 49.1.7.3
+- 49.1.7.4
+- 49.1.7.5
+- 49.1.7.6
+- 49.1.9.1
+- 62.1.10.1
+
+[LinkFinder]
+- /CBC
+- /CCM
+- /CFB
+- /EAX
+- /GCM
+- /GCTR
+- /HMAC
+- /OCB
+- /OFB
+- /OpenPGPCFB
+- /PGPCFBwithIV
+- /RFC3211Wrap
+- /SIC
+- /SSL3MAC
+- /assets/
+- /com/vsmcartcard
+- /data/data
+- /res/
+- /res/xml/accessoryservices.xml
+- ATTRIBUTECERTIFICATE/LDAP
+- CERTIFICATE/LDAP
+- CERTIFICATEPAIR/LDAP
+- CRL/LDAP
+- DESEDEMAC/CFB8
+- DESMAC/CFB8
+- ELGAMAL/PKCS1
+- FileTransferProfileJAR/FileTransferCallbackReceiver
+- FileTransferProfileJAR/SAFileTransfer
+- FileTransferProfileJAR/SAFileTransferIncomingRequestReceiver
+- FileTransferProfileJAR/SAFileTransferManager
+- FileTransferProfileJAR/SAft
+- HMACSHA512/224
+- HMACSHA512/256
+- MD5withRSA/ISO9796-2
+- RC2MAC/CFB8
+- RC5MAC/CFB8
+- RIPEMD160withRSA/ISO9796-2
+- RSA/ECB/NoPadding
+- RSA/ECB/OAEPPadding
+- RSA/ECB/PKCS1Padding
+- RSA/ISO9796-1
+- RSA/OAEP
+- RSA/PKCS1
+- SHA-512/224
+- SHA-512/256
+- SHA1withRSA/ISO9796-2
+- SHA1withRSA/PSS
+- SHA224withRSA/PSS
+- SHA256withRSA/PSS
+- SHA384withRSA/PSS
+- SHA512/224
+- SHA512/256
+- SHA512withRSA/PSS
+- SKIPJACKMAC/CFB8
+- activity_choser_model_history.xml
+- http://schemas.android.com/apk/res/android
+- https://frankmorgner.github.io/vsmartcard/virtualsmartcard/README.html
+- https://play.google.com/store/apps/details?id=com.samsung.android.gearoplugin
+- market://details?id=com.samsung.android.gearoplugin
+- share_history.xml
+

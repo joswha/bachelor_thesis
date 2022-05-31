@@ -1,0 +1,6 @@
+[LinkFinder]
+- http://schemas.android.com/apk/res/android
+- https://PayPal.me/fr3ts0n
+- https://github.com/fr3ts0n/AndrOBD
+- https://github.com/fr3ts0n/AndrOBD-Plugin
+

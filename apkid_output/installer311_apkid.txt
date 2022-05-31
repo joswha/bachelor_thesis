@@ -1,0 +1,6 @@
+[+] APKiD 2.1.3 :: from RedNaga :: rednaga.io
+[*] apps/installer311.apk!classes.dex
+ |-> anti_vm : Build.FINGERPRINT check, Build.MANUFACTURER check
+ |-> compiler : r8
+[*] apps/installer311.apk!classes2.dex
+ |-> compiler : r8 without marker (suspicious)

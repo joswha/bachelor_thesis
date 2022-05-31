@@ -1,0 +1,7 @@
+[LinkFinder]
+- /HoloKen/
+- /holoken_
+- http://play.google.com/store/apps/details?id=
+- http://schemas.android.com/apk/res/android
+- https://github.com/queler/holokenmod/issues
+

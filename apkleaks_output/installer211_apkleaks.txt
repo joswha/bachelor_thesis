@@ -1,0 +1,18 @@
+[Authorization_Basic]
+- basic means
+
+[LinkFinder]
+- ./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+- /mqtt
+- http://schemas.android.com/apk/res/android
+- https://github.com/fr3ts0n/AndrOBD
+
+[Authorization_Basic]
+- basic means
+
+[LinkFinder]
+- ./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+- /mqtt
+- http://schemas.android.com/apk/res/android
+- https://github.com/fr3ts0n/AndrOBD
+

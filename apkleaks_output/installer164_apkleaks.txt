@@ -1,0 +1,6 @@
+[LinkFinder]
+- /proc/self/fd/
+- achievements.txt
+- colors.txt
+- http://schemas.android.com/apk/res/android
+

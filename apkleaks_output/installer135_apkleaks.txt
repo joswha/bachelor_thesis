@@ -1,0 +1,28 @@
+[Authorization_Basic]
+- basic =
+
+[LinkFinder]
+- /android_asset/
+- /proc/self/fd/
+- A_DTS/EXPRESS
+- A_DTS/LOSSLESS
+- A_MS/ACM
+- A_PCM/INT/LIT
+- Pop/Funk
+- S_HDMV/PGS
+- S_TEXT/ASS
+- S_TEXT/UTF8
+- V_MPEG4/ISO/AP
+- V_MPEG4/ISO/ASP
+- V_MPEG4/ISO/AVC
+- V_MPEG4/ISO/SP
+- V_MPEGH/ISO/HEVC
+- V_MS/VFW/FOURCC
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- http://www.apache.org/licenses/LICENSE-2.0
+- http://www.example.com/somefile.mp4
+- http://www.w3.org/ns/ttml#parameter
+- https://github.com/PowerInside/syncplayer
+- https://github.com/PowerInside/syncplayer/issues
+

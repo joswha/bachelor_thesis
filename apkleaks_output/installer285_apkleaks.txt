@@ -1,0 +1,14 @@
+[IP_Address]
+- 192.168.43.1
+
+[LinkFinder]
+- /Android/data/
+- /html/
+- 416.html
+- http://schemas.android.com/apk/res/android
+- http://www.w3.org/1999/xhtml
+- http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd
+- http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\
+- index.html
+- market://details?id=org.openintents.filemanager
+

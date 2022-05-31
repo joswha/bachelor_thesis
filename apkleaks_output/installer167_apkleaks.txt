@@ -1,0 +1,8 @@
+[LinkFinder]
+- http://schemas.android.com/apk/res/android
+- market://search?q=pname:com.google.zxing.client.android
+
+[LinkFinder]
+- http://schemas.android.com/apk/res/android
+- market://search?q=pname:com.google.zxing.client.android
+

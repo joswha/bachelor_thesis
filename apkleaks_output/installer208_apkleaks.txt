@@ -1,0 +1,11 @@
+[LinkFinder]
+- ./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+- /data/misc/wifi/WifiConfigStore.xml
+- /data/misc/wifi/wpa_supplicant.conf
+- /sys/fs/selinux/enforce
+- activity_choser_model_history.xml
+- http://schemas.android.com/apk/res/android
+- http://xmlpull.org/v1/doc/features.html#process-namespaces
+- org/apache/commons/codec/language/dmrules.txt
+- share_history.xml
+

@@ -1,0 +1,30 @@
+[LinkFinder]
+- http://a.tile.cloudmade.com/%s/%d/%d/%d/%d/%d%s?token=%s
+- http://a.tile.opencyclemap.org/cycle/
+- http://a.tile.openstreetmap.org/
+- http://api.tiles.mapbox.com/v3/
+- http://auth.cloudmade.com/token/
+- http://openptmap.org/tiles/
+- http://otile1.mqcdn.com/tiles/1.0.0/map/
+- http://otile1.mqcdn.com/tiles/1.0.0/sat/
+- http://overlay.openstreetmap.nl/basemap/
+- http://overlay.openstreetmap.nl/openfietskaart-overlay/
+- http://overlay.openstreetmap.nl/roads/
+- http://schemas.android.com/apk/res/android
+- http://topo.geofabrik.de/hills/
+- http://topo.openstreetmap.de/base/
+- http://topo.openstreetmap.de/topo/
+- http://www.PLACEYOURDOMAINHERE.com/anyfolder/gpxuploader/upload.php
+- http://www.openstreetmap.org/api/0.5/gpx/create
+- http://www.slf4j.org/codes.html#StaticLoggerBinder
+- http://www.slf4j.org/codes.html#multiple_bindings
+- http://www.slf4j.org/codes.html#no_static_mdc_binder
+- http://www.slf4j.org/codes.html#null_LF
+- http://www.slf4j.org/codes.html#null_MDCA
+- http://www.slf4j.org/codes.html#substituteLogger
+- http://www.slf4j.org/codes.html#unsuccessfulInit
+- http://www.slf4j.org/codes.html#version_mismatch
+- http://www.w3.org/2001/XMLSchema-instance\
+- org/slf4j/impl/StaticLoggerBinder
+- org/slf4j/impl/StaticMDCBinder
+

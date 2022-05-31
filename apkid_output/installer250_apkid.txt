@@ -1,0 +1,5 @@
+[+] APKiD 2.1.3 :: from RedNaga :: rednaga.io
+[*] apps/installer250.apk!classes.dex
+ |-> anti_debug : Debug.isDebuggerConnected() check
+ |-> anti_vm : Build.MANUFACTURER check, device ID check
+ |-> compiler : r8

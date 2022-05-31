@@ -1,0 +1,10 @@
+[IP_Address]
+- 0.4.0.3
+
+[LinkFinder]
+- /proc/self/fd/
+- Android/data
+- http://schemas.android.com/apk/res/android
+- https://github.com/nitroshare/nitroshare-android/issues/new
+- https://nitroshare.net
+

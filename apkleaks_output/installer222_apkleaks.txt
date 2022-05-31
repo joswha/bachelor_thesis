@@ -1,0 +1,7 @@
+[LinkFinder]
+- http://schemas.android.com/apk/res/android
+- http://www.w3.org/1999/xhtml
+- http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd
+- http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd
+- https://play.google.com/store/apps/details?id=net.basov.lws.r\
+

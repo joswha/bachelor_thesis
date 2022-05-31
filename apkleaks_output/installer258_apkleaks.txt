@@ -1,0 +1,43 @@
+[Generic_API_Key]
+- ApiKey = "ffcb5a7ed134aac3d095fa628bc46c65"
+
+[LinkFinder]
+- /...
+- /AsteroidOSSync
+- /Screenshot_
+- /index.html
+- /mnt/sdcard
+- /png8?app_id=
+- /proc/self/fd/
+- /system/etc/vold.fstab
+- BluetoothCrashResolverState.txt
+- M/d/yy
+- activity_choser_model_history.xml
+- http://a.tile.cloudmade.com/%s/%d/%d/%d/%d/%d%s?token=%s
+- http://api.openweathermap.org/data/2.5/
+- http://api.tiles.mapbox.com/v4/
+- http://openptmap.org/tiles/
+- http://openweathermap.org/img/w/
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- https://a.tile.openstreetmap.org/
+- https://a.tile.opentopomap.org/
+- https://a.tile.thunderforest.com/{map}/
+- https://a.tiles.wmflabs.org/hikebike/
+- https://api.mapbox.com/v4/
+- https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryTopo/MapServer/tile/
+- https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/
+- https://dev.virtualearth.net/REST/V1/Imagery/Metadata/%s?mapVersion=v1&output=json&uriScheme=https&key=%s
+- https://overlay.openstreetmap.nl/basemap/
+- https://overlay.openstreetmap.nl/openfietskaart-overlay/
+- https://overlay.openstreetmap.nl/roads/
+- https://tiles.openseamap.org/seamark/
+- https://wms.chartbundle.com/tms/v1.0/enrh/
+- https://wms.chartbundle.com/tms/v1.0/enrl/
+- https://wms.chartbundle.com/tms/v1.0/wac/
+- id/bubble_description
+- id/bubble_image
+- id/bubble_subdescription
+- id/bubble_title
+- share_history.xml
+

@@ -1,0 +1,41 @@
+[Authorization_Basic]
+- basic =
+
+[JSON_Web_Token]
+- 1.1.0-alpha01
+- 1.2.0-alpha03
+- 1.2.0-alpha06
+- 1.3.0-alpha02
+
+[LinkFinder]
+- /...
+- /databases
+- /proc/self/fd/
+- META-INF/services/
+- activity_choser_model_history.xml
+- http://gatheringhallstudios.com/
+- http://kuroyonhon.com/mhw/
+- http://mhwg.org/
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- https://discord.gg/k5rmEWh
+- https://discordapp.com/invite/gJwMdhK/
+- https://docs.mhw-db.com/
+- https://github.com/CarlosFdez
+- https://github.com/DeveloperPaul123
+- https://github.com/JakeWharton/butterknife
+- https://github.com/ahctang
+- https://github.com/gatheringhallstudios
+- https://github.com/gatheringhallstudios/MHWorldData
+- https://github.com/harjot-oberai/VectorMaster
+- https://github.com/jaysondc
+- https://github.com/lisawray/groupie
+- https://github.com/nikibobi
+- https://github.com/sockeqwe/AdapterDelegates
+- https://github.com/square/leakcanary
+- https://mhworld.kiranico.com/
+- https://opencollective.com/gathering-hall-studios#
+- https://play.google.com/store/apps/details?id=
+- https://twitter.com/MHhexhexhex
+- share_history.xml
+

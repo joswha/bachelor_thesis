@@ -1,0 +1,14 @@
+[IP_Address]
+- 255.255.255.2
+
+[JSON_Web_Token]
+- 1.0.0-rc01
+- 1.1.0-beta02
+- 1.1.0-rc01
+
+[LinkFinder]
+- /proc/self/fd/
+- chiaki-settings.json
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+

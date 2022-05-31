@@ -1,0 +1,9 @@
+[JSON_Web_Token]
+- 1.0.0-alpha02
+- 1.1.0-alpha01
+- 1.1.0-alpha02
+
+[LinkFinder]
+- /proc/self/fd/
+- http://schemas.android.com/apk/res/android
+

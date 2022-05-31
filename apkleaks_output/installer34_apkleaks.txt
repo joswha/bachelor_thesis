@@ -1,0 +1,13 @@
+[IP_Address]
+- 239.255.255.2
+
+[LinkFinder]
+- /action
+- /api/
+- /app
+- /description.xml
+- /groups/
+- /lights/
+- /upnp:root/upnp:device
+- http://schemas.android.com/apk/res/android
+

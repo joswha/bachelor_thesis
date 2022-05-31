@@ -1,0 +1,13 @@
+[LinkFinder]
+- ../../../gdx/bin
+- ../target/native
+- /.libgdx/
+- /libgdx
+- Play/Pause
+- build-windows32home.xml
+- com/badlogic/gdx/utils/arial-15.fnt
+- http://schemas.android.com/apk/res/android
+- shaders/circle.vert
+- shaders/line.vert
+- tables/table
+

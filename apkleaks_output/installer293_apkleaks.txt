@@ -1,0 +1,32 @@
+[Authorization_Basic]
+- basic =
+
+[Generic_Secret]
+- SECRET = "b832b7743701776d2873265881f2b9a8c9313181"
+
+[IP_Address]
+- 19.3.1.1
+
+[LinkFinder]
+- /...
+- /index.html
+- /oauth/token
+- /proc/self/fd/
+- activities/following
+- activity_choser_model_history.xml
+- athlete/activities
+- athlete/clubs
+- athlete/followers
+- athlete/friends
+- athlete/zones
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- http://www.garmin.com/xmlschemas/TrackPointExtension/v1\
+- http://www.w3.org/2001/XMLSchema-instance\
+- https://www.strava.com
+- https://www.strava.com/api/v3/
+- https://www.strava.com/oauth/authorize?response_type=code
+- segments/explore
+- segments/starred
+- share_history.xml
+

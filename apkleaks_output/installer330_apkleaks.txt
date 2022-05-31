@@ -1,0 +1,6 @@
+[LinkFinder]
+- http://schemas.android.com/apk/res/android
+
+[Password_in_URL]
+- ftp://anonymous:anonymous@").put((ImmutableBiMap.Builder) (byte) 8, (byte) "ftp://ftp.").put((ImmutableBiMap.Builder) (byte) 
+

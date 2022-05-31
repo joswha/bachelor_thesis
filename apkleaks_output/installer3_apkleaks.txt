@@ -1,0 +1,17 @@
+[JSON_Web_Token]
+- 1.0.0-beta01
+- 1.0.0-rc01
+- version=17.0.0
+- version=18.0.0
+
+[LinkFinder]
+- /neo/
+- /proc/self/fd/
+- content://com.google.android.gms.chimera/
+- content://com.google.android.gms.phenotype/
+- content://com.google.android.gsf.gservices
+- content://com.google.android.gsf.gservices/prefix
+- http://schemas.android.com/apk/res/android
+- https://developers.yubico.com/yubioath-android/\
+- https://plus.google.com/
+

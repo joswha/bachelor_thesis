@@ -1,0 +1,39 @@
+[Authorization_Basic]
+- basic compressed
+
+[LinkFinder]
+- /...
+- /10000000
+- /Config/
+- /Config/Profiles/
+- /Config/Profiles/Wiimote/
+- /Config/Profiles/Wiimote/WiimoteProfile.ini
+- /Dump
+- /GameCovers/
+- /GameSettings/
+- /Load
+- /ResourcePacks
+- /Shaders
+- /Touchscreen
+- /Wii
+- /Wii/sd.raw
+- /dolphin-emu
+- /index.html
+- /proc/self/fd/
+- Config/Profiles/Wiimote/
+- IMUIR/Enabled
+- MM/dd/yyyy
+- activity_choser_model_history.xml
+- content://android.media.tv/channel
+- content://android.media.tv/preview_program
+- content://android.media.tv/program
+- content://android.media.tv/recorded_program
+- content://android.media.tv/watch_next_program
+- http://ns.adobe.com/xap/1.0/\u0000
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- https://art.gametdb.com/wii/cover/%s/%s.png
+- https://www.flickr.com/photos/e_dubois/5132528166/
+- https://www.flickr.com/photos/e_dubois/5230654930/
+- share_history.xml
+

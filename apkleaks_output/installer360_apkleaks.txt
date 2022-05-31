@@ -1,0 +1,111 @@
+[Authorization_Basic]
+- basic puzzle
+
+[Authorization_Bearer]
+- bearer =
+
+[Generic_API_Key]
+- ApiKey" android:value="4d39d433251f1e18f9c088ed8b9ba23da24da28e"
+
+[IP_Address]
+- 0.0.0.0
+- 127.0.0.1
+
+[LinkFinder]
+- -data.xml
+- /.*\\.puz
+- /..
+- /...
+- /../
+- /Users/rcooper/Downloads/cs150608.jpz
+- /Users/rcooper/test.zip
+- /accounts/ClientLogin
+- /archive/
+- /data/
+- /dc1-
+- /debug/debug.puz
+- /index.html
+- META-INF/MANIFEST.MF
+- META-INF/maven/
+- VERSION.txt
+- activity_choser_model_history.xml
+- application_default_credentials.json
+- crosswords/archive
+- crosswords/archive/
+- http://brainsonly.com/servlets-newsday-crossword/newsdaycrossword?date=
+- http://brendanemmettquigley.com/
+- http://cdn.games.arkadiumhosted.com/latimes/assets/DailyCrossword/
+- http://cdn.games.arkadiumhosted.com/latimes/games/daily-crossword/game/crossword-expert.swf
+- http://chronicle.com/items/biz/puzzles/
+- http://code.google.com/p/shortyz
+- http://crosswords.washingtonpost.com/wp-srv/style/crosswords/util/csserve2.cgi?t=puz&z=puzzler&f=
+- http://developer.android.com/guide/practices/ui_guidelines/icon_design.html
+- http://fsf.org/
+- http://github.com/andrewgaul
+- http://github.com/ebardsley
+- http://github.com/estmatic
+- http://github.com/gtkirk
+- http://github.com/paulirwin
+- http://github.com/vin
+- http://google.com/
+- http://herbach.dnsalias.com/Jonesin/
+- http://herbach.dnsalias.com/Tausig/
+- http://herbach.dnsalias.com/wsj/
+- http://inkwellxwords.com/iwxbooks.html
+- http://mazerlm.home.comcast.net/~mazerlm/
+- http://metadata.google.internal
+- http://picayune.uclick.com/comics/
+- http://puzzles.kingdigital.com/javacontent/clues/
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- http://shortyz.kebernet.net
+- http://standalone.com/dl/puz/boston/
+- http://thinks.com/daily-crossword/puzzles/
+- http://wij.theworld.com/puzzles/dailyrecord/
+- http://world.std.com/~wij/puzzles/cru/
+- http://www.avxword.com/
+- http://www.brendanemmettquigley.com/
+- http://www.chron.com/apps/games/xword/puzzles/
+- http://www.crookedcrosswords.com/
+- http://www.cruciverb.com/puzzles.php?op=showarch&pub=lat
+- http://www.cruciverb.com/puzzles/lat/
+- http://www.fleetwoodwack.typepad.com/
+- http://www.flickr.com/photos/kategeraets/
+- http://www.gameinformer.com/b/features/archive/2010/12/24/fifteen-fun-android-games.aspx
+- http://www.gnu.org/licenses/
+- http://www.gnu.org/philosophy/why-not-lgpl.html
+- http://www.lafn.org/~keglerron/Block_style/index.html
+- http://www.litsoft.com
+- http://www.nytimes.com/2010/12/23/technology/personaltech/23smart.html?_r=1
+- http://www.nytimes.com/puzzle
+- http://www.nytimes.com/specials/puzzles/
+- http://www.people.com/people/puzzler/
+- http://www.puzzlexpress.com/
+- http://www.screaming-penguin.com/node/7775
+- http://www.youtube.com/watch?v=F7IZZXQ89Oc
+- https://accounts.google.com
+- https://accounts.google.com/o/oauth2/auth
+- https://accounts.google.com/o/oauth2/token
+- https://developers.google.com/accounts/docs/application-default-credentials
+- https://github.com/jonzolla
+- https://github.com/kebernet/shortyz
+- https://github.com/kebernet/shortyz/issues
+- https://github.com/playgameservices/android-samples/issues. 
+- https://myaccount.nytimes.com/auth/login?URI=https%3A%2F%2Fwww.nytimes.com%2Fcrosswords%2Findex.html&OQ=page%3Dhome%26_r%3D1%26page%3Dhome%26
+- https://plus.google.com/112662859624418565027/posts
+- https://plus.google.com/b/112662859624418565027
+- https://washingtonpost.as.arkadiumhosted.com/clients/washingtonpost-content/SundayCrossword/mreagle_
+- https://washingtonpost.as.arkadiumhosted.com/clients/washingtonpost-content/crossynergy/
+- https://www.google.com
+- https://www.googleapis.com/batch
+- https://www.googleapis.com/oauth2/v1/certs
+- https://www.nytimes.com/crosswords
+- https://www.nytimes.com/crosswords/index.html?page=home&_r=0
+- https://www.nytimes.com/svc/crosswords/v2/puzzle/
+- market://search?q=pname:org.l6n.sendlog
+- share_history.xml
+- yyyy/MM/dd
+
+[Mailto]
+- kebernet@gmail.com
+

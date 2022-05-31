@@ -1,0 +1,6 @@
+[LinkFinder]
+- http://schemas.android.com/apk/res/android
+- market://details?id=de.onyxbits.remotekeyboard
+- market://details?id=de.onyxbits.textfiction
+- welcomescreen.txt
+

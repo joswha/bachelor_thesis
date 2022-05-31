@@ -1,0 +1,60 @@
+[IP_Address]
+- 1.9.1.6
+
+[LinkFinder]
+- -data.xml
+- /archive/
+- /dc1-
+- /debug/authresp.html
+- /debug/debug.puz
+- /debug/xword-puzzles.html
+- crosswords/archive
+- crosswords/archive/
+- http://brendanemmettquigley.com/
+- http://cdn.games.arkadiumhosted.com/latimes/assets/DailyCrossword/
+- http://cdn.games.arkadiumhosted.com/latimes/games/daily-crossword/game/crossword-expert.swf
+- http://chronicle.com/items/biz/puzzles/
+- http://code.google.com/p/shortyz
+- http://crosswords.washingtonpost.com/wp-srv/style/crosswords/util/csserve2.cgi?t=puz&z=puzzler&f=
+- http://developer.android.com/guide/practices/ui_guidelines/icon_design.html
+- http://fsf.org/
+- http://herbach.dnsalias.com/Jonesin/
+- http://herbach.dnsalias.com/Tausig/
+- http://inkwellxwords.com/iwxbooks.html
+- http://mazerlm.home.comcast.net/~mazerlm/
+- http://picayune.uclick.com/comics/
+- http://schemas.android.com/apk/res/android
+- http://select.nytimes.com/premium/xword/
+- http://select.nytimes.com/premium/xword/puzzles.html
+- http://shortyz.kebernet.net
+- http://standalone.com/dl/puz/boston/
+- http://thinks.com/daily-crossword/puzzles/
+- http://wij.theworld.com/puzzles/dailyrecord/
+- http://world.std.com/~wij/puzzles/cru/
+- http://www.brendanemmettquigley.com/
+- http://www.chron.com/apps/games/xword/puzzles/
+- http://www.cruciverb.com/puzzles.php?op=showarch&pub=lat
+- http://www.cruciverb.com/puzzles/lat/
+- http://www.fleetwoodwack.typepad.com/
+- http://www.gameinformer.com/b/features/archive/2010/12/24/fifteen-fun-android-games.aspx
+- http://www.gnu.org/licenses/
+- http://www.gnu.org/philosophy/why-not-lgpl.html
+- http://www.lafn.org/~keglerron/Block_style/index.html
+- http://www.litsoft.com
+- http://www.nytimes.com/2010/12/23/technology/personaltech/23smart.html?_r=1
+- http://www.nytimes.com/puzzle
+- http://www.nytimes.com/specials/puzzles/
+- http://www.people.com/people/puzzler/
+- http://www.puzzlexpress.com/
+- http://www.screaming-penguin.com/node/7775
+- http://www.washingtonpost.com/r/WashingtonPost/Content/Puzzles/Daily/
+- http://www.youtube.com/watch?v=F7IZZXQ89Oc
+- https://myaccount.nytimes.com/auth/login?URI=http://select.nytimes.com/premium/xword/puzzles.html
+- https://plus.google.com/112662859624418565027/posts
+- https://plus.google.com/b/112662859624418565027
+- https://www.paypal.com/cgi-bin/webscr
+- market://search?q=pname:org.l6n.sendlog
+
+[Mailto]
+- kebernet@gmail.com
+

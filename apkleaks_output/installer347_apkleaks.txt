@@ -1,0 +1,70 @@
+[Artifactory_API_Token]
+- AKC01n6v15PaGHr0lpVHAJQAe8KGnkzvhRf
+- AKC01n6v15PaGHr0nPOUSlJT5DsP67y8Y1jSH
+
+[LinkFinder]
+- -cellular.xml
+- -wifi.xml
+- /META-INF/services/org.xmlpull.v1.XmlPullParserFactory
+- /cells
+- /cells_positions
+- /logs
+- /org.openbmap
+- /org.openbmap/databases
+- /org.openbmap/maps
+- /osmarender/
+- /positions
+- /sessions
+- /tiles/1.0.0/map/
+- /wifis
+- /wifis_positions
+- Restaurantes/Bares
+- Restaurants/Bars
+- cells/overview/#
+- cells/session/#
+- custom_location.xml
+- default_ssid.xml
+- drawable/sat_indicator_
+- http://creativecommons.org/ns#
+- http://mapsforge.org/renderTheme ../renderTheme-v4.xsd
+- http://mapsforge.org/renderTheme https://raw.githubusercontent.com/mapsforge/mapsforge/dev/resources/renderTheme-v4.xsd
+- http://mapsforge.org/renderTheme
+- http://ns.adobe.com/AdobeIllustrator/10.0/
+- http://purl.org/dc/dcmitype/StillImage
+- http://purl.org/dc/elements/1.1/
+- http://schemas.android.com/apk/res/android
+- http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd
+- http://www.inkscape.org/namespaces/inkscape
+- http://www.topografix.com/GPX/1/1\
+- http://www.w3.org/1999/02/22-rdf-syntax-ns#
+- http://www.w3.org/1999/xlink
+- http://www.w3.org/2000/svg
+- http://www.w3.org/2000/xmlns/
+- http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd
+- http://www.w3.org/TR/SVG11/feature#
+- http://www.w3.org/XML/1998/namespace
+- http://xml.org/sax/properties/lexical-handler
+- http://xmlpull.org/v1/doc/
+- http://xmlpull.org/v1/doc/features.html#process-docdecl
+- http://xmlpull.org/v1/doc/features.html#process-namespaces
+- http://xmlpull.org/v1/doc/features.html#report-namespace-prefixes
+- http://xmlpull.org/v1/doc/features.html#validation
+- https://radiocells.org/default/database_version.json
+- https://radiocells.org/openbmap/downloads/map_downloads.json
+- https://radiocells.org/openbmap/uploads/generate_api_key
+- https://radiocells.org/uploads/cells
+- https://radiocells.org/uploads/check_login
+- https://radiocells.org/uploads/share_cells
+- https://radiocells.org/uploads/share_wifis
+- https://radiocells.org/uploads/version.xml
+- https://radiocells.org/uploads/wifis
+- https://www.radiocells.org/static/openbmap.sqlite
+- logs/session/#
+- positions/session/#
+- renderthemes/rendertheme-v4.xml
+- sessions/active
+- wifis/overview/#
+- wifis/session/#
+- http://www.w3.org/2000/svg
+- http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd
+

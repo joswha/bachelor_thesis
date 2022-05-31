@@ -1,0 +1,35 @@
+[Amazon_AWS_S3_Bucket]
+- //s3.amazonaws.com/android-beacon-library
+
+[Authorization_Basic]
+- basic means
+
+[JSON_Web_Token]
+- 1.1.0-alpha01
+- 1.1.0-alpha02
+- 1.2.0-alpha02
+- 1.2.0-alpha08
+- 1.3.0-alpha02
+- 1.3.0-alpha03
+- 1.3.0-alpha08
+- 1.5.0-alpha02
+- 2.3.0-alpha07
+
+[LinkFinder]
+- ./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+- /LogFiles
+- /mqtt
+- /proc/self/fd/
+- AES/CTR/NOPADDING
+- AES/CTR/NoPadding
+- AES/ECB/NOPADDING
+- AES/ECB/NoPadding
+- AES/GCM/NoPadding
+- BluetoothCrashResolverState.txt
+- RSA/ECB/NOPADDING
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- https://s3.amazonaws.com/android-beacon-library/android-distance.json
+- https://www.eclipse.org/legal/epl-2.0
+- model-distance-calculations.json
+

@@ -1,0 +1,8 @@
+[LinkFinder]
+- /action
+- /api/
+- /app
+- /groups/
+- /lights/
+- http://schemas.android.com/apk/res/android
+

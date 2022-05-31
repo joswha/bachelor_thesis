@@ -1,0 +1,27 @@
+[IP_Address]
+- 0.1.0.0
+- 2.1.0.0
+
+[LinkFinder]
+- /data/
+- /mnt/
+- /proc/version
+- /proc/wakelocks
+- /sdcard/
+- /sys/devices/system/cpu/cpu0/cpufreq/stats/time_in_state
+- /sys/kernel/debug/wakeup_sources
+- /sys/module/wakelock/parameters/default_stats
+- /system/app/Settings.apk
+- /system/bin/sh
+- AndroidManifest.xml
+- activity_choser_model_history.xml
+- css/1140.css
+- http://clients3.google.com/generate_204
+- http://forum.xda-developers.com/showpost.php?p=29443538&postcount=1
+- http://schemas.android.com/apk/res/android
+- https://play.google.com/store/apps/details?id=com.asksven.betterwifionoff_donate
+- https://twitter.com/#!/asksven
+- market://details?id=com.asksven.betterwifionoff
+- readme.html
+- share_history.xml
+

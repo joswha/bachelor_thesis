@@ -1,0 +1,39 @@
+[Authorization_Basic]
+- basic speed
+
+[IP_Address]
+- 173.194.45.4
+- 216.58.208.2
+
+[JSON_Web_Token]
+- 1.0.0-beta01
+- 1.0.0-rc01
+- sumxmy2=SOM.XMINY.2
+
+[LinkFinder]
+- /proc/self/fd/
+- M/d/yy
+- content://ca.rmen.android.networkmonitor.provider/connection_test_stats
+- content://ca.rmen.android.networkmonitor.provider/networkmonitor
+- content://ca.rmen.android.networkmonitor.provider/unique_values
+- dd/mm/yyyy
+- http://fsf.org/
+- http://maps.google.com/mapfiles/kml/shapes/placemark_circle.png
+- http://psdev.de/LicensesDialog
+- http://schemas.android.com/apk/res/android
+- http://www.gnu.org/licenses/
+- http://www.gnu.org/licenses/lgpl.html
+- http://www.gnu.org/philosophy/why-not-lgpl.html
+- http://xmlpull.org/v1/doc/features.html#process-namespaces
+- https://support.google.com/accounts/answer/185833
+- https://support.google.com/accounts/answer/185833?hl=es
+- https://support.google.com/accounts/answer/185833?hl=fr
+- https://www.google.com/landing/2step/
+- https://www.google.com/landing/2step/?hl=es
+- https://www.google.com/landing/2step/?hl=fr
+- https://www.google.com/settings/security/lesssecureapps
+- https://www.google.com/settings/security/lesssecureapps?hl=es
+- https://www.google.com/settings/security/lesssecureapps?hl=fr
+- message/rfc822
+- networkmonitor.html
+

@@ -1,0 +1,13 @@
+[LinkFinder]
+- /proc/cpuinfo
+- /thumb.png
+- activity_choser_model_history.xml
+- content://org.dolphinemu.dolphinemu.provider
+- content://org.dolphinemu.dolphinemu.provider/folders/
+- content://org.dolphinemu.dolphinemu.provider/games/
+- content://org.dolphinemu.dolphinemu.provider/refresh/
+- http://schemas.android.com/apk/res/android
+- https://www.flickr.com/photos/e_dubois/5132528166/
+- https://www.flickr.com/photos/e_dubois/5230654930/
+- share_history.xml
+

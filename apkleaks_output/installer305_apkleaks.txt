@@ -1,0 +1,8 @@
+[LinkFinder]
+- /proc/self/fd/
+- /sdcard
+- /sdcard/opensudoku
+- build/source/rs
+- http://schemas.android.com/apk/res/android
+- https://opensudoku.moire.org/
+

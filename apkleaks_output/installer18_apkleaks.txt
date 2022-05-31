@@ -1,0 +1,10 @@
+[Generic_API_Key]
+- API_KEY = "0d931dce668ff170f3e22d3ff29ff35c"
+
+[LinkFinder]
+- /data/2.5/weather?APPID=0d931dce668ff170f3e22d3ff29ff35c
+- activity_choser_model_history.xml
+- http://api.openweathermap.org/
+- http://schemas.android.com/apk/res/android
+- share_history.xml
+

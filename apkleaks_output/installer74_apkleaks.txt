@@ -1,0 +1,17 @@
+[IP_Address]
+- 4.7.2.1
+- 8.8.8.8
+
+[LinkFinder]
+- /...
+- /index.html
+- /message
+- activity_choser_model_history.xml
+- http://etherx.jabber.org/streams
+- http://jabber.org/protocol/compress
+- http://schemas.android.com/apk/res/android
+- http://xmlpull.org/v1/doc/features.html#process-namespaces
+- http://xmlpull.org/v1/doc/features.html#xml-roundtrip
+- share_history.xml
+- http://jabber.org/protocol/compress
+

@@ -1,0 +1,34 @@
+[JSON_Web_Token]
+- 1.0.0-beta01
+- 1.0.0-rc01
+
+[LinkFinder]
+- /data/local/bin/su
+- /proc/self/fd/
+- /proc/version
+- /store/
+- META-INF/maven/
+- NA/SubstituteLogger
+- activity_choser_model_history.xml
+- http://detectportal.firefox.com
+- http://detectp….firefox.com\
+- http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-fragment_3_0.xsd
+- http://java.sun.com/xml/ns/javaee
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- http://www.slf4j.org/codes.html
+- http://www.slf4j.org/codes.html#StaticLoggerBinder
+- http://www.slf4j.org/codes.html#loggerNameMismatch
+- http://www.slf4j.org/codes.html#multiple_bindings
+- http://www.slf4j.org/codes.html#no_static_mdc_binder
+- http://www.slf4j.org/codes.html#null_LF
+- http://www.slf4j.org/codes.html#null_MDCA
+- http://www.slf4j.org/codes.html#replay
+- http://www.slf4j.org/codes.html#substituteLogger
+- http://www.slf4j.org/codes.html#unsuccessfulInit
+- http://www.slf4j.org/codes.html#version_mismatch
+- http://www.w3.org/2001/XMLSchema-instance
+- https://c8320a1568c24fb5be10fc429bc5e2a0@sentry.io/1321461
+- org/slf4j/impl/StaticLoggerBinder
+- share_history.xml
+

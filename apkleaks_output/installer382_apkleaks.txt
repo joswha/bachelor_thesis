@@ -1,0 +1,11 @@
+[LinkFinder]
+- /.*
+- /.\n\r\u0000
+- /etc/group
+- /etc/nsswitch.conf
+- /etc/passwd
+- /proc/self/fd/
+- activity_choser_model_history.xml
+- http://schemas.android.com/apk/res/android
+- share_history.xml
+

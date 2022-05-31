@@ -1,0 +1,21 @@
+[Artifactory_API_Token]
+-  AKCy2fmRUWJSZ68qcw6ThEa89qA
+
+[JSON_Web_Token]
+- 1.2.0-alpha04
+
+[LinkFinder]
+- /ClipArts/
+- /proc/self/fd/
+- http://fsf.org/
+- http://psdev.de/LicensesDialog
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- http://www.gnu.org/licenses/
+- http://www.gnu.org/licenses/lgpl.html
+- http://www.gnu.org/philosophy/why-not-lgpl.html
+- http://xmlpull.org/v1/doc/features.html#process-namespaces
+- https://github.com/fossasia/badge-magic-android
+- https://github.com/fossasia/badge-magic-android/blob/development/LICENSE
+- https://github.com/fossasia/badge-magic-android/graphs/contributors
+

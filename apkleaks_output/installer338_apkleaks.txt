@@ -1,0 +1,29 @@
+[LinkFinder]
+- /Android/data/gr.ratmole.android.Mach3Pendant
+- /TCP connected to: 
+- /TCP
+- /UDP connected to: 
+- /UDP
+- com/esotericsoftware/reflectasm/ConstructorAccess
+- com/esotericsoftware/reflectasm/FieldAccess
+- com/esotericsoftware/reflectasm/MethodAccess
+- hotkeys.xml
+- http://schemas.android.com/apk/res/android
+- java/lang/Boolean
+- java/lang/Byte
+- java/lang/Character
+- java/lang/Class
+- java/lang/Double
+- java/lang/Float
+- java/lang/IllegalArgumentException
+- java/lang/Integer
+- java/lang/Long
+- java/lang/Object
+- java/lang/Short
+- java/lang/String
+- java/lang/StringBuilder
+- java/lang/Throwable
+- java/lang/UnsupportedOperationException
+- java/lang/invoke/MethodHandle
+- java/lang/invoke/MethodType
+

@@ -1,0 +1,35 @@
+[JSON_Web_Token]
+- 1.2.0-alpha06
+
+[LinkFinder]
+- /...
+- /antimine
+- /koin.properties
+- /proc/self/fd/
+- META-INF/services/
+- activity_choser_model_history.xml
+- ca-app-pub-3940256099942544/5224354917
+- collections/Iterable
+- collections/Mutable
+- collections/MutableIterable
+- error/NonExistentClass
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- https://crowdin.com/project/antimine-android
+- https://github.com/lucasnlm/antimine-android
+- https://www.lucasnlm.dev/antimine
+- https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=lucasnunesk%40gmail.com&item_name=With+your+help,+we%5C%27ll+be+able+to+implement+new+features+and+keep+our+project+active.&currency_code=USD&source=url
+- java/lang/
+- java/lang/Class
+- java/lang/Object
+- java/lang/Void
+- java/lang/annotation/Annotation
+- java/util/
+- java/util/Collection
+- java/util/List
+- java/util/function/
+- ref/Reference
+- reflect/KFunction
+- share_history.xml
+- stream/Stream
+

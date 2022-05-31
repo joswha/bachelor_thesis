@@ -1,0 +1,44 @@
+[IP_Address]
+- 44.0.0.0
+
+[LinkFinder]
+- /...
+- /Up
+- /index.html
+- /mnt/sdcard
+- /png8?app_id=
+- /system/etc/vold.fstab
+- activity_choser_model_history.xml
+- core/version
+- http://a.tile.cloudmade.com/%s/%d/%d/%d/%d/%d%s?token=%s
+- http://a.tile.openstreetmap.org/
+- http://a.tiles.wmflabs.org/hikebike/
+- http://api.tiles.mapbox.com/v4/
+- http://dapnet.db0sda.ampr.org:8080
+- http://db0sda.ampr.org/munin-cgi/munin-cgi-graph/db0sda.ampr.org/dapnet.db0sda.ampr.org/dapnet-week.png
+- http://dev.virtualearth.net/REST/V1/Imagery/Metadata/%s?mapVersion=v1&output=json&key=%s
+- http://hampager.de:8080
+- http://openptmap.org/tiles/
+- http://overlay.openstreetmap.nl/basemap/
+- http://overlay.openstreetmap.nl/openfietskaart-overlay/
+- http://overlay.openstreetmap.nl/roads/
+- http://schemas.android.com/apk/res/android
+- http://tiles.openseamap.org/seamark/
+- http://wms.chartbundle.com/tms/v1.0/enrh/
+- http://wms.chartbundle.com/tms/v1.0/enrl/
+- http://wms.chartbundle.com/tms/v1.0/wac/
+- http://www.hampager.de:8080
+- http://www.hampager.de:8080/
+- https://a.tile.thunderforest.com/{map}/
+- https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryTopo/MapServer/tile/
+- https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/
+- https://github.com/DecentralizedAmateurPagingNetwork
+- https://github.com/DecentralizedAmateurPagingNetwork/DAPNETApp/issues
+- https://opentopomap.org/
+- https://www.afu.rwth-aachen.de/munin-cgi/munin-cgi-graph/db0sda.ampr.org/dapnet.db0sda.ampr.org/dapnet-week.png
+- id/bubble_description
+- id/bubble_image
+- id/bubble_subdescription
+- id/bubble_title
+- share_history.xml
+

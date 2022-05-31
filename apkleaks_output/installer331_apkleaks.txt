@@ -1,0 +1,13 @@
+[LinkFinder]
+- /...
+- /Android/data
+- /proc/self/fd/
+- /storage/sdcard1
+- M/d/yy
+- activity_choser_model_history.xml
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- market://details?id=be.ppareit.swiftp
+- message/rfc822
+- share_history.xml
+

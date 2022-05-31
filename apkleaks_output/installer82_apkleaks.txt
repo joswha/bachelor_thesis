@@ -1,0 +1,6 @@
+[LinkFinder]
+- /sys/fs/selinux/enforce
+- http://schemas.android.com/apk/res/android
+- http://www.brunoparmentier.be
+- https://github.com/bparmentier/DNSSetter
+

@@ -1,0 +1,42 @@
+[JSON_Web_Token]
+- 1.0.0-beta01
+- 1.0.0-rc01
+
+[LinkFinder]
+- /bugsnag-errors/
+- /bugsnag-native/
+- /bugsnag-sessions/
+- /config
+- /omw/
+- /openmw.cfg
+- /proc/self/fd/
+- /storage
+- /storage/
+- /system/xbin/su
+- Mouse/Keyboard
+- OpenMWResourcePlugin.xml
+- _startupcrash.json
+- activity_choser_model_history.xml
+- config/openmw.cfg
+- config/settings-default.cfg
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- https://bugsnag.com
+- https://notify.bugsnag.com
+- https://omw.xyz.is/game.html
+- https://omw.xyz.is/mods.html
+- https://omw.xyz.is/privacy-policy.html
+- https://sessions.bugsnag.com
+- libopenmw/3rdparty-licenses.txt
+- libopenmw/openmw
+- libopenmw/resources
+- openmw_font.xml
+- openmw_layers.xml
+- openmw_pointer.xml
+- openmw_resources.xml
+- openmw_settings.xml
+- org/jetbrains/anko/db/SQLiteParserHelpersKt
+- org/jetbrains/anko/db/SQLiteParserHelpersKt__SqlParserHelpersKt
+- share_history.xml
+- skins.xml
+

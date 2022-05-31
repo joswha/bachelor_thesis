@@ -1,0 +1,29 @@
+[Authorization_Basic]
+- basic platform
+
+[LinkFinder]
+- /data/data/
+- /data/data/com.google.tts/lib/libttspico.so
+- /data/data/com.svox.pico/lib/libttspico.so
+- /sdcard/
+- /sdcard/espeak-data/
+- /sdcard/espeak-data/data.zip
+- /wiglewifi/
+- activity_choser_model_history.xml
+- http://eyes-free.googlecode.com/
+- http://eyes-free.googlecode.com/svn/trunk/documentation/tts_apps.html
+- http://eyes-free.googlecode.com/svn/trunk/thirdparty/espeak-data.zip
+- http://schemas.android.com/apk/res/android
+- http://www.opengis.net/kml/2.2\
+- https://api.wigle.net/v1/jsonUserStats
+- https://wigle.net/api/v1/jsonActivateClient
+- https://wigle.net/api/v1/jsonSiteStats
+- https://wigle.net/gps/gps/main/confirmfile/
+- https://wigle.net/gps/gps/main/myobserved/
+- market://search?q=pname:com.google.tts
+- mbrola/dummyfile
+- share_history.xml
+- site-stats-cache.json
+- user-stats-cache.json
+- https://wigle.net/gps/gps/main/register
+

@@ -1,0 +1,3 @@
+[+] APKiD 2.1.3 :: from RedNaga :: rednaga.io
+[*] apps/installer19.apk!classes.dex
+ |-> compiler : r8 without marker (suspicious)

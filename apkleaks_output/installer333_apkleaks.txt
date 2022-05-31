@@ -1,0 +1,4 @@
+[LinkFinder]
+- /CN=radius.c3noc.net
+- http://schemas.android.com/apk/res/android
+

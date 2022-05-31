@@ -1,0 +1,13 @@
+[IP_Address]
+- 19.3.1.1
+- 224.168.5.2
+
+[LinkFinder]
+- /about
+- /proc/self/fd/
+- TipsAndTricks.txt
+- activity_choser_model_history.xml
+- http://schemas.android.com/apk/res/android
+- https://www.kouchat.net/
+- share_history.xml
+

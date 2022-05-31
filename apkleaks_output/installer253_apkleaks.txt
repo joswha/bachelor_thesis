@@ -1,0 +1,12 @@
+[IP_Address]
+- 127.0.0.1
+
+[LinkFinder]
+- /LICENSE.txt
+- activity_choser_model_history.xml
+- http://clients3.google.com/generate_204
+- http://schemas.android.com/apk/res/android
+- https://www.paypal.me/RinatKurmaev
+- index.html
+- share_history.xml
+

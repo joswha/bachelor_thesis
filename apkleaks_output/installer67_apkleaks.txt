@@ -1,0 +1,10 @@
+[LinkFinder]
+- /140
+- /20
+- activity_choser_model_history.xml
+- http://schemas.android.com/apk/res/android
+- http://www.w3.org/1999/xhtml\
+- share_history.xml
+- ../README.md
+- src/main/res/raw
+

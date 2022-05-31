@@ -1,0 +1,16 @@
+[JSON_Web_Token]
+- 1.0.0-beta01
+- 1.0.0-rc01
+
+[LinkFinder]
+- /proc/self/fd/
+- AES/CBC/NoPadding
+- Mute/Unmute
+- Play/Pause
+- activity_choser_model_history.xml
+- http://play.google.com/store/apps/details?id=com.inputstick.apps.inputstickutility
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- market://details?id=com.inputstick.apps.inputstickutility
+- share_history.xml
+

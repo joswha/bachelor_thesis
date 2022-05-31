@@ -1,0 +1,159 @@
+[Authorization_Basic]
+- basic type
+
+[Firebase]
+- mygod-vpnhotspot.firebaseio.com
+
+[Google_API_Key]
+- AIzaSyADp0gTf25H6H3KxDRKwvp0EaWq_XvYUmg
+
+[Google_Cloud_Platform_OAuth]
+- 13108846109-5iemp5pbapg7n5epbk0mv96007m9bhmg.apps.googleusercontent.com
+
+[IP_Address]
+- 0.0.0.0
+- 8.8.8.8
+
+[JSON_Web_Token]
+- 1.1.0-beta01
+- 1.2.0-beta01
+- 1.3.0-alpha02
+- 1.3.0-beta01
+- 1.5.0-alpha02
+- 2.3.0-beta01
+- billing_client=3.0.1
+- version=16.0.0
+- version=16.3.3
+- version=17.0.0
+- version=17.2.2
+- version=18.0.0
+- version=19.3.0
+- version=19.3.1
+- version=2.2.1
+- version=2.2.4
+- version=2.3.1
+- version=3.0.1
+
+[LinkFinder]
+- /apex/
+- /bin
+- /bin/app_process
+- /cmdline
+- /data
+- /data/app/
+- /data/data/
+- /data/misc/wifi/p2p_supplicant.conf
+- /data/user/%d/%s
+- /data/vendor/wifi/wpa/p2p_supplicant.conf
+- /dev
+- /etc && echo dir.
+- /etc/ld.config.txt
+- /index.html
+- /linkerconfig/ld.config.txt
+- /linkerconfig/ld.config.txt\
+- /proc
+- /proc/
+- /proc/meminfo
+- /proc/net/arp
+- /proc/self/exe
+- /proc/self/fd/
+- /s\t\t▼ 
+- /sys/class/net/
+- /system/app/Superuser.apk
+- /system/bin
+- /system/bin/app_process
+- /system/bin/ip rule 
+- /system/bin/ip rule add 
+- /system/bin/ip
+- /system/etc/ld.config.
+- /system/etc/ld.config.txt
+- /system/etc/ld.config.vndk_lite.txt
+- /system/xbin/su
+- META-INF/services/
+- add-double/2addr
+- add-float/2addr
+- add-int/2addr
+- add-int/lit16
+- add-int/lit8
+- add-long/2addr
+- and-int/2addr
+- and-int/lit16
+- and-int/lit8
+- and-long/2addr
+- config/app/
+- const-string/jumbo
+- const-wide/high16
+- const/high16
+- content://com.google.android.gms.chimera/
+- content://com.google.android.gms.phenotype/
+- content://com.google.android.gsf.gservices
+- content://com.google.android.gsf.gservices/prefix
+- div-double/2addr
+- div-float/2addr
+- div-int/2addr
+- div-int/lit16
+- div-int/lit8
+- div-long/2addr
+- filled-new-array/range
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- https://app-measurement.com/a
+- https://firebase-settings.crashlytics.com/spi/v2/platforms/android/gmp/%s/settings
+- https://github.com/Mygod/VPNHotspot/blob/master/README.md
+- https://ipinfo.io/
+- https://macvendors.co/api/
+- https://macvendors.co/results/
+- https://mygod.be/donate/
+- https://pagead2.googlesyndication.com/pagead/gen_204?id=gmob-apps
+- https://plus.google.com/
+- https://reports.crashlytics.com/spi/v1/platforms/android/apps/%s/reports
+- https://update.crashlytics.com/spi/v1/platforms/android/apps
+- https://www.google.com
+- https://www.googleadservices.com/pagead/conversion/app/deeplink?id_type=adid&sdk_version=%s&rdid=%s&bundleid=%s&retry=%s
+- invoke-custom/range
+- invoke-direct/range
+- invoke-interface/range
+- invoke-polymorphic/range
+- invoke-static/range
+- invoke-super/range
+- invoke-virtual/range
+- move-object/from16
+- move-wide/from16
+- move/from16
+- mul-double/2addr
+- mul-float/2addr
+- mul-int/2addr
+- mul-int/lit16
+- mul-int/lit8
+- mul-long/2addr
+- or-int/2addr
+- or-int/lit16
+- or-int/lit8
+- or-long/2addr
+- overrides.txt
+- rem-double/2addr
+- rem-float/2addr
+- rem-int/2addr
+- rem-int/lit16
+- rem-int/lit8
+- rem-long/2addr
+- res/raw/third_party_licenses
+- rsub-int/lit8
+- shl-int/2addr
+- shl-int/lit8
+- shl-long/2addr
+- shr-int/2addr
+- shr-int/lit8
+- shr-long/2addr
+- sub-double/2addr
+- sub-float/2addr
+- sub-int/2addr
+- sub-long/2addr
+- ushr-int/2addr
+- ushr-int/lit8
+- ushr-long/2addr
+- xor-int/2addr
+- xor-int/lit16
+- xor-int/lit8
+- xor-long/2addr
+

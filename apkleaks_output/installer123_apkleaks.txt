@@ -1,0 +1,40 @@
+[Authorization_Basic]
+- basic :
+- basic =
+
+[JSON_Web_Token]
+- 1.0.0-beta01
+- 1.0.0-rc01
+
+[LinkFinder]
+- /.*\\.aps
+- /.*\\.bps
+- /.*\\.dps
+- /.*\\.ebp
+- /.*\\.ips
+- /.*\\.ppf
+- /.*\\.ups
+- /.*\\.vcdiff
+- /.*\\.xd
+- /.*\\.xdelta
+- /.*\\.xdelta3
+- /proc/self/fd/
+- IABUtil/Security
+- cgi-bin/webscr
+- http://schemas.android.com/apk/res/android
+- http://www.websequencediagrams.com
+- http://www.websequencediagrams.com/
+- http://yuml.me/diagram/
+- https://github.com/btimofeev/UniPatcher
+- https://maps.google.com/maps?q=
+- message/rfc822
+- patch/ebp/wrong1.ips
+- patch/ebp/wrong2.ips
+- patch/ebp/wrong3.ips
+- patch/ebp/wrong4.ips
+- patch/ebp/wrong5.ips
+- patch/ebp/wrong6.ips
+
+[Mailto]
+- unipatcher@gmail.com
+

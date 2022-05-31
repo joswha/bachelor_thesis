@@ -1,0 +1,10 @@
+[LinkFinder]
+- /proc/self/fd/
+- content://no.nordicsemi.android.log
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- https://calliope.cc/subdomain_minieditor/calliope.html
+- https://lab.open-roberta.org/#loadSystem&&calliope2017
+- https://makecode.calliope.cc/#pub:92924-38966-79138-39825
+- manifest.json
+

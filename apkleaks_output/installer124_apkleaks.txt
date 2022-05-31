@@ -1,0 +1,23 @@
+[IP_Address]
+- 1.0.3.5
+- 127.0.0.1
+
+[LinkFinder]
+- AndroidManifest.xml
+- activity_choser_model_history.xml
+- exceptions.txt
+- http://code.google.com/p/android/issues/detail?id=21469
+- http://cyanogenmod.com
+- http://schemas.android.com/apk/res/android
+- http://wififixer.wordpress.com
+- http://www.w3.org/TR/html4/strict.dtd
+- index.html
+- knownissues.html
+- market://details?id=com.wahtod.wififixer
+- readfirst.html
+- share_history.xml
+- suggestedconf.html
+- support.html
+- upgrading.html
+- wififixer_log.txt
+

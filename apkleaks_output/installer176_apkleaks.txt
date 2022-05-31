@@ -1,0 +1,8 @@
+[LinkFinder]
+- /0x
+- /app
+- /lib
+- /service
+- android.txt
+- http://schemas.android.com/apk/res/android
+

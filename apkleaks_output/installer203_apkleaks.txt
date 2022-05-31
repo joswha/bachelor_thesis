@@ -1,0 +1,15 @@
+[Authorization_Basic]
+- basic =
+
+[LinkFinder]
+- /proc/self/fd/
+- /v1/{resource=**}:getAcl
+- /v2/acls/{resource=**}:getAcl
+- /v2/{resource=**}
+- /v2/{resource=**}:getAcl
+- http://schemas.android.com/apk/res/android
+- https://android.googlesource.com/platform/frameworks/opt/sherpa/+/studio-3.2.1/constraintlayout
+- https://github.com/JakeWharton/butterknife
+- https://github.com/greenrobot/EventBus
+- https://github.com/protocolbuffers/protobuf
+

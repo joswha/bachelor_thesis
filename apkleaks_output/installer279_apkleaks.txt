@@ -1,0 +1,7 @@
+[LinkFinder]
+- /data/misc/wifi/wpa_supplicant.conf
+- /sys/fs/selinux/enforce
+- activity_choser_model_history.xml
+- http://schemas.android.com/apk/res/android
+- share_history.xml
+

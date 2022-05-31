@@ -1,0 +1,8 @@
+[LinkFinder]
+- content://net.dinglisch.android.tasker/prefs
+- http://schemas.android.com/apk/res/android
+- http://tasker.dinglisch.net/download.html
+- https://github.com/theksmith/CarBusInterface/wiki
+- market://details?id=net.dinglisch.android.taskercupcake
+- market://details?id=net.dinglisch.android.taskerm
+

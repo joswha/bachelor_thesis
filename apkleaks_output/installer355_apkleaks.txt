@@ -1,0 +1,9 @@
+[LinkFinder]
+- /...
+- /proc/self/fd/
+- activity_choser_model_history.xml
+- http://schemas.android.com/apk/res/android
+- https://github.com/lexica/lexica
+- https://sjp.pl/%s
+- share_history.xml
+

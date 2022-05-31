@@ -1,0 +1,14 @@
+[JSON_Web_Token]
+- 1.2.0-alpha05
+
+[LinkFinder]
+- /proc/self/fd/
+- META-INF/services/
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- https://f-droid.org/en/packages/%s
+- https://paypal.me/saschahlusiak/3eur
+- https://play.google.com/store/apps/details?id=de.saschahlusiak.freebloksvip
+- https://www.blockchain.com/btc/address/bc1qdgm2zvlc6qzqh8qs44wv8l622tfrhvkjqn0fkl
+- https://www.youtube.com/watch?v=pc8nmWpcQWs
+

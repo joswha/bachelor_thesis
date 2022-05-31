@@ -1,0 +1,7 @@
+[LinkFinder]
+- /Minetest.zip
+- /proc/self/fd/
+- activity_choser_model_history.xml
+- http://schemas.android.com/apk/res/android
+- share_history.xml
+

@@ -1,0 +1,4 @@
+[LinkFinder]
+- http://schemas.android.com/apk/res/android
+- https://play.google.com/store/apps/details?id=
+

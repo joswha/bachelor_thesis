@@ -1,0 +1,22 @@
+[JSON_Web_Token]
+- billing_client=3.0.0
+- version=3.0.0
+
+[LinkFinder]
+- /proc/self/cmdline
+- /proc/self/fd/
+- META-INF/services/
+- cgi-bin/webscr
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- https://github.com/btimofeev/UniPatcher
+- https://github.com/btimofeev/UniPatcher/blob/master/Changelog.md
+- message/rfc822
+- patch/ebp/wrong1.ips
+- patch/ebp/wrong2.ips
+- patch/ebp/wrong3.ips
+- patch/ebp/wrong4.ips
+- patch/ebp/wrong5.ips
+- patch/ebp/wrong6.ips
+- unipatcher_crash_report.txt
+

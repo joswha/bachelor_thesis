@@ -1,0 +1,12 @@
+[LinkFinder]
+- http://schemas.android.com/apk/res/android
+
+[Mailto]
+- sinpowei@gmail.com
+
+[LinkFinder]
+- http://schemas.android.com/apk/res/android
+
+[Mailto]
+- sinpowei@gmail.com
+

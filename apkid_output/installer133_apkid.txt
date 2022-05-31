@@ -1,0 +1,4 @@
+[+] APKiD 2.1.3 :: from RedNaga :: rednaga.io
+[*] apps/installer133.apk!classes.dex
+ |-> anti_vm : Build.BRAND check, Build.DEVICE check, Build.FINGERPRINT check, Build.MANUFACTURER check, Build.MODEL check, Build.TAGS check, possible VM check
+ |-> compiler : r8

@@ -1,0 +1,33 @@
+[Artifactory_Password]
+-  AP7sToOSm2U3paPtS9NthcuwXn0
+
+[IP_Address]
+- 239.255.255.2
+
+[LinkFinder]
+- ./.-.
+- /chess.pgn
+- /chess_history.pgn
+- /data/data/jwtc.android.chess/
+- /games
+- /practices
+- /puzzles
+- /system/bin/chmod 744 /data/data/jwtc.android.chess/
+- /system/bin/ls /data/data/jwtc.android.chess/
+- ECO.json
+- app/YouTube
+- content://jwtc.android.chess.MyPGNProvider/games
+- http://chart.apis.google.com/chart?chs=200x200&cht=qr&chl=
+- http://schemas.android.com/apk/res/android
+- http://www.freechess.org/Register/index.html
+- http://www.jwtc.nl/
+- http://www.w3.org/1999/xhtml
+- http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd
+- https://github.com/jcarolus/android-chess
+- merida/border
+- merida/select.png
+- merida/select_light.png
+- practice.txt
+- ws/app/
+- http://www.jwtc.nl/
+

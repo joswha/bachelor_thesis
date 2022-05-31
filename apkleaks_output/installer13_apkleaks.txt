@@ -1,0 +1,4 @@
+[LinkFinder]
+- http://schemas.android.com/apk/res/android
+- saved_game.json
+

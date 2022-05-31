@@ -1,0 +1,6 @@
+[LinkFinder]
+- http://schemas.android.com/apk/res/android
+- https://github.com/subchannel13/EnchantedFortress
+- https://github.com/subchannel13/EnchantedFortress/issues
+- https://www.paypal.me/IvanKravarscan/5
+

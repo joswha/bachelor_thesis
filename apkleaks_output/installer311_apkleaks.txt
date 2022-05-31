@@ -1,0 +1,68 @@
+[IP_Address]
+- 1.6.4.0
+
+[JSON_Web_Token]
+- 1.1.0-alpha01
+- 1.2.0-alpha08
+- 1.3.0-alpha02
+- 1.3.0-alpha08
+- 2.3.0-alpha07
+- billing_client=3.0.0
+- version=3.0.0
+
+[LinkFinder]
+- /...
+- /10000000
+- /index.html
+- /proc/self/fd/
+- Africa/Addis_Ababa
+- Africa/Cairo
+- Africa/Harare
+- America/Anchorage
+- America/Argentina/Buenos_Aires
+- America/Chicago
+- America/Indiana/Indianapolis
+- America/Los_Angeles
+- America/Phoenix
+- America/Puerto_Rico
+- America/Sao_Paulo
+- America/St_Johns
+- Asia/Dhaka
+- Asia/Ho_Chi_Minh
+- Asia/Karachi
+- Asia/Kolkata
+- Asia/Shanghai
+- Asia/Tokyo
+- Asia/Yerevan
+- Australia/Darwin
+- Australia/Sydney
+- Europe/Paris
+- META-INF/services/
+- Pacific/Apia
+- Pacific/Auckland
+- Pacific/Guadalcanal
+- activity_choser_model_history.xml
+- collections/Iterable
+- collections/Mutable
+- collections/MutableIterable
+- error/NonExistentClass
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- https://play.google.com/store/apps/details?id=
+- java/lang/
+- java/lang/Class
+- java/lang/Object
+- java/lang/Void
+- java/lang/annotation/Annotation
+- java/util/
+- java/util/Collection
+- java/util/List
+- java/util/function/
+- okio/Okio
+- okio/Okio__JvmOkioKt
+- org/threeten/bp/TZDB.dat
+- ref/Reference
+- reflect/KFunction
+- share_history.xml
+- stream/Stream
+

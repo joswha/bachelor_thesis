@@ -1,0 +1,10 @@
+[JSON_Web_Token]
+- 1.0.0-beta01
+- 1.0.0-rc01
+
+[LinkFinder]
+- /neo/
+- /proc/self/fd/
+- http://schemas.android.com/apk/res/android
+- https://developers.yubico.com/yubioath-android/\
+

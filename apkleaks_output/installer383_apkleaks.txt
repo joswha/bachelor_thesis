@@ -1,0 +1,6 @@
+[LinkFinder]
+- /music
+- /sdcard/com.drodin.tuxrider
+- /sounds
+- http://schemas.android.com/apk/res/android
+

@@ -1,0 +1,19 @@
+[IP_Address]
+- 127.0.0.1
+- 192.168.43.1
+- 239.192.0.0
+
+[LinkFinder]
+- /Marlinski/=
+- /proc/net/arp
+- activity_choser_model_history.xml
+- certs/disruptedsystemsCA.pem
+- http://disruptedsystems.org/
+- http://fsf.org/
+- http://schemas.android.com/apk/res/android
+- http://www.gnu.org/licenses/
+- http://www.gnu.org/licenses/gpl-3.0.rdf
+- http://www.gnu.org/philosophy/why-not-lgpl.html
+- https://data.disruptedsystems.org/post
+- share_history.xml
+

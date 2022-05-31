@@ -1,0 +1,30 @@
+[IP_Address]
+- 127.0.0.1
+
+[JSON_Web_Token]
+- 1.2.0-alpha02
+- 1.2.0-alpha03
+- 1.2.0-alpha06
+- 1.2.0-beta01
+- 1.3.0-alpha03
+- 1.3.0-rc01
+- 2.3.0-alpha01
+
+[LinkFinder]
+- /Cuberite
+- /cuberite-server
+- /proc/self/fd/
+- Cuberite/Console
+- Cuberite/Control
+- Cuberite/CuberiteHelper
+- Cuberite/InstallService
+- Cuberite/MainActivity
+- Cuberite/ServerService
+- Cuberite/Settings
+- Cuberite/State
+- META-INF/services/
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- https://download.cuberite.org/android
+- https://download.cuberite.org/androidbinaries/
+

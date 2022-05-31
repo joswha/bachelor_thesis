@@ -1,0 +1,12 @@
+[IP_Address]
+- 192.168.5.1
+- 255.255.255.0
+
+[LinkFinder]
+- ./setup
+- /proc/cpuinfo
+- /proc/net/dev
+- /proc/net/route
+- /proc/net/wireless
+- http://schemas.android.com/apk/res/android
+

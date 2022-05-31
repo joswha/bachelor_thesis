@@ -1,0 +1,24 @@
+[IP_Address]
+- 1.1.1.1
+- 19.3.1.1
+- 33.1.1.1
+
+[LinkFinder]
+- ../GameSettings/
+- /Config/
+- /GameSettings/
+- /dolphin-emu
+- /dolphin-emu/ScreenShots/
+- /proc/self/fd/
+- MM/dd/yyyy
+- activity_choser_model_history.xml
+- content://org.dolphinemu.dolphinemu.provider
+- content://org.dolphinemu.dolphinemu.provider/folders/
+- content://org.dolphinemu.dolphinemu.provider/games/
+- content://org.dolphinemu.dolphinemu.provider/refresh/
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- https://www.flickr.com/photos/e_dubois/5132528166/
+- https://www.flickr.com/photos/e_dubois/5230654930/
+- share_history.xml
+

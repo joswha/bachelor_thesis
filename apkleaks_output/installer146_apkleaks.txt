@@ -1,0 +1,25 @@
+[IP_Address]
+- 0.0.0.0
+- 0.3.10.1
+- 127.0.0.1
+- 5.1.1.1
+
+[LinkFinder]
+- /..
+- /../
+- /proc/self/fd/
+- META-INF/MANIFEST.MF
+- activity_choser_model_history.xml
+- com/google/common/truth/Truth
+- gamedifficulty/computerskill
+- gamedifficulty/showkilledplane
+- http://schemas.android.com/apk/res/android
+- https://axa951.wixsite.com/portfolio
+- https://goo.gl/aH3UyP
+- https://stackoverflow.com/q/5189914/28465
+- https://www.github.com/xxxcucus/planes
+- https://www.youtube.com/watch?v=CAxSPp2h_Vo
+- https://www.youtube.com/watch?v=qgL0RdwqBRY
+- java/lang/Boolean
+- share_history.xml
+

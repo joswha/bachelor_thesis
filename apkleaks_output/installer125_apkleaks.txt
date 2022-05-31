@@ -1,0 +1,11 @@
+[IP_Address]
+- 19.3.1.1
+- 35.1.1.1
+
+[LinkFinder]
+- /proc/self/fd/
+- activity_choser_model_history.xml
+- http://schemas.android.com/apk/res/android
+- http://xmlpull.org/v1/doc/features.html#indent-output
+- share_history.xml
+

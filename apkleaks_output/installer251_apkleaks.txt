@@ -1,0 +1,9 @@
+[JSON_Web_Token]
+- 1.3.0-alpha03
+
+[LinkFinder]
+- /proc/self/fd/
+- M/d/yy
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+

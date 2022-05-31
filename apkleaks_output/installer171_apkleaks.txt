@@ -1,0 +1,7 @@
+[LinkFinder]
+- /dev/urandom
+- AES/CTR/NoPadding
+- http://schemas.android.com/apk/res/android
+- https://play.google.com/store/apps/details?id=
+- nfcinfo_00.txt
+

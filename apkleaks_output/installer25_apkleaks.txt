@@ -1,0 +1,15 @@
+[JSON_Web_Token]
+- 1.0.0-alpha02
+- 1.0.0-alpha06
+- 1.1.0-alpha01
+- 1.1.0-alpha02
+- 1.1.0-alpha04
+- 1.1.0-alpha05
+- 1.1.0-alpha06
+- 2.1.0-alpha04
+
+[LinkFinder]
+- /proc/self/fd/
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+

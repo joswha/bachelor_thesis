@@ -1,0 +1,69 @@
+[Google_API_Key]
+- AIzaSyACUb8m8fx4iZSafmBe4WznRGW74OfSI_U
+
+[JSON_Web_Token]
+- 00138C=Kumyoung.Co.Ltd
+- 1.0.0-beta01
+- 1.0.0-rc01
+- 741AE0C=bistos.co.ltd
+- 98FD74=Act.Co.Ltd
+
+[LinkFinder]
+- -cache.json
+- /...
+- /index.html
+- /phpbb/images/smilies
+- /proc/self/fd/
+- /usr/xpg4/bin/df
+- /wiglewifi/
+- /wiglewifi/gpx/
+- /wiglewifi/m8b/
+- AES/GCM/NoPadding
+- Display/Speaker
+- M/d/yy
+- META-INF/maven/
+- NA/SubstituteLogger
+- RSA/ECB/OAEPWithSHA-256AndMGF1Padding
+- RSA/ECB/PKCS1Padding
+- activity_choser_model_history.xml
+- http://javax.xml.XMLConstants/feature/secure-processing
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- http://www.slf4j.org/codes.html
+- http://www.slf4j.org/codes.html#StaticLoggerBinder
+- http://www.slf4j.org/codes.html#loggerNameMismatch
+- http://www.slf4j.org/codes.html#multiple_bindings
+- http://www.slf4j.org/codes.html#no_static_mdc_binder
+- http://www.slf4j.org/codes.html#null_LF
+- http://www.slf4j.org/codes.html#null_MDCA
+- http://www.slf4j.org/codes.html#replay
+- http://www.slf4j.org/codes.html#substituteLogger
+- http://www.slf4j.org/codes.html#unsuccessfulInit
+- http://www.slf4j.org/codes.html#version_mismatch
+- http://www.topografix.com/GPX/1/1\
+- http://www.w3.org/2001/XMLSchema-instance\
+- https://api.wigle.net/api/v2/activate
+- https://api.wigle.net/api/v2/cell/search
+- https://api.wigle.net/api/v2/file/kml/
+- https://api.wigle.net/api/v2/file/transactions
+- https://api.wigle.net/api/v2/file/upload
+- https://api.wigle.net/api/v2/network/mine
+- https://api.wigle.net/api/v2/network/search
+- https://api.wigle.net/api/v2/network/search?
+- https://api.wigle.net/api/v2/news/latest
+- https://api.wigle.net/api/v2/stats/site
+- https://api.wigle.net/api/v2/stats/standings
+- https://api.wigle.net/api/v2/stats/user
+- https://wigle.net/clientTile?zoom=%d&x=%d&y=%d&startTransID=%s&endTransID=%s
+- https://wigle.net/register
+- local/anonymous
+- news-cache.json
+- observed-cache.json
+- org/slf4j/impl/StaticLoggerBinder
+- share_history.xml
+- site-stats-cache.json
+- uploads-cache.json
+- user-stats-cache.json
+- wiglewifi/gpx
+- wiglewifi/m8b
+

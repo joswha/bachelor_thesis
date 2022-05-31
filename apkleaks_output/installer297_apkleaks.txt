@@ -1,0 +1,32 @@
+[Generic_API_Key]
+- ApiKey" android:value="063c6b8c6ed0069bf5c2bc131f8a25a797014d2e"
+
+[JSON_Web_Token]
+- 1.0.0-rc01
+- 1.1.0-rc01
+- 1.2.0-alpha02
+
+[LinkFinder]
+- /...
+- /calls
+- /index.html
+- /proc/self/fd
+- /proc/self/fd/
+- /responses
+- /stats
+- /sys/devices/system/cpu/
+- game.jsp
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- https://api.cardcastgame.com/v1/
+- https://api.urbandictionary.com/v0/autocomplete-extra
+- https://api.urbandictionary.com/v0/define
+- https://gianlu.xyz
+- https://gianlu.xyz/donate/
+- https://github.com/devgianlu/PretendYoureXyzzyAndroid
+- https://play.google.com/store/apps/details?id=
+- https://pyx-discovery.gianlu.xyz/ListAll
+- https://pyx-discovery.gianlu.xyz/WelcomeMessage
+- message/rfc822
+- stats.jsp
+

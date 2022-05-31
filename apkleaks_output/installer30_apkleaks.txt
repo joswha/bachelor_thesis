@@ -1,0 +1,27 @@
+[IP_Address]
+- 0.0.0.0
+- 127.0.0.1
+- 54.1.2.2
+
+[LinkFinder]
+- /...
+- /index.html
+- AES/CBC/NoPadding
+- AES/CTR/NoPadding
+- Blowfish/CBC/NoPadding
+- DESede/CBC/NoPadding
+- DESede/CTR/NoPadding
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- https://status.stratum0.org/status.json
+- https://status.stratum0.org/update
+
+[RSA_Private_Key]
+- -----BEGIN RSA PRIVATE KEY-----
+
+[SSH_DSA_Private_Key]
+- -----BEGIN DSA PRIVATE KEY-----
+
+[SSH_EC_Private_Key]
+- -----BEGIN EC PRIVATE KEY-----
+

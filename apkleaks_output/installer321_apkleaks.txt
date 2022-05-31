@@ -1,0 +1,10 @@
+[LinkFinder]
+- /...
+- /proc/self/fd/
+- activity_choser_model_history.xml
+- dd/MM/yyyy
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- https://sudoku.secuso.org
+- share_history.xml
+

@@ -1,0 +1,7 @@
+[IP_Address]
+- 10.0.2.2
+
+[LinkFinder]
+- http://schemas.android.com/apk/res/android
+- https://frankmorgner.github.io/vsmartcard/virtualsmartcard/README.html
+

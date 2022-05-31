@@ -1,0 +1,9 @@
+[Artifactory_Password]
+-  AP2BOOMJCyxzrgqzJ17Soof8Dyw
+
+[LinkFinder]
+- /proc/self/fd/
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- market://details?id=com.aaronjwood.portauthority.free
+
