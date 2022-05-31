@@ -1,0 +1,35 @@
+[JSON_Web_Token]
+- 1.0.0-rc01
+- 1.1.0-rc01
+- 1.2.0-alpha02
+
+[LinkFinder]
+- /...
+- /calls
+- /cost
+- /index.html
+- /proc/self/fd
+- /proc/self/fd/
+- /responses
+- /stats
+- /sys/devices/system/cpu/
+- activity_choser_model_history.xml
+- game.jsp
+- http://play.google.com/store/apps/details?id=
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- http://www.google.
+- http://www.google.com/generate_204
+- https://api.cardcastgame.com/v1/
+- https://api.urbandictionary.com/v0/autocomplete-extra
+- https://api.urbandictionary.com/v0/define
+- https://gianlu.xyz
+- https://gianlu.xyz/donate/
+- https://github.com/devgianlu/PretendYoureXyzzyAndroid
+- https://play.google.com/store/apps/details?id=
+- https://pyx-discovery.gianlu.xyz/ListAll
+- https://pyx-discovery.gianlu.xyz/WelcomeMessage
+- message/rfc822
+- share_history.xml
+- stats.jsp
+

@@ -1,0 +1,12 @@
+[Amazon_AWS_Access_Key_ID]
+- xA3TRUCH5PNL2B0UBLM
+
+[JSON_Web_Token]
+- 1.0.0-beta01
+- 1.0.0-rc01
+
+[LinkFinder]
+- /proc/self/fd/
+- M/d/yy
+- http://schemas.android.com/apk/res/android
+

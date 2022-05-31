@@ -140,9 +140,10 @@ if __name__ == "__main__":
     # List all the apk files form current working directory.
     # got to 38 after first run -> 37'th index
     # second time(internet dc -> apkleaks doesn't work) -> 55
-    apk_files = [f for f in os.listdir("apps/") if f.startswith("installer") and f.endswith(".apk")]
+    # apk_files = [f for f in os.listdir("apps/") if f.startswith("installer") and f.endswith(".apk")]
+    apk_files = [f for f in os.listdir("apps/") if len(f) == 17]
 
-    apk_files = apk_files[55:]
+    # apk_files = apk_files[55:]
 
     # Create output folders, if they don't exist.
     create_output_folders()

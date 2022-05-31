@@ -1,0 +1,19 @@
+[Authorization_Basic]
+- basic whitelist
+
+[JSON_Web_Token]
+- 1.0.0-beta01
+- 1.0.0-rc01
+
+[LinkFinder]
+- /001
+- /proc/self/fd/
+- activity_choser_model_history.xml
+- http://en.wikipedia.org/
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=986PSAHLH6N4L
+- info.txt
+- share_history.xml
+- vocabulario.json
+

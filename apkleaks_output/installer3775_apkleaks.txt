@@ -1,0 +1,31 @@
+[Artifactory_Password]
+-  AP5ZkiPaIsDtTrUVZK511VlooJ4
+
+[LinkFinder]
+- /...
+- /Minetest
+- /index.html
+- /mods
+- /storage/emulated/0/
+- /world.mt
+- /worlds/singleplayerworld
+- README.txt
+- activity_choser_model_history.xml
+- author.txt
+- depends.txt
+- description.txt
+- games/minetest_game/mods
+- http://play.google.com/store/apps/details?id=
+- http://play.google.com/store/apps/details?id=net.minetest.minetest
+- http://schemas.android.com/apk/res/android
+- https://minetest-mods.rubenwardy.com/
+- https://minetest-mods.rubenwardy.com/screenshot/
+- market://details?id=net.minetest.minetest
+- modpack.txt
+- readme.txt
+- share_history.xml
+- v1/on-download
+- v1/report
+- v2/list
+- v2/on-missing-dep
+

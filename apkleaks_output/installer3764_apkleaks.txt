@@ -1,0 +1,18 @@
+[Authorization_Basic]
+- basic UI
+- basic material
+- basic part
+
+[IP_Address]
+- 0.9.4.5
+- 1.58.0.0
+- 4.4.1.2
+
+[LinkFinder]
+- /proc/self/fd/
+- M/d/yy
+- activity_choser_model_history.xml
+- http://schemas.android.com/apk/res/android
+- https://opentdb.com/api.php?
+- share_history.xml
+

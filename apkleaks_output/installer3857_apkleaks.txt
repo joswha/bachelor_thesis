@@ -1,0 +1,28 @@
+[JSON_Web_Token]
+- 1.0.0-beta01
+- 1.0.0-rc01
+
+[LinkFinder]
+- /Android/data/
+- /config
+- /config/openmw/openmw.cfg
+- /config/openmw/settings.cfg
+- /openmw
+- /proc/self/fd/
+- /resources
+- Mouse/Keyboard
+- OpenMWResourcePlugin.xml
+- activity_choser_model_history.xml
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- libopenmw/config
+- libopenmw/openmw
+- libopenmw/resources
+- openmw_font.xml
+- openmw_layers.xml
+- openmw_pointer.xml
+- openmw_resources.xml
+- openmw_settings.xml
+- share_history.xml
+- skins.xml
+

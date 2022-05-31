@@ -1,0 +1,15 @@
+[JSON_Web_Token]
+- 1.0.0-beta01
+- 1.0.0-rc01
+
+[LinkFinder]
+- /proc/self/fd
+- /proc/self/fd/
+- /sys/devices/system/cpu/
+- activity_choser_model_history.xml
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- http://www.paypal.me/proggenbuck
+- https://github.com/LuigiTheHunter/DSAAssistant/issues
+- share_history.xml
+

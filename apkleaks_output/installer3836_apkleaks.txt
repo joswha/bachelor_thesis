@@ -1,0 +1,12 @@
+[Authorization_Basic]
+- basic =
+
+[LinkFinder]
+- /cache.jpg
+- Misja/restart
+- content://com.roguetemple.hyperroid/
+- http://roguetemple.com/z/hyper.php
+- http://schemas.android.com/apk/res/android
+- http://www.roguetemple.com/z/hyper.php
+- market://details?id=com.roguetemple.hyperroidgold
+

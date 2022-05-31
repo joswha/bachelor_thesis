@@ -1,0 +1,9 @@
+[Authorization_Basic]
+- basic course
+
+[LinkFinder]
+- /music
+- /sounds
+- http://schemas.android.com/apk/res/android
+- market://details?id=com.drodin.tuxrider
+

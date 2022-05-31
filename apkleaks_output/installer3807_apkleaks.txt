@@ -1,0 +1,16 @@
+[Authorization_Basic]
+- basic game
+
+[IP_Address]
+- 2.5.29.1
+- 224.0.0.2
+- 8.8.8.8
+
+[LinkFinder]
+- /index.html
+- /socket.io/1/
+- /ws
+- activity_choser_model_history.xml
+- http://schemas.android.com/apk/res/android
+- share_history.xml
+

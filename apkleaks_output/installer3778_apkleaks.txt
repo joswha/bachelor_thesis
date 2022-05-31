@@ -1,0 +1,9 @@
+[LinkFinder]
+- OpenCV/StaticHelper
+- OpenCVLoader/BaseLoaderCallback
+- OpenCVManager/Helper
+- activity_choser_model_history.xml
+- http://schemas.android.com/apk/res/android
+- market://details?id=org.opencv.engine
+- share_history.xml
+

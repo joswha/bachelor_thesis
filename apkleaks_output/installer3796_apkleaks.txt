@@ -1,0 +1,10 @@
+[Authorization_Basic]
+- basic =
+
+[LinkFinder]
+- /cache.jpg
+- content://com.roguetemple.hyperroid/
+- http://roguetemple.com/z/hyper/
+- http://schemas.android.com/apk/res/android
+- http://www.roguetemple.com/z/hyper.php
+

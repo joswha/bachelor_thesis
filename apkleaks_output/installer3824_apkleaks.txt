@@ -1,0 +1,19 @@
+[JSON_Web_Token]
+- 1.0.0-beta01
+- 1.0.0-rc01
+
+[LinkFinder]
+- /proc/self/fd/
+- activity_choser_model_history.xml
+- http://instagram.com/_u/
+- http://m.facebook.com/
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- http://twitter.com/intent/user?screen_name=%s
+- http://youtube.com/channel/%s
+- https://github.com/%s
+- share_history.xml
+
+[Mailto]
+- feedback@mjurtz.com
+

@@ -1,0 +1,10 @@
+[IP_Address]
+- 127.0.0.1
+
+[LinkFinder]
+- /main.
+- AES/CBC/PKCS5Padding
+- device_id.xml
+- display/keep_screen_on
+- http://schemas.android.com/apk/res/android
+

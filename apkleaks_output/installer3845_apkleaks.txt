@@ -1,0 +1,26 @@
+[IP_Address]
+- 0.0.0.0
+- 1.1.1.1
+- 10.0.1.1
+- 10.0.2.2
+- 10.0.3.2
+- 192.0.0.0
+
+[LinkFinder]
+- /...
+- /capture.json
+- /data/local/tmp/exopackage/%s//secondary-dex
+- /display_photo
+- /index.html
+- /open-stack-frame
+- /photo
+- /proc/self/fd/
+- /system/bin/getprop
+- /vendor/lib:/system/lib
+- ReactNativeDevBundle.js
+- activity_choser_model_history.xml
+- http://schemas.android.com/apk/res/android
+- http://www.android.com/
+- model/gltf-binary
+- share_history.xml
+

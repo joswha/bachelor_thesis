@@ -1,0 +1,14 @@
+[Authorization_Basic]
+- basic =
+
+[IP_Address]
+- 19.3.1.1
+
+[LinkFinder]
+- /proc/self/fd
+- /proc/self/fd/
+- /sys/devices/system/cpu/
+- activity_choser_model_history.xml
+- http://schemas.android.com/apk/res/android
+- share_history.xml
+

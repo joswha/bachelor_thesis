@@ -1,0 +1,43 @@
+[LinkFinder]
+- /chess.pgn
+- /chess_history.pgn
+- /chessgamesonline.pgn
+- /data/data/
+- /data/data/jwtc.android.chess/
+- /games
+- /pppppppp/8/8/8/8/PPPPPPPP/
+- /practices
+- /proc/self/fd/
+- /puzzles
+- /system/bin/chmod 744 /data/data/jwtc.android.chess/
+- /system/bin/chmod 744 /data/data/jwtc.android.chess/*
+- /system/bin/ls /data/data/jwtc.android.chess/
+- ECO.json
+- activity_choser_model_history.xml
+- content://jwtc.android.chess.MyPGNProvider/games
+- highres/bb.png
+- highres/border.png
+- highres/bw.png
+- highres/kb.png
+- highres/kw.png
+- highres/nb.png
+- highres/nw.png
+- highres/pb.png
+- highres/pw.png
+- highres/qb.png
+- highres/qw.png
+- highres/rb.png
+- highres/rw.png
+- highres/select.png
+- highres/select_light.png
+- http://chart.apis.google.com/chart?chs=200x200&cht=qr&chl=
+- http://schemas.android.com/apk/res/android
+- http://www.freechess.org/Register/index.html
+- http://www.jwtc.nl/
+- http://www.w3.org/1999/xhtml
+- http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd
+- https://github.com/jcarolus/android-chess
+- practice.txt
+- share_history.xml
+- http://www.jwtc.nl/
+

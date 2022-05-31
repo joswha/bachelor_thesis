@@ -1,0 +1,8 @@
+[LinkFinder]
+- /cache.jpg
+- /proc/self/fd/
+- content://com.roguetemple.hyperroid/
+- http://roguetemple.com/z/hyper/
+- http://schemas.android.com/apk/res/android
+- http://www.roguetemple.com/z/hyper.php
+

@@ -1,0 +1,13 @@
+[LinkFinder]
+- /proc/cpuinfo
+- /proc/self/fd/
+- /usr/xpg4/bin/df
+- activity_choser_model_history.xml
+- http://schemas.android.com/apk/res/android
+- http://yearbooklabs.com/
+- http://yearbooklabs.com/sd/
+- https://github.com/williehwc/wonderdroid-x/issues
+- https://play.google.com/store/apps/dev?id=8429993243664540065
+- share_history.xml
+- wonderdroid/cartmem
+

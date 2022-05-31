@@ -1,0 +1,24 @@
+[LinkFinder]
+- ../encog-widget.js\
+- ../encog.js\
+- /docs/javadoc/
+- /url
+- http://developer.android.com/reference/
+- http://docs.oracle.com/javase/7/docs/api/
+- http://ichart.finance.yahoo.com/table.csv?
+- http://schemas.android.com/apk/res/android
+- http://schemas.android.com/tools
+- http://schemas.openxmlformats.org/officeDocument/2006/relationships
+- http://schemas.openxmlformats.org/spreadsheetml/2006/main
+- http://search.yahooapis.com/WebSearchService/V1/webSearch?
+- http://www.heatonresearch.com/encog
+- https://issues.apache.org/jira/browse/MATH
+- index.html
+- org/encog/data/analyst.csv
+- org/encog/data/blank.xlsx
+- org/encog/data/classes.txt
+- org/encog/data/ninja.cs
+- xl/worksheets/sheet1.xml
+- http://adserver.veldsoft.eu/www/delivery/ck.php?n=af13ab7e&amp;cb=INSERT_RANDOM_NUMBER_HERE
+- https://adserver.veldsoft.eu/www/delivery/ajs.php
+

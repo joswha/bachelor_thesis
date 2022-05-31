@@ -1,0 +1,12 @@
+[LinkFinder]
+- /0x
+- /app
+- /lib
+- /lib/python2.7/lib-dynload/_ctypes.so
+- /lib/python2.7/lib-dynload/_io.so
+- /lib/python2.7/lib-dynload/unicodedata.so
+- /service
+- android.txt
+- http://schemas.android.com/apk/res/android
+- service/main.py
+

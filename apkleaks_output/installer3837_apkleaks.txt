@@ -1,0 +1,12 @@
+[Authorization_Basic]
+- basic =
+
+[LinkFinder]
+- activity_choser_model_history.xml
+- http://schemas.android.com/apk/res/android
+- https://www.gnu.org/licenses/agpl-3.0.html\
+- https://www.yucata.de/Services/YucataService.svc/GetCurrentGames
+- https://www.yucata.de/en
+- https://www.yucata.de/en/CurrentGames
+- share_history.xml
+

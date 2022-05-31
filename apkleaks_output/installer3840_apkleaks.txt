@@ -1,0 +1,22 @@
+[JSON_Web_Token]
+- 1.0.0-beta01
+- 1.0.0-rc01
+
+[LinkFinder]
+- ./sudoku.dtd
+- ./sudokutype.dtd
+- /home/t/Code/SudoQ/DebugOnPC/profilefiles
+- /proc/self/fd/
+- activity_choser_model_history.xml
+- games.xml
+- http://apache.org/xml/features/nonvalidating/load-dtd-grammar
+- http://apache.org/xml/features/nonvalidating/load-external-dtd
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- http://xml.org/sax/features/namespaces
+- http://xml.org/sax/features/validation
+- profile.xml
+- profiles.xml
+- share_history.xml
+- simple.txt
+

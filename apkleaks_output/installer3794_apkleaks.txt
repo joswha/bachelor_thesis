@@ -1,0 +1,11 @@
+[JSON_Web_Token]
+- 1.0.0-beta01
+- 1.0.0-rc01
+
+[LinkFinder]
+- /proc/self/fd/
+- activity_choser_model_history.xml
+- http://schemas.android.com/apk/res-auto
+- http://schemas.android.com/apk/res/android
+- share_history.xml
+

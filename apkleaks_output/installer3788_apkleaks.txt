@@ -1,0 +1,13 @@
+[JSON_Web_Token]
+- animation.idle.end=13
+- drop.vibrate.duration=100
+- idle.ping.interval=5000
+
+[LinkFinder]
+- /android_asset/
+- /orientationimage2.csv
+- http://schemas.android.com/apk/res/android
+
+[Mailto]
+- c@rmen.ca
+
