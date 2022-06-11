@@ -1,4 +1,4 @@
-*.json
+# *.json
 .DS_STORE
 __pycache__/
 .vscode/
