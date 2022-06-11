@@ -3,6 +3,7 @@ import sys
 import subprocess
 from mobsftester import *
 import time
+import xmltodict
 
 # pylint: disable=pointless-string-statement
 """
@@ -210,65 +211,6 @@ def parse_apkleaks_output(_output):
     - http://xmlpull.org/v1/doc/features.html#indent-output
     - share_history.xml
 
-    2. 
-    [Amazon_AWS_S3_Bucket]
-    - //s3.amazonaws.com/exp-exponent-view-code
-
-    [Authorization_Basic]
-    - basic code
-    - basic implementation
-
-    [Facebook_Secret_Key]
-    - fb", "4a4428f24b1a17de152309d8a09b40be
-    - fbd5cd62bc65a09'],['e1031be262c7ed1b1dc9227a4a04c017
-
-    [Generic_API_Key]
-
-    3.
-    [IP_Address]
-    - 44.0.0.0
-
-    [LinkFinder]
-    - /...
-    - /Up
-    - /index.html
-    - /mnt/sdcard
-    - /png8?app_id=
-    - /system/etc/vold.fstab
-    - activity_choser_model_history.xml
-    - core/version
-    - http://a.tile.cloudmade.com/%s/%d/%d/%d/%d/%d%s?token=%s
-    - http://a.tile.openstreetmap.org/
-    - http://a.tiles.wmflabs.org/hikebike/
-    - http://api.tiles.mapbox.com/v4/
-    - http://dapnet.db0sda.ampr.org:8080
-    - http://db0sda.ampr.org/munin-cgi/munin-cgi-graph/db0sda.ampr.org/dapnet.db0sda.ampr.org/dapnet-week.png
-    - http://dev.virtualearth.net/REST/V1/Imagery/Metadata/%s?mapVersion=v1&output=json&key=%s
-    - http://hampager.de:8080
-    - http://openptmap.org/tiles/
-    - http://overlay.openstreetmap.nl/basemap/
-    - http://overlay.openstreetmap.nl/openfietskaart-overlay/
-    - http://overlay.openstreetmap.nl/roads/
-    - http://schemas.android.com/apk/res/android
-    - http://tiles.openseamap.org/seamark/
-    - http://wms.chartbundle.com/tms/v1.0/enrh/
-    - http://wms.chartbundle.com/tms/v1.0/enrl/
-    - http://wms.chartbundle.com/tms/v1.0/wac/
-    - http://www.hampager.de:8080
-    - http://www.hampager.de:8080/
-    - https://a.tile.thunderforest.com/{map}/
-    - https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryTopo/MapServer/tile/
-    - https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/
-    - https://github.com/DecentralizedAmateurPagingNetwork
-    - https://github.com/DecentralizedAmateurPagingNetwork/DAPNETApp/issues
-    - https://opentopomap.org/
-    - https://www.afu.rwth-aachen.de/munin-cgi/munin-cgi-graph/db0sda.ampr.org/dapnet.db0sda.ampr.org/dapnet-week.png
-    - id/bubble_description
-    - id/bubble_image
-    - id/bubble_subdescription
-    - id/bubble_title
-    - share_history.xml
-
     We need to extract each type of finding, for example: `[IP_Address]`, `[LinkFinder]`, `[Amazon_AWS_S3_Bucket]`, etc.
 
     We will take the apkleaks output as our input, and hence the final output should be stored in a mapping as so:
@@ -292,29 +234,192 @@ def parse_apkleaks_output(_output):
                     if len(line) > 0:
                         result[finding].append(line)
 
-        
     return result
+
+def parse_flowdroid_output(_output):
+    """
+    The flowdroid output is in xml format and can look like either of these cases:
+
+    1. 
+    <?xml version="1.0" encoding="UTF-8"?><DataFlowResults FileFormatVersion="102" TerminationState="Success"><Results><Result><Sink Statement="virtualinvoke $r5.&lt;java.io.OutputStream: void write(byte[],int,int)&gt;(r3, 0, $i1)" Method="&lt;protect.babymonitor.MonitorActivity: void serviceConnection(java.net.Socket)&gt;"><AccessPath Value="$i1" Type="int" TaintSubFields="true"></AccessPath></Sink><Sources><Source Statement="$i1 = virtualinvoke r2.&lt;android.media.AudioRecord: int read(byte[],int,int)&gt;(r3, 0, $i0)" Method="&lt;protect.babymonitor.MonitorActivity: void serviceConnection(java.net.Socket)&gt;"><AccessPath Value="$i1" Type="int" TaintSubFields="true"></AccessPath></Source></Sources></Result></Results><PerformanceData><PerformanceEntry Name="CallgraphConstructionSeconds" Value="1"></PerformanceEntry><PerformanceEntry Name="TotalRuntimeSeconds" Value="1"></PerformanceEntry><PerformanceEntry Name="MaxMemoryConsumption" Value="153"></PerformanceEntry><PerformanceEntry Name="SourceCount" Value="1"></PerformanceEntry><PerformanceEntry Name="SinkCount" Value="38"></PerformanceEntry></PerformanceData></DataFlowResults>
     
+    2.<?xml version="1.0" encoding="UTF-8"?><DataFlowResults FileFormatVersion="102" TerminationState="DataFlowOutOfMemory"><Results><Result><Sink Statement="virtualinvoke $r2.&lt;android.content.Context: void startActivities(android.content.Intent[])&gt;($r0)" Method="&lt;androidx.core.content.ContextCompat: boolean startActivities(android.content.Context,android.content.Intent[],android.os.Bundle)&gt;"><AccessPath Value="$r2" Type="android.content.Context" TaintSubFields="true"></AccessPath></Sink><Sources><Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;"><AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath></Source><Source Statement="$d1 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;"><AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath></Source><Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;"><AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath></Source><Source Statement="$d1 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;"><AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath></Source></Sources></Result><Result><Sink Statement="staticinvoke &lt;android.util.Log: int d(java.lang.String,java.lang.String)&gt;($r6, $r9)" Method="&lt;com.kalab.chess.enginesupport.ChessEngineResolver: java.util.List resolveEnginesForPackage(java.util.List,android.content.pm.ResolveInfo,java.lang.String)&gt;"><AccessPath Value="$r9" Type="java.lang.String" TaintSubFields="true"></AccessPath></Sink><Sources><Source Statement="$r4 = virtualinvoke $r3.&lt;android.content.pm.PackageManager: java.util.List queryIntentActivities(android.content.Intent,int)&gt;($r11, 128)" Method="&lt;com.kalab.chess.enginesupport.ChessEngineResolver: java.util.List resolveEngines()&gt;"><AccessPath Value="$r4" Type="java.util.List" TaintSubFields="true"></AccessPath></Source></Sources></Result><Result><Sink Statement="staticinvoke &lt;android.util.Log: int d(java.lang.String,java.lang.String)&gt;(&quot;NotifManCompat&quot;, $r12)" Method="&lt;androidx.core.app.NotificationManagerCompat$SideChannelManager: void updateListenerMap()&gt;"><AccessPath Value="$r12" Type="java.lang.String" TaintSubFields="true"></AccessPath></Sink><Sources><Source Statement="$r6 = virtualinvoke $r4.&lt;android.content.pm.PackageManager: java.util.List queryIntentServices(android.content.Intent,int)&gt;($r5, 0)" Method="&lt;androidx.core.app.NotificationManagerCompat$SideChannelManager: void updateListenerMap()&gt;"><AccessPath Value="$r6" Type="java.util.List" TaintSubFields="true"></AccessPath></Source></Sources></Result><Result><Sink Statement="staticinvoke &lt;android.util.Log: int v(java.lang.String,java.lang.String)&gt;(&quot;FragmentManager&quot;, $r8)" Method="&lt;androidx.fragment.app.FragmentManagerImpl: void moveToState(androidx.fragment.app.Fragment,int,int,int,boolean)&gt;"><AccessPath Value="$r8" Type="java.lang.String" TaintSubFields="true"></AccessPath></Sink><Sources><Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;"><AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath></Source><Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;"><AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath></Source><Source Statement="$d1 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;"><AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath></Source><Source Statement="$d1 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;"><AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath></Source><Source Statement="$d0 = virtualinvoke $r1.&lt;android.location.Location: double getLatitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;"><AccessPath Value="$d0" Type="double" TaintSubFields="true"></AccessPath></Source><Source Statement="$d1 = virtualinvoke $r1.&lt;android.location.Location: double getLongitude()&gt;()" Method="&lt;androidx.appcompat.app.TwilightManager: void updateState(android.location.Location)&gt;"><AccessPath Value="$d1" Type="double" TaintSubFields="true"></AccessPath></Source></Sources></Result><Result><Sink Statement="staticinvoke &lt;android.util.Log: int d(java.lang.String,java.lang.String)&gt;(&quot;NotifManCompat&quot;, $r12)" Method="&lt;androidx.core.app.NotificationManagerCompat$SideChannelManager: void updateListenerMap()&gt;"><AccessPath Value="$r12" Type="java.lang.String" TaintSubFields="true"></AccessPath></Sink><Sources><Source Statement="$r6 = virtualinvoke $r4.&lt;android.content.pm.PackageManager: java.util.List queryIntentServices(android.content.Intent,int)&gt;($r5, 0)" Method="&lt;androidx.core.app.NotificationManagerCompat$SideChannelManager: void updateListenerMap()&gt;"><AccessPath Value="$r6" Type="java.util.List" TaintSubFields="true"></AccessPath></Source></Sources></Result><Result><Sink Statement="$z0 = virtualinvoke $r4.&lt;android.content.Context: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)&gt;($r2, r0, 33)" Method="&lt;androidx.core.app.NotificationManagerCompat$SideChannelManager: boolean ensureServiceBound(androidx.core.app.NotificationManagerCompat$SideChannelManager$ListenerRecord)&gt;"><AccessPath Value="r0" Type="androidx.core.app.NotificationManagerCompat$SideChannelManager" TaintSubFields="true"><Fields><Field Value="&lt;androidx.core.app.NotificationManagerCompat$SideChannelManager: java.util.Map mRecordMap&gt;" Type="java.util.Map"></Field><Field Value="&lt;java.util.Map: java.lang.Object[] values&gt;" Type="java.lang.Object[]"></Field></Fields></AccessPath></Sink><Sources><Source Statement="$r6 = virtualinvoke $r4.&lt;android.content.pm.PackageManager: java.util.List queryIntentServices(android.content.Intent,int)&gt;($r5, 0)" Method="&lt;androidx.core.app.NotificationManagerCompat$SideChannelManager: void updateListenerMap()&gt;"><AccessPath Value="$r6" Type="java.util.List" TaintSubFields="true"></AccessPath></Source></Sources></Result><Result><Sink Statement="staticinvoke &lt;android.util.Log: int d(java.lang.String,java.lang.String)&gt;($r4, $r6)" Method="&lt;com.kalab.chess.enginesupport.ChessEngineResolver: java.util.List resolveEnginesForPackage(java.util.List,android.content.pm.ResolveInfo,java.lang.String)&gt;"><AccessPath Value="$r6" Type="java.lang.String" TaintSubFields="true"></AccessPath></Sink><Sources><Source Statement="$r4 = virtualinvoke $r3.&lt;android.content.pm.PackageManager: java.util.List queryIntentActivities(android.content.Intent,int)&gt;($r11, 128)" Method="&lt;com.kalab.chess.enginesupport.ChessEngineResolver: java.util.List resolveEngines()&gt;"><AccessPath Value="$r4" Type="java.util.List" TaintSubFields="true"></AccessPath></Source></Sources></Result><Result><Sink Statement="staticinvoke &lt;android.util.Log: int d(java.lang.String,java.lang.String)&gt;(&quot;NotifManCompat&quot;, $r6)" Method="&lt;androidx.core.app.NotificationManagerCompat$SideChannelManager: void processListenerQueue(androidx.core.app.NotificationManagerCompat$SideChannelManager$ListenerRecord)&gt;"><AccessPath Value="$r6" Type="java.lang.String" TaintSubFields="true"></AccessPath></Sink><Sources><Source Statement="$r6 = virtualinvoke $r4.&lt;android.content.pm.PackageManager: java.util.List queryIntentServices(android.content.Intent,int)&gt;($r5, 0)" Method="&lt;androidx.core.app.NotificationManagerCompat$SideChannelManager: void updateListenerMap()&gt;"><AccessPath Value="$r6" Type="java.util.List" TaintSubFields="true"></AccessPath></Source></Sources></Result><Result><Sink Statement="staticinvoke &lt;android.util.Log: int w(java.lang.String,java.lang.String)&gt;(&quot;NotifManCompat&quot;, $r6)" Method="&lt;androidx.core.app.NotificationManagerCompat$SideChannelManager: void scheduleListenerRetry(androidx.core.app.NotificationManagerCompat$SideChannelManager$ListenerRecord)&gt;"><AccessPath Value="$r6" Type="java.lang.String" TaintSubFields="true"></AccessPath></Sink><Sources><Source Statement="$r6 = virtualinvoke $r4.&lt;android.content.pm.PackageManager: java.util.List queryIntentServices(android.content.Intent,int)&gt;($r5, 0)" Method="&lt;androidx.core.app.NotificationManagerCompat$SideChannelManager: void updateListenerMap()&gt;"><AccessPath Value="$r6" Type="java.util.List" TaintSubFields="true"></AccessPath></Source></Sources></Result></Results><PerformanceData><PerformanceEntry Name="CallgraphConstructionSeconds" Value="19"></PerformanceEntry><PerformanceEntry Name="TaintPropagationSeconds" Value="64"></PerformanceEntry><PerformanceEntry Name="PathReconstructionSeconds" Value="10"></PerformanceEntry><PerformanceEntry Name="TotalRuntimeSeconds" Value="95"></PerformanceEntry><PerformanceEntry Name="MaxMemoryConsumption" Value="2847"></PerformanceEntry><PerformanceEntry Name="SourceCount" Value="11"></PerformanceEntry><PerformanceEntry Name="SinkCount" Value="257"></PerformanceEntry></PerformanceData></DataFlowResults>
+     
+    """
+    result = {"file_name": _output}
+
+    with open("flowdroid_output/" + _output[:-4] + "_flowdroid.xml", "rb") as f:
+
+        parsed_file = xmltodict.parse(f)
+
+        # After the file is parsed, it looks like this:
+        return parsed_file
+        """
+        {
+            'DataFlowResults': {
+                '@FileFormatVersion': '102', 
+                '@TerminationState': 'DataFlowOutOfMemory', 
+                'Results': {
+                    'Result': [
+                        {
+                            'Sink': {
+                                '@Statement': 'staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>("FragmentManager", $r3)', 
+                                '@Method': '<androidx.fragment.app.q0: void C0(androidx.fragment.app.o,int)>', 
+                                'AccessPath': {
+                                    '@Value': '$r3', 
+                                    '@Type': 'java.lang.String', 
+                                    '@TaintSubFields': 'true'
+                                }
+                            }, 
+                            'Sources': 
+                            {
+                                'Source': [
+                                    {
+                                        '@Statement': '$d1 = virtualinvoke $r1.<android.location.Location: double getLongitude()>()', 
+                                        '@Method': '<androidx.appcompat.app.r1: void f(android.location.Location)>', 
+                                        'AccessPath': {
+                                            '@Value': '$d1', 
+                                            '@Type': 'double', 
+                                            '@TaintSubFields': 'true'
+                                        }
+                                    },
+                                    {
+                                        '@Statement': '$d1 = virtualinvoke $r1.<android.location.Location: double getLongitude()>()', 
+                                        '@Method': '<androidx.appcompat.app.r1: void f(android.location.Location)>', 
+                                        'AccessPath': {
+                                            '@Value': '$d1', '@Type': 'double', '@TaintSubFields': 'true'
+                                        }
+                                    }, 
+                                    {
+                                        '@Statement': '$d1 = virtualinvoke $r1.<android.location.Location: double getLongitude()>()', 
+                                        '@Method': '<androidx.appcompat.app.r1: void f(android.location.Location)>', 
+                                        'AccessPath': 
+                                        {
+                                            '@Value': '$d1', 
+                                            '@Type': 'double', 
+                                            '@TaintSubFields': 'true'
+                                        }
+                                    }, 
+                                    {
+                                        '@Statement': '$d0 = virtualinvoke $r1.<android.location.Location: double getLatitude()>()', 
+                                        '@Method': '<androidx.appcompat.app.r1: void f(android.location.Location)>', 
+                                        'AccessPath': {
+                                            '@Value': '$d0', '@Type': 'double', '@TaintSubFields': 'true'
+                                        }
+                                    }, 
+                                    {
+                                        '@Statement': '$d0 = virtualinvoke $r1.<android.location.Location: double getLatitude()>()', 
+                                        '@Method': '<androidx.appcompat.app.r1: void f(android.location.Location)>', 
+                                        'AccessPath': {
+                                            '@Value': '$d0', '@Type': 'double', '@TaintSubFields': 'true'
+                                        }
+                                    }, 
+                                    {
+                                        '@Statement': '$d0 = virtualinvoke $r1.<android.location.Location: double getLatitude()>()', 
+                                        '@Method': '<androidx.appcompat.app.r1: void f(android.location.Location)>', 
+                                        'AccessPath': {
+                                            '@Value': '$d0', '@Type': 'double', '@TaintSubFields': 'true'
+                                        }
+                                    }
+                                ]
+                            }
+                        }, 
+                        {
+                            'Sink': {
+                                '@Statement': 'virtualinvoke $r2.<android.os.Bundle: void putAll(android.os.Bundle)>($r3)', 
+                                '@Method': '<androidx.savedstate.d: void c(android.os.Bundle)>', 
+                                'AccessPath': {'@Value': '$r3', '@Type': 'android.os.Bundle', '@TaintSubFields': 'true'}
+                            }, 
+                            'Sources': {
+                                'Source': [
+                                    {
+                                        '@Statement': '$d1 = virtualinvoke $r1.<android.location.Location: double getLongitude()>()', 
+                                        '@Method': '<androidx.appcompat.app.r1: void f(android.location.Location)>', 
+                                        'AccessPath': {'@Value': '$d1', '@Type': 'double', '@TaintSubFields': 'true'}
+                                    }, 
+                                    {
+                                        '@Statement': '$d1 = virtualinvoke $r1.<android.location.Location: double getLongitude()>()', 
+                                        '@Method': '<androidx.appcompat.app.r1: void f(android.location.Location)>', 
+                                        'AccessPath': {'@Value': '$d1', '@Type': 'double', '@TaintSubFields': 'true'}
+                                    }, 
+                                    {
+                                        '@Statement': '$d0 = virtualinvoke $r1.<android.location.Location: double getLatitude()>()', 
+                                        '@Method': '<androidx.appcompat.app.r1: void f(android.location.Location)>', 
+                                        'AccessPath': {'@Value': '$d0', '@Type': 'double', '@TaintSubFields': 'true'}
+                                    }, 
+                                    {
+                                        '@Statement': '$d0 = virtualinvoke $r1.<android.location.Location: double getLatitude()>()', 
+                                        '@Method': '<androidx.appcompat.app.r1: void f(android.location.Location)>', 
+                                        'AccessPath': {'@Value': '$d0', '@Type': 'double', '@TaintSubFields': 'true'}
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                'PerformanceData': {
+                    'PerformanceEntry': [
+                        {
+                            '@Name': 'CallgraphConstructionSeconds', '@Value': '12'
+                        }, 
+                        {
+                            '@Name': 'TaintPropagationSeconds', '@Value': '110'
+                        }, {
+                            '@Name': 'PathReconstructionSeconds', '@Value': '12'
+                        }, {
+                            '@Name': 'TotalRuntimeSeconds', '@Value': '137'
+                        }, {
+                            '@Name': 'MaxMemoryConsumption', '@Value': '3055'
+                        }, {
+                            '@Name': 'SourceCount', '@Value': '7'
+                        }, {
+                            '@Name': 'SinkCount', '@Value': '129'
+                        }
+                    ]
+                }
+            }
+        }
+        """
+
+        # or 
+        """
+        {
+            'DataFlowResults': {
+                '@FileFormatVersion': '102', 
+                '@TerminationState': 
+                'Success', 
+                'PerformanceData': {
+                    'PerformanceEntry': [
+                        {
+                            '@Name': 'CallgraphConstructionSeconds', 
+                            '@Value': '1'
+                        }, {
+                            '@Name': 'TotalRuntimeSeconds', 
+                            '@Value': '1'
+                        }, {
+                            '@Name': 'MaxMemoryConsumption', 
+                            '@Value': '146'
+                        }
+                    ]
+                }
+            }
+        }
+        """
+
+
+
 if __name__ == "__main__":
 
     # List all the apk files form current working directory.
-    # got to 38 after first run -> 37'th index
-    # second time(internet dc -> apkleaks doesn't work) -> 55
     apk_files = [f for f in os.listdir("apps/") if f.endswith(".apk")]
 
-    print(parse_apkleaks_output(apk_files[22]))
-
-    # j = 0
-    # for i, apk_name in enumerate(apk_files):
-    #     # apkid_parsed = parse_apkid_output(apk_name)
-    #     apkleaks_parsed = parse_apkleaks_output(apk_name)
-    #     # print(apkleaks_parsed)
-    #     print(len(apkleaks_parsed)) 
-
-
-    # timeouts_map = {'installer.apk', 'installer103.apk', 'installer104.apk', 'installer105.apk', 'installer106.apk', 'installer107.apk', 'installer109.apk', 'installer115.apk', 'installer121.apk', 'installer122.apk', 'installer126.apk', 'installer127.apk', 'installer130.apk', 'installer134.apk', 'installer136.apk', 'installer138.apk', 'installer142.apk', 'installer146.apk', 'installer152.apk', 'installer154.apk', 'installer157.apk', 'installer160.apk', 'installer164.apk', 'installer165.apk', 'installer168.apk', 'installer169.apk', 'installer17.apk', 'installer170.apk', 'installer173.apk', 'installer174.apk', 'installer175.apk', 'installer179.apk', 'installer182.apk', 'installer185.apk', 'installer186.apk', 'installer187.apk', 'installer189.apk', 'installer193.apk', 'installer205.apk', 'installer211.apk', 'installer212.apk', 'installer213.apk', 'installer215.apk', 'installer219.apk', 'installer224.apk', 'installer227.apk', 'installer23.apk', 'installer233.apk', 'installer234.apk', 'installer235.apk', 'installer238.apk', 'installer246.apk', 'installer250.apk', 'installer251.apk', 'installer252.apk', 'installer256.apk', 'installer257.apk', 'installer258.apk', 'installer261.apk', 'installer262.apk', 'installer267.apk', 'installer272.apk', 'installer274.apk', 'installer275.apk', 'installer277.apk', 'installer28.apk', 'installer281.apk', 'installer287.apk', 'installer295.apk', 'installer297.apk', 'installer3.apk', 'installer303.apk', 'installer304.apk', 'installer31.apk', 'installer310.apk', 'installer311.apk', 'installer312.apk', 'installer314.apk', 'installer320.apk', 'installer321.apk', 'installer327.apk', 'installer328.apk', 'installer329.apk', 'installer331.apk', 'installer334.apk', 'installer336.apk', 'installer339.apk', 'installer343.apk', 'installer347.apk', 'installer355.apk', 'installer361.apk', 'installer367.apk', 'installer371.apk', 'installer38.apk', 'installer380.apk', 'installer41.apk', 'installer46.apk', 'installer48.apk', 'installer55.apk', 'installer7.apk', 'installer71.apk', 'installer73.apk', 'installer76.apk', 'installer80.apk', 'installer83.apk', 'installer85.apk', 'installer97.apk', 'installer98.apk', 'installer3849.apk', 'installer3848.apk', 'installer3840.apk', 'installer3856.apk', 'installer3852.apk', 'installer3764.apk', 'installer3824.apk'}
-
-    # apk_files = apk_files[55:]
+    j = 0
+    for i, apk_name in enumerate(apk_files):
+        # apkid_parsed = parse_apkid_output(apk_name)
+        # apkleaks_parsed = parse_apkleaks_output(apk_name)
+        # flowdroid_parsed = parse_flowdroid_output(apk_name)
+        # dcheck_parsed = parse_dependencycheck_output(apk_name)
+        # mobsf_parsed = parse_mobsf_output(apk_name)
 
     # Create output folders, if they don't exist.
     # create_output_folders()
