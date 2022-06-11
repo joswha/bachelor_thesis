@@ -71,7 +71,7 @@ def run_d_check(_name):
         subprocess.run(d2j_cmd, shell = True, timeout = 20, check = True)
 
         # Run dependency-check
-        d_check_cmd_json = f"dependency-check -n -s temp_jar/{_name[:-4]}.jar -f JSON -o dependencycheck_output/{_name[:-4]}"
+        d_check_cmd_json = f"dependency-check -s temp_jar/{_name[:-4]}.jar -f JSON -o dependencycheck_output/{_name[:-4]}"
         # had to add -n so that no update is done, this got me a lot of errors
         subprocess.run(d_check_cmd_json, shell = True, timeout = 40, check = True)
         
