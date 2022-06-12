@@ -51,7 +51,7 @@ def json_resp(data):
     headers = {'Authorization': APIKEY}
     data = {"hash": json.loads(data)["hash"]}
     response = requests.post(SERVER + '/api/v1/report_json', data=data, headers=headers)
-    print(response.text)
+    return response.json()
 
 
 def delete(data):
