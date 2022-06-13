@@ -24,11 +24,20 @@ def run_apkid(_name):
     """
     print(f"Running apkid on apps/{_name}")
 
+    start_time = time.time()
+
     # Run apkid
-    apkid_cmd = f"apkid -v apps/{_name} > apkid_output/{_name[:-4]}_apkid.txt"
+    # apkid_cmd = f"apkid -v apps/{_name} > apkid_output/{_name[:-4]}_apkid.txt"
+    apkid_cmd = f"apkid -v apps/{_name}"
 
     try:
         subprocess.run(apkid_cmd, shell = True, timeout = 60, check = True)
+        
+        end_time = "{:.2f}".format(float(time.time() - start_time))
+
+        with open("runtime_apkid.txt", "a") as runtime_file:
+            runtime_file.write(f"{_name}: {end_time}\n")
+
     except subprocess.TimeoutExpired:
         
         # Add a new line to the timeouts.txt file
@@ -44,11 +53,20 @@ def run_apkleaks(_name):
     """
     print(f"Running apkleaks on apps/{_name}")
 
+    start_time = time.time()
+
     # Run apkleaks
-    apkleaks_cmd = f"apkleaks -f apps/{_name} -o apkleaks_output/{_name[:-4]}_apkleaks.txt"
+    # apkleaks_cmd = f"apkleaks -f apps/{_name} -o apkleaks_output/{_name[:-4]}_apkleaks.txt"
+    apkleaks_cmd = f"apkleaks -f apps/{_name}"
 
     try:
         subprocess.run(apkleaks_cmd, shell = True, timeout = 150, check = True)
+
+        end_time = "{:.2f}".format(float(time.time() - start_time))
+
+        with open("runtime_apkleaks.txt", "a") as runtime_file:
+            runtime_file.write(f"{_name}: {end_time}\n")
+
     except subprocess.TimeoutExpired:
 
         # Add a new line to the timeouts.txt file
@@ -64,6 +82,7 @@ def run_d_check(_name):
     """
     print(f"Running dex2jar and dependency-check on {_name}")
 
+    start_time = time.time()
 
     try:
         # Run dex2jar
@@ -74,9 +93,11 @@ def run_d_check(_name):
         d_check_cmd_json = f"dependency-check -s temp_jar/{_name[:-4]}.jar -f JSON -o dependencycheck_output/{_name[:-4]}"
         # had to add -n so that no update is done, this got me a lot of errors
         subprocess.run(d_check_cmd_json, shell = True, timeout = 40, check = True)
-        
-        # d_check_cmd_html = f"dependency-check -s temp_jar/{_name[:-4]}.jar -f HTML -o dependencycheck_output/{_name[:-4]}"
-        # subprocess.run(d_check_cmd_html, shell = True, timeout = 60, check = True)
+
+        end_time = "{:.2f}".format(float(time.time() - start_time))
+
+        with open("runtime_dcheck.txt", "a") as runtime_file:
+            runtime_file.write(f"{_name}: {end_time}\n")
 
     except subprocess.TimeoutExpired:
 
@@ -95,12 +116,20 @@ def run_flowdroid(_name):
 
     flow_droid_folder = "/Users/vlad/Desktop/THESIS/FlowDroid-2.10"
 
+    start_time = time.time()
+
     # Run flowdroid
     # flowdroid -a ../bachelor_thesis/apps/cam3.apk -p /Users/vlad/Library/Android/sdk/platforms -s soot-infoflow-android/SourcesAndSinks.txt
     flowdroid_cmd = f"java -jar {flow_droid_folder}/soot-infoflow-cmd/target/soot-infoflow-cmd-jar-with-dependencies.jar -s {flow_droid_folder}/soot-infoflow-android/SourcesAndSinks.txt -a apps/{_name} -p /Users/vlad/Library/Android/sdk/platforms -o flowdroid_output/{_name[:-4]}_flowdroid.xml"
 
     try:
         subprocess.run(flowdroid_cmd, shell = True, timeout = 150, check = True)
+
+        end_time = "{:.2f}".format(float(time.time() - start_time))
+
+        with open("runtime_flowdroid.txt", "a") as runtime_file:
+            runtime_file.write(f"{_name}: {end_time}\n")
+
     except subprocess.TimeoutExpired:
         
         # Add a new line to the timeouts.txt file
@@ -115,10 +144,16 @@ def run_mobsf(_name):
     """
     Runs mobsf on the apk file.
     """
+    start_time = time.time()
     RESP = upload(f"apps/{_name}")
     scan(RESP)
-    json_resp(RESP)
-    pdf(RESP, _name[:-4])
+    # json_resp(RESP)
+    # pdf(RESP, _name[:-4])
+
+    end_time = "{:.2f}".format(float(time.time() - start_time))
+
+    with open("runtime_mobsf.txt", "a") as runtime_file:
+        runtime_file.write(f"{_name}: {end_time}\n")
 
 def create_output_folders():
     """
@@ -243,8 +278,6 @@ def parse_flowdroid_output(_output):
 
     <?xml version="1.0" encoding="UTF-8"?><DataFlowResults FileFormatVersion="102" TerminationState="Success"><Results><Result><Sink Statement="virtualinvoke $r5.&lt;java.io.OutputStream: void write(byte[],int,int)&gt;(r3, 0, $i1)" Method="&lt;protect.babymonitor.MonitorActivity: void serviceConnection(java.net.Socket)&gt;"><AccessPath Value="$i1" Type="int" TaintSubFields="true"></AccessPath></Sink><Sources><Source Statement="$i1 = virtualinvoke r2.&lt;android.media.AudioRecord: int read(byte[],int,int)&gt;(r3, 0, $i0)" Method="&lt;protect.babymonitor.MonitorActivity: void serviceConnection(java.net.Socket)&gt;"><AccessPath Value="$i1" Type="int" TaintSubFields="true"></AccessPath></Source></Sources></Result></Results><PerformanceData><PerformanceEntry Name="CallgraphConstructionSeconds" Value="1"></PerformanceEntry><PerformanceEntry Name="TotalRuntimeSeconds" Value="1"></PerformanceEntry><PerformanceEntry Name="MaxMemoryConsumption" Value="153"></PerformanceEntry><PerformanceEntry Name="SourceCount" Value="1"></PerformanceEntry><PerformanceEntry Name="SinkCount" Value="38"></PerformanceEntry></PerformanceData></DataFlowResults>     
     """
-    result = {}
-
     try:
         with open("flowdroid_output/" + _output[:-4] + "_flowdroid.xml", "rb") as f:
 
@@ -316,9 +349,8 @@ def parse_mobsf_output(_output):
     result["secrets"] = response["secrets"]
     # appsec
     result["appsec"] = response["appsec"]
-    
+
     return result
-    
 
 if __name__ == "__main__":
 
@@ -330,52 +362,54 @@ if __name__ == "__main__":
     start_time = time.time()
 
     # Parsing the outputs into a unified dictionary.
-    for i, apk_name in enumerate(apk_files):
+    # for i, apk_name in enumerate(apk_files):
         
-        print("\n\n")
-        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-        print(f"Parsing: {i}'th {apk_name}")
-        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-        print("\n\n")
+    #     print("\n\n")
+    #     print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+    #     print(f"Parsing: {i}'th {apk_name}")
+    #     print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+    #     print("\n\n")
 
-        apkid_parsed = parse_apkid_output(apk_name)
-        apkleaks_parsed = parse_apkleaks_output(apk_name)
-        flowdroid_parsed = parse_flowdroid_output(apk_name)
-        dependencycheck_parsed = parse_dependencycheck_output(apk_name)
-        mobsf_parsed = parse_mobsf_output(apk_name)
+        # apkid_parsed = parse_apkid_output(apk_name)
+        # apkleaks_parsed = parse_apkleaks_output(apk_name)
+        # flowdroid_parsed = parse_flowdroid_output(apk_name)
+        # dependencycheck_parsed = parse_dependencycheck_output(apk_name)
+        # print(f"{apk_name}", dependencycheck_parsed)
+        # mobsf_parsed = parse_mobsf_output(apk_name)
 
-        apk_res = {
-            "apkid": apkid_parsed,
-            "apkleaks": apkleaks_parsed,
-            "flowdroid": flowdroid_parsed,
-            "dependencycheck": dependencycheck_parsed,
-            "mobsf": mobsf_parsed
-        }
+        # apk_res = {
+        #     "apkid": apkid_parsed,
+        #     "apkleaks": apkleaks_parsed,
+        #     "flowdroid": flowdroid_parsed,
+        #     "dependencycheck": dependencycheck_parsed,
+        #     "mobsf": mobsf_parsed
+        # }
 
-        final_res[apk_name] = apk_res
+    #     final_res[apk_name] = apk_res
         
-    print(final_res)
+    # print(final_res)
 
     # Create output folders, if they don't exist.
     # create_output_folders()
 
 
     # # Run the tools on all the apk files.
-    # for apk in apk_files:
+    for apk in apk_files:
 
     #     # Run apkid
-    #     run_apkid(apk)
+        # run_apkid(apk)
 
     #     # Run apkleaks
-    #     run_apkleaks(apk)
+        # run_apkleaks(apk)
 
     #     # Run dex2jar and dependency-check
         # run_d_check(apk)
 
     #     # Run mobsf
-    #     run_mobsf(apk)
+        run_mobsf(apk)
 
     #     # Run flowdroid
     #     run_flowdroid(apk)
 
-    print("--- %s seconds ---" % (time.time() - start_time))
+    final_time = "{:.2f}".format(float(time.time() - start_time))
+    print(f"--- {final_time} seconds --- ")

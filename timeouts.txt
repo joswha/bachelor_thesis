@@ -1,0 +1,2 @@
+apkleaks: pay5.apk
+apkleaks: pay4.apk
