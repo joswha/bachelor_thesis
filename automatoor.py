@@ -86,17 +86,17 @@ def run_d_check(_name):
 
     try:
         # Run dex2jar
-        d2j_cmd = f"d2j-dex2jar apps/{_name} -o temp_jar/{_name[:-4]}.jar"
-        subprocess.run(d2j_cmd, shell = True, timeout = 20, check = True)
+        # d2j_cmd = f"d2j-dex2jar apps/{_name} -o temp_jar/{_name[:-4]}.jar"
+        # subprocess.run(d2j_cmd, shell = True, timeout = 20, check = True)
 
         # Run dependency-check
-        d_check_cmd_json = f"dependency-check -s temp_jar/{_name[:-4]}.jar -f JSON -o dependencycheck_output/{_name[:-4]}"
+        d_check_cmd_json = f"dependency-check --scan apps/{_name} -f JSON -o dependencycheck_output_apk/{_name[:-4]}"
         # had to add -n so that no update is done, this got me a lot of errors
         subprocess.run(d_check_cmd_json, shell = True, timeout = 40, check = True)
 
         end_time = "{:.2f}".format(float(time.time() - start_time))
 
-        with open("runtime_dcheck.txt", "a") as runtime_file:
+        with open("runtime_dcheck_apk.txt", "a") as runtime_file:
             runtime_file.write(f"{_name}: {end_time}\n")
 
     except subprocess.TimeoutExpired:
@@ -120,7 +120,7 @@ def run_flowdroid(_name):
 
     # Run flowdroid
     # flowdroid -a ../bachelor_thesis/apps/cam3.apk -p /Users/vlad/Library/Android/sdk/platforms -s soot-infoflow-android/SourcesAndSinks.txt
-    flowdroid_cmd = f"java -jar {flow_droid_folder}/soot-infoflow-cmd/target/soot-infoflow-cmd-jar-with-dependencies.jar -s {flow_droid_folder}/soot-infoflow-android/SourcesAndSinks.txt -a apps/{_name} -p /Users/vlad/Library/Android/sdk/platforms -o flowdroid_output/{_name[:-4]}_flowdroid.xml"
+    flowdroid_cmd = f"java -Xmx12g -jar {flow_droid_folder}/soot-infoflow-cmd/target/soot-infoflow-cmd-jar-with-dependencies.jar -s {flow_droid_folder}/soot-infoflow-android/SourcesAndSinks.txt -a apps/{_name} -p /Users/vlad/Library/Android/sdk/platforms -o 12gb/{_name[:-4]}_flowdroid.xml"
 
     try:
         subprocess.run(flowdroid_cmd, shell = True, timeout = 150, check = True)
@@ -133,7 +133,7 @@ def run_flowdroid(_name):
     except subprocess.TimeoutExpired:
         
         # Add a new line to the timeouts.txt file
-        with open("timeouts_150.txt", "a") as f:
+        with open("timeouts_wrongers.txt", "a") as f:
             f.write(f"flowdroid: {_name}\n")
 
         print("TIMEOUT + flowdroid timed out + TIMEOUT on the following app: " + _name)
@@ -301,12 +301,13 @@ def parse_dependencycheck_output(_output):
 
     apk_name = _output[:-4]
 
-    f = open('dependencycheck_output/' + apk_name + '/dependency-check-report.json', 'r')
+    f = open('dependencycheck_output_apk/' + apk_name + '/dependency-check-report.json', 'r')
 
     data = json.load(f)
 
     try:
-        return data['dependencies'][0]['vulnerabilities']
+        # print("FOUND")
+        return data['dependencies'][0]
 
     except KeyError:
         pass
@@ -360,20 +361,26 @@ if __name__ == "__main__":
     final_res = {}
 
     start_time = time.time()
-
     # Parsing the outputs into a unified dictionary.
     # for i, apk_name in enumerate(apk_files):
-        
-    #     print("\n\n")
-    #     print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-    #     print(f"Parsing: {i}'th {apk_name}")
-    #     print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-    #     print("\n\n")
 
         # apkid_parsed = parse_apkid_output(apk_name)
         # apkleaks_parsed = parse_apkleaks_output(apk_name)
         # flowdroid_parsed = parse_flowdroid_output(apk_name)
+
+        # print(flowdroid_parsed)
+        # j = 0
+        # print(apk_name)
+
+        # if flowdroid_parsed is not None:
+            # print(f"{apk_name} is a wrong timeoutter")
+            # print(f"{apk_name}: "+flowdroid_parsed['DataFlowResults']['PerformanceData']['PerformanceEntry'][3]['@Value']) # {'@Name': 'TotalRuntimeSeconds', '@Value': '84'}
+                # print(flowdroid_parsed['DataFlowResults']['PerformanceData']['PerformanceEntry'][4])# {'@Name': 'MaxMemoryConsumption', '@Value': '2868'}
+
+                
+                # return
         # dependencycheck_parsed = parse_dependencycheck_output(apk_name)
+        # print(dependencycheck_parsed)
         # print(f"{apk_name}", dependencycheck_parsed)
         # mobsf_parsed = parse_mobsf_output(apk_name)
 
@@ -394,22 +401,24 @@ if __name__ == "__main__":
 
 
     # # Run the tools on all the apk files.
-    for apk in apk_files:
+    # for apk in apk_files:
 
-    #     # Run apkid
-        # run_apkid(apk)
+    # #     # Run apkid
+    #     # run_apkid(apk)
 
-    #     # Run apkleaks
-        # run_apkleaks(apk)
+    # #     # Run apkleaks
+    #     # run_apkleaks(apk)
 
-    #     # Run dex2jar and dependency-check
-        # run_d_check(apk)
+    # #     # Run dex2jar and dependency-check
+    #     # run_d_check(apk)
 
-    #     # Run mobsf
-        run_mobsf(apk)
+    # #     # Run mobsf
+    #     # run_mobsf(apk)
 
-    #     # Run flowdroid
-    #     run_flowdroid(apk)
+    # #     # Run flowdroid
+    #     if apk in wrong_timeouters:
+    #         print(f"TESTING THIS ONE{apk}")
+    #         run_flowdroid(apk)
 
-    final_time = "{:.2f}".format(float(time.time() - start_time))
-    print(f"--- {final_time} seconds --- ")
+    # final_time = "{:.2f}".format(float(time.time() - start_time))
+    # print(f"--- {final_time} seconds --- ")

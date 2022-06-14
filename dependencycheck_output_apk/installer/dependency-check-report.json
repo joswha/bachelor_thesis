@@ -1,0 +1,61 @@
+{
+    "reportSchema": "1.1",
+    "scanInfo": {
+        "engineVersion": "7.1.0",
+        "dataSource": [
+            {
+                "name": "NVD CVE Checked",
+                "timestamp": "2022-06-14T15:18:41"
+            },
+            {
+                "name": "NVD CVE Modified",
+                "timestamp": "2022-06-14T14:00:01"
+            },
+            {
+                "name": "VersionCheckOn",
+                "timestamp": "2022-06-07T16:11:33"
+            }
+        ]
+    },
+    "projectInfo": {
+        "name": "",
+        "reportDate": "2022-06-14T13:49:30.357400Z",
+        "credits": {
+            "NVD": "This report contains data retrieved from the National Vulnerability Database: http://nvd.nist.gov",
+            "NPM": "This report may contain data retrieved from the NPM Public Advisories: https://www.npmjs.com/advisories",
+            "RETIREJS": "This report may contain data retrieved from the RetireJS community: https://retirejs.github.io/retire.js/",
+            "OSSINDEX": "This report may contain data retrieved from the Sonatype OSS Index: https://ossindex.sonatype.org"
+        }
+    },
+    "dependencies": [
+        {
+            "isVirtual": false,
+            "fileName": "installer.apk",
+            "filePath": "\/Users\/vlad\/Desktop\/THESIS\/bachelor_thesis\/apps\/installer.apk",
+            "md5": "aa6d66ee811e0e587983729d87087633",
+            "sha1": "7b9b4521a259f000f9181368b1e3ee94c25da0e2",
+            "sha256": "45b987d5e4a2c40595c19f947714a5fd339867ad9943e58a8e9769343ffaf070",
+            "evidenceCollected": {
+                "vendorEvidence": [
+                    {
+                        "type": "vendor",
+                        "confidence": "HIGH",
+                        "source": "file",
+                        "name": "name",
+                        "value": "installer"
+                    }
+                ],
+                "productEvidence": [
+                    {
+                        "type": "product",
+                        "confidence": "HIGH",
+                        "source": "file",
+                        "name": "name",
+                        "value": "installer"
+                    }
+                ],
+                "versionEvidence": []
+            }
+        }
+    ]
+}

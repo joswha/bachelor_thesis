@@ -1,0 +1,76 @@
+{
+    "reportSchema": "1.1",
+    "scanInfo": {
+        "engineVersion": "7.1.0",
+        "dataSource": [
+            {
+                "name": "NVD CVE Checked",
+                "timestamp": "2022-06-14T15:18:41"
+            },
+            {
+                "name": "NVD CVE Modified",
+                "timestamp": "2022-06-14T14:00:01"
+            },
+            {
+                "name": "VersionCheckOn",
+                "timestamp": "2022-06-07T16:11:33"
+            }
+        ]
+    },
+    "projectInfo": {
+        "name": "",
+        "reportDate": "2022-06-14T13:51:05.140398Z",
+        "credits": {
+            "NVD": "This report contains data retrieved from the National Vulnerability Database: http://nvd.nist.gov",
+            "NPM": "This report may contain data retrieved from the NPM Public Advisories: https://www.npmjs.com/advisories",
+            "RETIREJS": "This report may contain data retrieved from the RetireJS community: https://retirejs.github.io/retire.js/",
+            "OSSINDEX": "This report may contain data retrieved from the Sonatype OSS Index: https://ossindex.sonatype.org"
+        }
+    },
+    "dependencies": [
+        {
+            "isVirtual": false,
+            "fileName": "installer257.apk",
+            "filePath": "\/Users\/vlad\/Desktop\/THESIS\/bachelor_thesis\/apps\/installer257.apk",
+            "md5": "5ee8757816180d9aed48f0c4049b333c",
+            "sha1": "514c6b970b2759618d5a957d7a0a7856debb68f4",
+            "sha256": "1472e593d122073a45eebcc814d95902b5b109d630069834c069d64cac82a7a4",
+            "evidenceCollected": {
+                "vendorEvidence": [
+                    {
+                        "type": "vendor",
+                        "confidence": "HIGH",
+                        "source": "file",
+                        "name": "name",
+                        "value": "installer257"
+                    }
+                ],
+                "productEvidence": [
+                    {
+                        "type": "product",
+                        "confidence": "HIGH",
+                        "source": "file",
+                        "name": "name",
+                        "value": "installer257"
+                    }
+                ],
+                "versionEvidence": [
+                    {
+                        "type": "version",
+                        "confidence": "MEDIUM",
+                        "source": "file",
+                        "name": "name",
+                        "value": "installer257"
+                    },
+                    {
+                        "type": "version",
+                        "confidence": "MEDIUM",
+                        "source": "file",
+                        "name": "version",
+                        "value": "257"
+                    }
+                ]
+            }
+        }
+    ]
+}

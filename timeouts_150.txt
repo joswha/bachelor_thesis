@@ -47,3 +47,5 @@ flowdroid: installer380.apk
 flowdroid: installer23.apk
 flowdroid: installer168.apk
 flowdroid: installer154.apk
+flowdroid: installer133.apk
+flowdroid: installer134.apk

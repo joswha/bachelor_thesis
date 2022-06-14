@@ -1,0 +1,76 @@
+{
+    "reportSchema": "1.1",
+    "scanInfo": {
+        "engineVersion": "7.1.0",
+        "dataSource": [
+            {
+                "name": "NVD CVE Checked",
+                "timestamp": "2022-06-14T15:18:41"
+            },
+            {
+                "name": "NVD CVE Modified",
+                "timestamp": "2022-06-14T14:00:01"
+            },
+            {
+                "name": "VersionCheckOn",
+                "timestamp": "2022-06-07T16:11:33"
+            }
+        ]
+    },
+    "projectInfo": {
+        "name": "",
+        "reportDate": "2022-06-14T14:08:07.456846Z",
+        "credits": {
+            "NVD": "This report contains data retrieved from the National Vulnerability Database: http://nvd.nist.gov",
+            "NPM": "This report may contain data retrieved from the NPM Public Advisories: https://www.npmjs.com/advisories",
+            "RETIREJS": "This report may contain data retrieved from the RetireJS community: https://retirejs.github.io/retire.js/",
+            "OSSINDEX": "This report may contain data retrieved from the Sonatype OSS Index: https://ossindex.sonatype.org"
+        }
+    },
+    "dependencies": [
+        {
+            "isVirtual": false,
+            "fileName": "installer141.apk",
+            "filePath": "\/Users\/vlad\/Desktop\/THESIS\/bachelor_thesis\/apps\/installer141.apk",
+            "md5": "0c67dfc3a3acd6c9ba9ea23358650a45",
+            "sha1": "6ae2581379a443b688975ee5c45a14e5fbfc93fe",
+            "sha256": "fd3f59443a958532c3674546348d3e975e5ac4ddb3f37108b636034754c772b9",
+            "evidenceCollected": {
+                "vendorEvidence": [
+                    {
+                        "type": "vendor",
+                        "confidence": "HIGH",
+                        "source": "file",
+                        "name": "name",
+                        "value": "installer141"
+                    }
+                ],
+                "productEvidence": [
+                    {
+                        "type": "product",
+                        "confidence": "HIGH",
+                        "source": "file",
+                        "name": "name",
+                        "value": "installer141"
+                    }
+                ],
+                "versionEvidence": [
+                    {
+                        "type": "version",
+                        "confidence": "MEDIUM",
+                        "source": "file",
+                        "name": "name",
+                        "value": "installer141"
+                    },
+                    {
+                        "type": "version",
+                        "confidence": "MEDIUM",
+                        "source": "file",
+                        "name": "version",
+                        "value": "141"
+                    }
+                ]
+            }
+        }
+    ]
+}
