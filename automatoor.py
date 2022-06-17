@@ -5,6 +5,9 @@ from mobsftester import *
 import time
 import xmltodict
 import json
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+import numpy as np
 
 # pylint: disable=pointless-string-statement
 """
@@ -339,11 +342,11 @@ def parse_mobsf_output(_output):
     # emails
     result["emails"] = response["emails"]
     # strings
-    result["strings"] = response["strings"]
+    # result["strings"] = response["strings"] # exclude, too long
     # firebase_urls
     result["firebase_urls"] = response["firebase_urls"]
     # files
-    result["files"] = response["files"]
+    # result["files"] = response["files"]
     # trackers
     result["trackers"] = response["trackers"]
     # secrets
@@ -353,6 +356,151 @@ def parse_mobsf_output(_output):
 
     return result
 
+def get_apk_size(_name):
+    """
+    Returns the size of the apk in bytes.
+    """
+    app_mb = os.path.getsize("apps/" + _name) / 1024 / 1024
+    
+    return float("{:.2f}".format(app_mb))
+
+def distribution_running_times(_app_runtime):
+    """
+    Plots the distribution of running times for an app using the matplotlib library.
+    """
+    with open(_app_runtime, "r") as f:
+        running_times = f.readlines()
+
+    # the structure of the file looks like this:
+    # app_name: runtime, we only need the runtime
+    running_times = [float(x.split(":")[1].strip()) for x in running_times]
+
+    running_times.sort()
+
+    # exclude the outliers, calculated based on the quartile method
+    q1 = np.percentile(running_times, 25)
+    q3 = np.percentile(running_times, 75)
+    iqr = q3 - q1
+    lower_bound = q1 - (1.5 * iqr)
+    upper_bound = q3 + (1.5 * iqr)
+
+    # remove the outliers
+    running_times = [x for x in running_times if lower_bound < x < upper_bound]
+        
+    # plot the distribution of running times for an app
+    plt.hist(running_times, bins = 20, color = 'green', edgecolor = 'black')
+    plt.title("Distribution of Running Times for " + _app_runtime.split("_")[1][:-4])
+    plt.xlabel("Running Time (seconds)")
+    plt.ylabel("Frequency")
+    print(max(running_times))
+    plt.xticks(np.arange(min(running_times), max(running_times), 10))
+    plt.savefig(f'{_app_runtime.split("_")[1][:-4]}.png')
+
+def number_of_findings(_output, _tool):
+    """
+    Returns the number of findings in the output file.
+    """
+    nr_findings = 0
+    
+    if _tool == "apkid":
+        parsed_apkid = parse_apkid_output(_output)
+
+        for key, value in parsed_apkid.items():        
+            # check if value is an array
+            if isinstance(value, list):
+                nr_findings += len(value)
+            else:
+                nr_findings += 1
+
+    elif _tool == "mobsf":
+        parsed_mobsf = parse_mobsf_output(_output)
+
+        nr_findings += (parsed_mobsf["trackers"]["detected_trackers"])
+        nr_findings += len(parsed_mobsf["firebase_urls"])
+        nr_findings += len(parsed_mobsf["secrets"])
+        nr_findings += len(parsed_mobsf["emails"])
+        nr_findings += len(parsed_mobsf["appsec"]["high"])
+        nr_findings += len(parsed_mobsf["appsec"]["warning"])
+        nr_findings += len(parsed_mobsf["appsec"]["info"])
+        nr_findings += len(parsed_mobsf["appsec"]["hotspot"])
+
+    elif _tool == "apkleaks":
+        parse_apkleaks = parse_apkleaks_output(_output)
+
+        for key in parse_apkleaks.keys():
+            nr_findings += len(parse_apkleaks[key])    
+
+    elif _tool == "flowdroid":
+
+        parsed_flowdroid = parse_flowdroid_output(_output)
+
+        if not parsed_flowdroid:
+            return 0
+
+        try:
+            nr_findings += (len(parsed_flowdroid['DataFlowResults']['Results']['Result']))
+        except KeyError:
+            return
+
+    return nr_findings
+
+def distribution_size_nrfindings(_apk_files, _tool):
+    """
+    Plots the distribution of the number of findings for each app.
+    """
+    # get the list of all apps
+    size_dict = {f: get_apk_size(f) for f in os.listdir("apps/") if f.endswith(".apk")}
+
+    # sort the size_dict based on the value and store it in a size array
+    sorted_size_dict = sorted(size_dict.items(), key=lambda x: x[1])
+
+    # exclude the outliers using the quartile method
+    q1 = np.percentile([float(x[1]) for x in sorted_size_dict], 25)
+    q3 = np.percentile([float(x[1]) for x in sorted_size_dict], 75)
+    iqr = q3 - q1
+    lower_bound = q1 - (1.5 * iqr)
+    upper_bound = q3 + (1.5 * iqr)
+
+    # remove the outliers
+    sorted_size_dict = [x for x in sorted_size_dict if lower_bound < float(x[1]) < upper_bound]
+
+    # transform into an array
+    size_array = [float(y) for (x,y) in sorted_size_dict]
+
+    nr_findings = [number_of_findings(x, _tool) for (x, y) in sorted_size_dict]
+
+    # plot the distribution of the number of findings for each app
+    plt.scatter(size_array, nr_findings, color = 'green', edgecolor = 'black')
+    plt.title(f"Distribution of Number of Findings for {_tool}")
+    plt.xlabel("App Size (MB)")
+    plt.ylabel("Number of Findings")
+    plt.savefig(f"distribution_size_nrfindings_{_tool}.png")
+
+    # calculate Pearson correlation coefficient
+    # pearson_corr = np.corrcoef(size_array, nr_findings)
+    # print("Pearson correlation coefficient: ", pearson_corr)
+
+def run_tools(_apk_files):
+    """
+    Run the tools on all the apk files.
+
+    Returns:
+        - Raw outputs from all of the tools organized by their subsequent output folders.
+    """
+    for apk in apk_files:
+
+        # Run apkid
+        run_apkid(apk)
+
+        # Run apkleaks
+        run_apkleaks(apk)
+
+        # Run mobsf
+        run_mobsf(apk)
+
+        # Run flowdroid
+        run_flowdroid(apk)
+
 if __name__ == "__main__":
 
     # List all the apk files form current working directory.
@@ -361,8 +509,11 @@ if __name__ == "__main__":
     final_res = {}
 
     start_time = time.time()
+
     # Parsing the outputs into a unified dictionary.
     # for i, apk_name in enumerate(apk_files):
+
+        # size_dict[apk_name] = get_apk_size(apk_name)
 
         # apkid_parsed = parse_apkid_output(apk_name)
         # apkleaks_parsed = parse_apkleaks_output(apk_name)
@@ -398,27 +549,19 @@ if __name__ == "__main__":
 
     # Create output folders, if they don't exist.
     # create_output_folders()
+    
+    # Run the tools.
+    # run_tools(apk_tools)
 
+    # distribution_running_times("runtime_flowdroid.txt")
+    # distribution_running_times("runtime_apkid.txt")
+    # distribution_running_times("runtime_apkleaks.txt")
+    # distribution_running_times("runtime_flowdroid.txt")
 
-    # # Run the tools on all the apk files.
-    # for apk in apk_files:
-
-    # #     # Run apkid
-    #     # run_apkid(apk)
-
-    # #     # Run apkleaks
-    #     # run_apkleaks(apk)
-
-    # #     # Run dex2jar and dependency-check
-    #     # run_d_check(apk)
-
-    # #     # Run mobsf
-    #     # run_mobsf(apk)
-
-    # #     # Run flowdroid
-    #     if apk in wrong_timeouters:
-    #         print(f"TESTING THIS ONE{apk}")
-    #         run_flowdroid(apk)
+    # distribution_size_nrfindings(apk_files, "flowdroid")
+    # distribution_size_nrfindings(apk_files, "apkid")
+    # distribution_size_nrfindings(apk_files, "mobsf")
+    # distribution_size_nrfindings(apk_files, "apkleaks")
 
     # final_time = "{:.2f}".format(float(time.time() - start_time))
     # print(f"--- {final_time} seconds --- ")

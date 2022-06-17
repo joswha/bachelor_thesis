@@ -389,9 +389,9 @@ installer329.apk: 107
 installer328.apk: 109
 installer300.apk: 88
 installer314.apk: 117
-installer116.apk: 2966
+installer116.apk: 29.66
 installer251.apk: 111
-installer292.apk: 2673
+installer292.apk: 26.73
 installer3840.apk: 112
 installer127.apk: 113
 installer331.apk: 104
@@ -435,7 +435,7 @@ installer220.apk: 95
 installer354.apk: 92
 installer382.apk: 92
 installer355.apk: 119
-pay2.apk: 165
+pay2.apk: 145
 installer3824.apk: 104
 installer157.apk: 138
 installer143.apk: 94
@@ -448,4 +448,4 @@ installer80.apk: 97
 installer281.apk: 85
 installer295.apk: 87
 installer142.apk: 119
-pay3.apk: 199
+pay3.apk: 149
