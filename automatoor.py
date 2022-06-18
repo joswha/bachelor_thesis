@@ -1,45 +1,56 @@
 import os
-import sys
 import subprocess
 from mobsftester import *
 import time
 import xmltodict
 import json
-import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
 
 # pylint: disable=pointless-string-statement
 """
-Program that handles running the following tools, saving outputs in a subsequent folder:
+    Program that primarily handles running the following tools, saving outputs in a subsequent folder:
 
     1. apkid
     2. apkleaks
     3. mobsf
     4. flowdroid
 
+    The program also handles the following:
+        - parsing outputs for all of the aformentioned tools
+        - creating a visual representation of the distribution of running times for each tool
+        - creating a visual representation of possible correlations between number of findings and apk / dex sizes.
 '"""
 
 def run_apkid(_name):
     """
     Runs apkid on the apk file.
+
+    Args:
+        _name (str): The name of the apk file
+
+    Returns:
+        - The raw output of apkid in txt format, or add a new line to the timeouts.txt file, should the tool timeout while running.
     """
     print(f"Running apkid on apps/{_name}")
 
     start_time = time.time()
 
-    # Run apkid
-    # apkid_cmd = f"apkid -v apps/{_name} > apkid_output/{_name[:-4]}_apkid.txt"
-    apkid_cmd = f"apkid -v apps/{_name}"
+    # apkid command construction
+    apkid_cmd = f"apkid -v apps/{_name} > apkid_output/{_name[:-4]}_apkid.txt"
 
     try:
+
+        # Run apkid
         subprocess.run(apkid_cmd, shell = True, timeout = 60, check = True)
         
         end_time = "{:.2f}".format(float(time.time() - start_time))
 
+        # write the amount of time it took to run apkid
         with open("runtime_apkid.txt", "a") as runtime_file:
             runtime_file.write(f"{_name}: {end_time}\n")
 
+    # apkid timed out -> add it to the timeouts.txt file
     except subprocess.TimeoutExpired:
         
         # Add a new line to the timeouts.txt file
@@ -52,23 +63,32 @@ def run_apkid(_name):
 def run_apkleaks(_name):
     """
     Runs apkleaks on the apk file.
+
+    Args:
+        _name (str): The name of the apk file
+
+    Returns:
+        - The raw output of apkleaks in txt format, or add a new line to the timeouts.txt file, should the tool timeout while running.
     """
     print(f"Running apkleaks on apps/{_name}")
 
     start_time = time.time()
 
-    # Run apkleaks
-    # apkleaks_cmd = f"apkleaks -f apps/{_name} -o apkleaks_output/{_name[:-4]}_apkleaks.txt"
-    apkleaks_cmd = f"apkleaks -f apps/{_name}"
+    # apkleaks command construction
+    apkleaks_cmd = f"apkleaks -f apps/{_name} -o apkleaks_output/{_name[:-4]}_apkleaks.txt"
 
     try:
+
+        # Run apkleaks
         subprocess.run(apkleaks_cmd, shell = True, timeout = 150, check = True)
 
         end_time = "{:.2f}".format(float(time.time() - start_time))
-
+        
+        # write the amount of time it took to run apkleaks
         with open("runtime_apkleaks.txt", "a") as runtime_file:
             runtime_file.write(f"{_name}: {end_time}\n")
 
+    # apkleaks timed out -> add it to the timeouts.txt file
     except subprocess.TimeoutExpired:
 
         # Add a new line to the timeouts.txt file
@@ -81,29 +101,39 @@ def run_apkleaks(_name):
 def run_flowdroid(_name):
     """
     Runs flowdroid on the apk file.
+        
+    Args:
+        _name (str): The name of the apk file
+
+    Returns:
+        - May return either the xml result of running flowdroid or add a new line to the timeouts.txt file, should the tool timeout while running.
     """
     print(f"Running flowdroid on {_name}")
 
+    # TODO make this a .env file
+    # also the SDK from the command
     flow_droid_folder = "/Users/vlad/Desktop/THESIS/FlowDroid-2.10"
 
     start_time = time.time()
 
-    # Run flowdroid
-    # flowdroid -a ../bachelor_thesis/apps/cam3.apk -p /Users/vlad/Library/Android/sdk/platforms -s soot-infoflow-android/SourcesAndSinks.txt
-    flowdroid_cmd = f"java -Xmx12g -jar {flow_droid_folder}/soot-infoflow-cmd/target/soot-infoflow-cmd-jar-with-dependencies.jar -s {flow_droid_folder}/soot-infoflow-android/SourcesAndSinks.txt -a apps/{_name} -p /Users/vlad/Library/Android/sdk/platforms -o 12gb/{_name[:-4]}_flowdroid.xml"
+    # flowdroid command construction
+    flowdroid_cmd = f"java -jar {flow_droid_folder}/soot-infoflow-cmd/target/soot-infoflow-cmd-jar-with-dependencies.jar -s {flow_droid_folder}/soot-infoflow-android/SourcesAndSinks.txt -a apps/{_name} -p /Users/vlad/Library/Android/sdk/platforms -o flowdroid_output/{_name[:-4]}_flowdroid.txt"
 
     try:
+        # Run flowdroid
         subprocess.run(flowdroid_cmd, shell = True, timeout = 150, check = True)
 
         end_time = "{:.2f}".format(float(time.time() - start_time))
 
+        # write the amount of time it took to run flowdroid
         with open("runtime_flowdroid.txt", "a") as runtime_file:
             runtime_file.write(f"{_name}: {end_time}\n")
 
+    # flowdroid timed out -> add it to the timeouts.txt file
     except subprocess.TimeoutExpired:
         
         # Add a new line to the timeouts.txt file
-        with open("timeouts_wrongers.txt", "a") as f:
+        with open("flowdroid_timeouts.txt", "a") as f:
             f.write(f"flowdroid: {_name}\n")
 
         print("TIMEOUT + flowdroid timed out + TIMEOUT on the following app: " + _name)
@@ -113,15 +143,27 @@ def run_flowdroid(_name):
 def run_mobsf(_name):
     """
     Runs mobsf on the apk file.
+
+    Args:
+        _name (str): The name of the apk file
+
+    Returns:
+        - The raw output of mobsf in json format.
     """
     start_time = time.time()
+
+    # upload file to mobsf server
     RESP = upload(f"apps/{_name}")
+
+    # send the scan command to the server
     scan(RESP)
-    # json_resp(RESP)
-    # pdf(RESP, _name[:-4])
+
+    # get the output of the scan in json format
+    json_resp(RESP)
 
     end_time = "{:.2f}".format(float(time.time() - start_time))
 
+    # write the amount of time it took to run mobsf
     with open("runtime_mobsf.txt", "a") as runtime_file:
         runtime_file.write(f"{_name}: {end_time}\n")
 
@@ -142,98 +184,77 @@ def create_output_folders():
 
 def parse_apkid_output(_output):
     """
-    The apkid output can look like either of these cases:
+    Parses the output of apkid.
 
-    1. 
-    [+] APKiD 2.1.3 :: from RedNaga :: rednaga.io
-    [*] apps/installer109.apk!classes.dex
-    |-> anti_vm : Build.FINGERPRINT check, Build.MANUFACTURER check
-    |-> compiler : r8
+    Args:
+        _output (str): The raw output of apkid as a txt file
 
-    2. 
-    [+] APKiD 2.1.3 :: from RedNaga :: rednaga.io
-    [*] apps/installer103.apk!classes.dex
-    |-> anti_vm : Build.FINGERPRINT check, Build.MANUFACTURER check
-    |-> compiler : r8
-    [*] apps/installer103.apk!classes2.dex
-    |-> compiler : r8 without marker (suspicious)
-
-    3.
-    [+] APKiD 2.1.3 :: from RedNaga :: rednaga.io
-    [*] apps/installer147.apk!classes.dex
-    |-> anti_vm : Build.MANUFACTURER check
-    |-> compiler : unknown (please file detection issue!)
-
-    We need to extract the types of compilers, anti_vms, etc. for the first entry, namely the one for classes.dex;
-
-    We will take the apkid output as our input, and hence the final output should be stored in a mapping as so:
-
-    {file_name: "installer109.apk", anti_vm: ["Build.FINGERPRINT check", "Build.MANUFACTURER check"], compiler: "r8"}
+    Returns:
+        - The parsed output of apkid in json format.
     """
     result = {}
 
+    # open the output file
     with open("apkid_output/" + _output[:-4] + "_apkid.txt", "r") as f:
+
+        # read the file line by line
         for line in f:
-            # print(line)
+
+            
             if "anti_vm" in line:
-                anti_vm = line.split("anti_vm : ")[1].strip()
+                # originally, the line looks like this:  |-> anti_vm : Build.FINGERPRINT check, Build.MANUFACTURER check
+                # so we need to clean it up accordingly
+
+                anti_vm = line.split("anti_vm : ")[1].strip() # removes extra symbols
+
                 # transform Build.FINGERPRINT check, Build.MANUFACTURER check into array
                 anti_vm = anti_vm.split(", ")
-                # print(anti_vm)
 
                 result["anti_vm"] = anti_vm
+
             if "compiler" in line:
+                # similarly to the "anti_vm" we have to clean the line
+
                 compiler = line.split("compiler : ")[1].strip()
+
                 result["compiler"] = compiler
 
     return result
 
 def parse_apkleaks_output(_output):
     """
-    The apkid output can look like either of these cases:
+    Parses the output of apkleaks.
 
-    1. 
-    [IP_Address]
-    - 19.3.1.1
-    - 35.1.1.1
+    Args:
+        _output (str): The raw output of apkleaks as a txt file
 
-    [LinkFinder]
-    - /proc/self/fd/
-    - activity_choser_model_history.xml
-    - http://schemas.android.com/apk/res/android
-    - http://xmlpull.org/v1/doc/features.html#indent-output
-    - share_history.xml
-
-    [IP_Address]
-    - 19.3.1.1
-    - 35.1.1.1
-
-    [LinkFinder]
-    - /proc/self/fd/
-    - activity_choser_model_history.xml
-    - http://schemas.android.com/apk/res/android
-    - http://xmlpull.org/v1/doc/features.html#indent-output
-    - share_history.xml
-
-    We need to extract each type of finding, for example: `[IP_Address]`, `[LinkFinder]`, `[Amazon_AWS_S3_Bucket]`, etc.
-
-    We will take the apkleaks output as our input, and hence the final output should be stored in a mapping as so:
-
-    {file_name: "installer109.apk", IP_Address: ["19.3.1.1","35.1.1.1"], LinkFinder: ["/...,/Up", "/index.html", "/mnt/sdcard", "/png8?app_id="], etc..}
+    Returns:
+        - The parsed output of apkleaks in json format.
     """
     result = {}
 
     with open("apkleaks_output/" + _output[:-4] + "_apkleaks.txt", "r") as f:
         finding = ""
+
+        # read the file line by line
         for i, line in enumerate(f):
-            # if the line contains `[name_of_finding]`, then we know we are in a new finding
+            # It's important to note that the lines look like this:
+            # 
+            # [IP_Address]
+            # - 19.3.1.1
+            # - 35.1.1.1
+            # [LinkFinder]
+            # - activity_choser_model_history.xml
+            # ...
+
+            # if the line contains `[name_of_finding]`, then we know we found a new type of finding
+            # eg within [IP_Address] until [LinkFinder] is found
             if line[0] == "[":
                 finding = line.strip("[]\n")
                 result[finding] = []
             else:
-                # otherwise, we are inside a finding, so while we are in a finding, we will keep appending to it
+                # otherwise, we are inside a finding, we will keep appending each line that starts with `-` to it
                 if finding:
-                    # print(line)
                     line = line.strip("- \n")
                     if len(line) > 0:
                         result[finding].append(line)
@@ -242,24 +263,38 @@ def parse_apkleaks_output(_output):
 
 def parse_flowdroid_output(_output):
     """
-    The flowdroid output is in xml format and can look like this:
+    Parses the output of flowdroid.
 
-    <?xml version="1.0" encoding="UTF-8"?><DataFlowResults FileFormatVersion="102" TerminationState="Success"><Results><Result><Sink Statement="virtualinvoke $r5.&lt;java.io.OutputStream: void write(byte[],int,int)&gt;(r3, 0, $i1)" Method="&lt;protect.babymonitor.MonitorActivity: void serviceConnection(java.net.Socket)&gt;"><AccessPath Value="$i1" Type="int" TaintSubFields="true"></AccessPath></Sink><Sources><Source Statement="$i1 = virtualinvoke r2.&lt;android.media.AudioRecord: int read(byte[],int,int)&gt;(r3, 0, $i0)" Method="&lt;protect.babymonitor.MonitorActivity: void serviceConnection(java.net.Socket)&gt;"><AccessPath Value="$i1" Type="int" TaintSubFields="true"></AccessPath></Source></Sources></Result></Results><PerformanceData><PerformanceEntry Name="CallgraphConstructionSeconds" Value="1"></PerformanceEntry><PerformanceEntry Name="TotalRuntimeSeconds" Value="1"></PerformanceEntry><PerformanceEntry Name="MaxMemoryConsumption" Value="153"></PerformanceEntry><PerformanceEntry Name="SourceCount" Value="1"></PerformanceEntry><PerformanceEntry Name="SinkCount" Value="38"></PerformanceEntry></PerformanceData></DataFlowResults>     
+    Args:
+        _output (str): The raw output of flowdroid as a xml file
+
+    Returns:
+        - The parsed output of flowdroid in json format.
     """
+
+    # we try to use the xmltodict library;
     try:
         with open("flowdroid_output/" + _output[:-4] + "_flowdroid.xml", "rb") as f:
-
+            
+            # pars the file
             parsed_file = xmltodict.parse(f)
 
             # After the file is parsed, it looks like the flowdroid_test.json file
             return parsed_file
 
-    except FileNotFoundError: # file not found if we have this as timeout.
+    # if xmltodict fails, that means the particular file has timeouted.
+    except FileNotFoundError:
         pass
 
 def parse_mobsf_output(_output):
     """
-    Parses the output of the MobSF tool.
+    Parses the output of mobsf.
+
+    Args:
+        _output (str): The raw output of mobsf as a json file
+
+    Returns:
+        - The parsed output of mobsf in json format, selecting the most relevant fields.
     """
     result = {}
     RESP = upload(f"apps/{_output}")
@@ -267,6 +302,7 @@ def parse_mobsf_output(_output):
     response = json_resp(RESP)
 
     # Filter out important fields from the response.
+
     # permissions
     result["permissions"] = response["permissions"]
     # certificate_analysis
@@ -301,6 +337,12 @@ def parse_mobsf_output(_output):
 def get_apk_size(_name):
     """
     Returns the size of the apk in MB.
+
+    Args:
+        _name (str): The name of the apk file.
+
+    Returns:
+        - The size of the apk in MB.
     """
     app_mb = os.path.getsize("apps/" + _name) / 1024 / 1024
     
@@ -308,7 +350,13 @@ def get_apk_size(_name):
 
 def get_dex_size(_name):
     """
-    Returns the size of all dex files from an apk in MB.
+    Returns the sum of the sizes of dex files within an apk.
+
+    Args:
+        _name (str): The name of the apk file.
+
+    Returns:
+        - The sum of the sizes of dex files within an apk, in MB.
     """
     total_mb =  0
 
@@ -319,20 +367,28 @@ def get_dex_size(_name):
     # retrieve all the dex files from the target folder, recursivelly
     for root, dirs, files in os.walk(f"temp_apk/target_{_name[:-4]}"):
         for file in files:
+
+            # if the file is a dex file, add its size to the total
             if file.endswith(".dex"):
                 total_mb += os.path.getsize(os.path.join(root, file)) / 1024 / 1024
 
     return float("{:.2f}".format(total_mb))
 
-def distribution_running_times(_app_runtime):
+def distribution_running_times(_tool_runtime):
     """
     Plots the distribution of running times for an app using the matplotlib library.
+
+    Args:
+        _tool_runtime (dict): The running times of a tool.
+
+    Returns:
+        - The distribution of running times for an app as a png histogram.
     """
-    with open(_app_runtime, "r") as f:
+    with open(_tool_runtime, "r") as f:
         running_times = f.readlines()
 
     # the structure of the file looks like this:
-    # app_name: runtime, we only need the runtime
+    # app_name: runtime ; thus we only need the runtime
     running_times = [float(x.split(":")[1].strip()) for x in running_times]
 
     running_times.sort()
@@ -349,12 +405,12 @@ def distribution_running_times(_app_runtime):
         
     # plot the distribution of running times for an app
     plt.hist(running_times, bins = 20, color = 'green', edgecolor = 'black')
-    plt.title("Distribution of Running Times for " + _app_runtime.split("_")[1][:-4])
+    plt.title("Distribution of Running Times for " + _tool_runtime.split("_")[1][:-4])
     plt.xlabel("Running Time (seconds)")
     plt.ylabel("Frequency")
     print(max(running_times))
     plt.xticks(np.arange(min(running_times), max(running_times), 10))
-    plt.savefig(f'distribution_runtimes_{_app_runtime.split("_")[1][:-4]}.png')
+    plt.savefig(f'distribution_runtimes_{_tool_runtime.split("_")[1][:-4]}.png')
 
 def number_of_findings(_output, _tool):
     """
@@ -369,6 +425,7 @@ def number_of_findings(_output, _tool):
     """
     nr_findings = 0
     
+    # depending on the selected tool, there's different ways to count the important findings
     if _tool == "apkid":
         parsed_apkid = parse_apkid_output(_output)
 
@@ -429,6 +486,9 @@ def correlation_size_nrfindings(_apk_files, _tool, _option):
         _apk_files: list of apk files
         _tool: the tool used to generate the output file
         _option: apk or dex files that are being used
+
+    Returns:
+        The correlation of the number of findings to the size of the apk or dex files, as a png scatter plot.
     """
 
     if _option == "apk":
@@ -496,48 +556,15 @@ if __name__ == "__main__":
     # List all the apk files form current working directory.
     apk_files = [f for f in os.listdir("apps/") if f.endswith(".apk")]
 
-    # Don't run all of them at the same time, the matplotlib library is not thread safe.(https://stackoverflow.com/questions/41903300/matplotlib-crashes-when-running-in-parallel)
-    # Essentially, it yields memory corrupted plots; run each function at a time.
-
-    # correlation_size_nrfindings(apk_files, "apkid", "dex")
-    # correlation_size_nrfindings(apk_files, "apkleaks", "dex")
-    # correlation_size_nrfindings(apk_files, "mobsf", "dex")
-    # correlation_size_nrfindings(apk_files, "flowdroid", "dex")
-
-    # correlation_size_nrfindings(apk_files, "apkid", "apk")
-    # correlation_size_nrfindings(apk_files, "apkleaks", "apk")
-    # correlation_size_nrfindings(apk_files, "mobsf", "apk")
-    # correlation_size_nrfindings(apk_files, "flowdroid", "apk")
-
-    # for run_time in ["apkid", "apkleaks", "mobsf", "flowdroid"]:
-        # distribution_running_times(f"runtime_{run_time}.txt")
-    distribution_running_times("runtime_flowdroid.txt")
-
     final_res = {}
 
     start_time = time.time()
 
     # Create output folders, if they don't exist.
-    # create_output_folders()
-
-    # apk_file = apk_files[23]
-    # print(apk_file)
-    # dex_size = get_dex_size(apk_file)
-    # print(dex_size)
-
-    # dex_sizes = []
-
-    # for apk_file in apk_files:
-    #     dex_sizes.append(get_dex_size(apk_file))
-
-    
-    # print(dex_sizes)
-
+    create_output_folders()
 
     # Parsing the outputs into a unified dictionary.
     # for i, apk_name in enumerate(apk_files):
-
-        # size_dict[apk_name] = get_apk_size(apk_name)
 
         # apkid_parsed = parse_apkid_output(apk_name)
         # apkleaks_parsed = parse_apkleaks_output(apk_name)
@@ -570,15 +597,30 @@ if __name__ == "__main__":
     # Run the tools.
     # run_tools(apk_tools)
 
+    # Statistics: 
+
+    # NOTE Don't run all of them at the same time, the matplotlib library is not thread safe.
+    # (https://stackoverflow.com/questions/41903300/matplotlib-crashes-when-running-in-parallel)
+    # Essentially, it yields memory corrupted plots; run each function at a time.
+
+    # Correlation of the number of findings to the size of the dex files.
+    # correlation_size_nrfindings(apk_files, "apkid", "dex")
+    # correlation_size_nrfindings(apk_files, "apkleaks", "dex")
+    # correlation_size_nrfindings(apk_files, "mobsf", "dex")
+    # correlation_size_nrfindings(apk_files, "flowdroid", "dex")
+
+    # Correlation of the number of findings to the size of the apk files.
+    # correlation_size_nrfindings(apk_files, "apkid", "apk")
+    # correlation_size_nrfindings(apk_files, "apkleaks", "apk")
+    # correlation_size_nrfindings(apk_files, "mobsf", "apk")
+    # correlation_size_nrfindings(apk_files, "flowdroid", "apk")
+
+    # Distribution of the number of findings.
     # distribution_running_times("runtime_flowdroid.txt")
     # distribution_running_times("runtime_apkid.txt")
     # distribution_running_times("runtime_apkleaks.txt")
-    # distribution_running_times("runtime_flowdroid.txt")
+    # distribution_running_times("runtime_mobsf.txt")
 
-    # distribution_size_nrfindings(apk_files, "flowdroid")
-    # distribution_size_nrfindings(apk_files, "apkid")
-    # distribution_size_nrfindings(apk_files, "mobsf")
-    # distribution_size_nrfindings(apk_files, "apkleaks")
-
+    # Print total running time of the automation procedure.
     # final_time = "{:.2f}".format(float(time.time() - start_time))
     # print(f"--- {final_time} seconds --- ")
