@@ -159,7 +159,10 @@ def run_mobsf(_name):
     scan(RESP)
 
     # get the output of the scan in json format
-    json_resp(RESP)
+    response = json_resp(RESP)
+
+    # save the response in a json file
+    json.dump(response, open("mobsf_output/" + _name[:-4] + "_mobsf.json", "w"))
 
     end_time = "{:.2f}".format(float(time.time() - start_time))
 
@@ -291,15 +294,15 @@ def parse_mobsf_output(_output):
     Parses the output of mobsf.
 
     Args:
-        _output (str): The raw output of mobsf as a json file
+        _output (str): The raw output of mobsf as json
 
     Returns:
         - The parsed output of mobsf in json format, selecting the most relevant fields.
     """
     result = {}
-    RESP = upload(f"apps/{_output}")
-    # return json_resp(RESP)
-    response = json_resp(RESP)
+
+    output_file = open("mobsf_output/" + _output[:-4] + "_mobsf.json")
+    response = json.load(output_file)
 
     # Filter out important fields from the response.
 
@@ -447,6 +450,7 @@ def number_of_findings(_output, _tool):
         nr_findings += len(parsed_mobsf["appsec"]["warning"])
         nr_findings += len(parsed_mobsf["appsec"]["info"])
         nr_findings += len(parsed_mobsf["appsec"]["hotspot"])
+        nr_findings += len(parsed_mobsf["permissions"])
 
     elif _tool == "apkleaks":
         parse_apkleaks = parse_apkleaks_output(_output)
@@ -530,6 +534,77 @@ def correlation_size_nrfindings(_apk_files, _tool, _option):
     # pearson_corr = np.corrcoef(size_array, nr_findings)
     # print("Pearson correlation coefficient: ", pearson_corr)
 
+def summarise_results():
+    """
+    Summarises the results, aggregating the highest severity findings of all results.
+
+    Returns:
+        A dictionary containing the highest severity findings of all results.
+    """
+    # get the highest severity findings of all results
+    highest_severity_findings = {"apkid": [], "mobsf": [], "apkleaks": [], "flowdroid": []}
+    apk_files = [f for f in os.listdir("apps/") if f.endswith(".apk")]
+
+    for apk_name in apk_files:
+        
+        # select highest severity findings of the parsed apkid results
+        apkid_parsed = parse_apkid_output(apk_name)
+
+        for key, value in apkid_parsed.items():
+
+            # check if any of the following is within the value, then we can mark it as suspicious
+            suspicious = ["axmlprinter2", "apktool", "suspicious", "link", "obfuscator", "dexlib", "smali", "apktool"]
+
+            for suspicious_string in suspicious:
+                if suspicious_string in value:
+                    highest_severity_findings["apkid"].append(
+                        (apk_name, key) # add the key instead, for cleaner summary; up to the reasearcher to look into the specific output file
+                    )
+
+        # select highest severity findings of the parsed apkleaks results
+        apkleaks_parsed = parse_apkleaks_output(apk_name)
+
+        for key, value in apkleaks_parsed.items():
+
+            # check the regexes here https://github.com/dwisiswant0/apkleaks/blob/master/config/regexes.json
+            # essentially, the most severe results here can be secret keys and/ or API keys
+            # if "Key" in key or "Token" in key:
+            suspicious = ["Key", "Token", "OAuth"]
+            for suspicious_string in suspicious:
+                if suspicious_string in key:
+                    highest_severity_findings["apkleaks"].append(
+                        (apk_name, key) # add the key instead, for cleaner summary; up to the reasearcher to look into the specific output file
+                    )
+
+        # select highest severity findings of the parsed flowdroid results
+        flowdroid_parsed = parse_flowdroid_output(apk_name)
+        # print(flowdroid_parsed)
+
+        if flowdroid_parsed:
+            # print("YES")
+            # print(flowdroid_parsed.keys())
+            if "Results" in flowdroid_parsed['DataFlowResults']:
+                highest_severity_findings["flowdroid"].append(
+                    (apk_name, len(flowdroid_parsed['DataFlowResults']['Results']['Result'])) # append nr of results
+                )
+
+        # select highest severity findings of the parsed mobsf results
+        mobsf_parsed = parse_mobsf_output(apk_name)
+        
+        if mobsf_parsed["trackers"]["detected_trackers"]:
+            highest_severity_findings["mobsf"].append((apk_name, "trackers"))
+ 
+        if mobsf_parsed["secrets"]:
+            highest_severity_findings["mobsf"].append((apk_name, "secrets"))
+
+        if mobsf_parsed["appsec"]["high"]:
+            highest_severity_findings["mobsf"].append((apk_name, "appsec"))
+    
+    # sort the array based on nr of findings (apk_name, nr_findings)
+    highest_severity_findings["flowdroid"] = sorted(highest_severity_findings["flowdroid"], key=lambda x: x[1], reverse=True)
+
+    return highest_severity_findings
+
 def run_tools(_apk_files):
     """
     Run the tools on all the apk files.
@@ -562,43 +637,15 @@ if __name__ == "__main__":
 
     # Create output folders, if they don't exist.
     create_output_folders()
-
-    # Parsing the outputs into a unified dictionary.
-    # for i, apk_name in enumerate(apk_files):
-
-        # apkid_parsed = parse_apkid_output(apk_name)
-        # apkleaks_parsed = parse_apkleaks_output(apk_name)
-        # flowdroid_parsed = parse_flowdroid_output(apk_name)
-
-        # print(flowdroid_parsed)
-        # j = 0
-        # print(apk_name)
-
-        # if flowdroid_parsed is not None:
-            # print(f"{apk_name} is a wrong timeoutter")
-            # print(f"{apk_name}: "+flowdroid_parsed['DataFlowResults']['PerformanceData']['PerformanceEntry'][3]['@Value']) # {'@Name': 'TotalRuntimeSeconds', '@Value': '84'}
-                # print(flowdroid_parsed['DataFlowResults']['PerformanceData']['PerformanceEntry'][4])# {'@Name': 'MaxMemoryConsumption', '@Value': '2868'}
-
-                
-                # return
-        # mobsf_parsed = parse_mobsf_output(apk_name)
-
-        # apk_res = {
-        #     "apkid": apkid_parsed,
-        #     "apkleaks": apkleaks_parsed,
-        #     "flowdroid": flowdroid_parsed,
-        #     "mobsf": mobsf_parsed
-        # }
-
-    #     final_res[apk_name] = apk_res
-        
-    # print(final_res)
-    
+            
     # Run the tools.
     # run_tools(apk_tools)
 
-    # Statistics: 
+    # Print total running time of the automation procedure.
+    # final_time = "{:.2f}".format(float(time.time() - start_time))
+    # print(f"--- {final_time} seconds --- ")
 
+    # Statistics: 
     # NOTE Don't run all of them at the same time, the matplotlib library is not thread safe.
     # (https://stackoverflow.com/questions/41903300/matplotlib-crashes-when-running-in-parallel)
     # Essentially, it yields memory corrupted plots; run each function at a time.
@@ -621,6 +668,5 @@ if __name__ == "__main__":
     # distribution_running_times("runtime_apkleaks.txt")
     # distribution_running_times("runtime_mobsf.txt")
 
-    # Print total running time of the automation procedure.
-    # final_time = "{:.2f}".format(float(time.time() - start_time))
-    # print(f"--- {final_time} seconds --- ")
+    # Summarise the results
+    # final_res = summarize_results(apk_files)
