@@ -4,3 +4,4 @@ __pycache__/
 .vscode/
 apps/
 temp_jar/
+temp_apk/

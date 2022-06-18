@@ -17,7 +17,6 @@ Program that handles running the following tools, saving outputs in a subsequent
     2. apkleaks
     3. mobsf
     4. flowdroid
-    5. d2j-dex2jar + dependency-check on the newly created jar file
 
 '"""
 
@@ -79,38 +78,6 @@ def run_apkleaks(_name):
         print("TIMEOUT + apkleaks timed out + TIMEOUT on the following app: " + _name)
         return
 
-def run_d_check(_name):
-    """
-    Runs dependency-check on the jar file.
-    """
-    print(f"Running dex2jar and dependency-check on {_name}")
-
-    start_time = time.time()
-
-    try:
-        # Run dex2jar
-        # d2j_cmd = f"d2j-dex2jar apps/{_name} -o temp_jar/{_name[:-4]}.jar"
-        # subprocess.run(d2j_cmd, shell = True, timeout = 20, check = True)
-
-        # Run dependency-check
-        d_check_cmd_json = f"dependency-check --scan apps/{_name} -f JSON -o dependencycheck_output_apk/{_name[:-4]}"
-        # had to add -n so that no update is done, this got me a lot of errors
-        subprocess.run(d_check_cmd_json, shell = True, timeout = 40, check = True)
-
-        end_time = "{:.2f}".format(float(time.time() - start_time))
-
-        with open("runtime_dcheck_apk.txt", "a") as runtime_file:
-            runtime_file.write(f"{_name}: {end_time}\n")
-
-    except subprocess.TimeoutExpired:
-
-        # Add a new line to the timeouts.txt file
-        with open("timeouts.txt", "a") as f:
-            f.write(f"d_check: {_name}\n")
-
-        print("TIMEOUT + dependency-check timed out + TIMEOUT on the following app: " + _name)
-        return
-
 def run_flowdroid(_name):
     """
     Runs flowdroid on the apk file.
@@ -170,10 +137,8 @@ def create_output_folders():
         os.makedirs("mobsf_output")
     if not os.path.exists("flowdroid_output"):
         os.makedirs("flowdroid_output")
-    if not os.path.exists("temp_jar"):
-        os.makedirs("temp_jar")
-    if not os.path.exists("dependencycheck_output"):
-        os.makedirs("dependencycheck_output")
+    if not os.path.exists("temp_apk"):
+        os.makedirs("temp_apk")
 
 def parse_apkid_output(_output):
     """
@@ -292,29 +257,6 @@ def parse_flowdroid_output(_output):
     except FileNotFoundError: # file not found if we have this as timeout.
         pass
 
-
-def parse_dependencycheck_output(_output):
-    """
-    The output of the dependency checker is a JSON file, and it has the following format:
-
-    Check the dcheck_test.json
-    """
-
-    # load the file; the format of the folder is dependencycheck_output/apk_name/dependency-check-report.json
-
-    apk_name = _output[:-4]
-
-    f = open('dependencycheck_output_apk/' + apk_name + '/dependency-check-report.json', 'r')
-
-    data = json.load(f)
-
-    try:
-        # print("FOUND")
-        return data['dependencies'][0]
-
-    except KeyError:
-        pass
-
 def parse_mobsf_output(_output):
     """
     Parses the output of the MobSF tool.
@@ -358,11 +300,29 @@ def parse_mobsf_output(_output):
 
 def get_apk_size(_name):
     """
-    Returns the size of the apk in bytes.
+    Returns the size of the apk in MB.
     """
     app_mb = os.path.getsize("apps/" + _name) / 1024 / 1024
     
     return float("{:.2f}".format(app_mb))
+
+def get_dex_size(_name):
+    """
+    Returns the size of all dex files from an apk in MB.
+    """
+    total_mb =  0
+
+    # try this if the apk has not already been unpacked:
+    if not os.path.exists(f"temp_apk/target_{_name[:-4]}"):
+        os.system(f"unzip apps/{_name} -d temp_apk/target_{_name[:-4]}")
+    
+    # retrieve all the dex files from the target folder, recursivelly
+    for root, dirs, files in os.walk(f"temp_apk/target_{_name[:-4]}"):
+        for file in files:
+            if file.endswith(".dex"):
+                total_mb += os.path.getsize(os.path.join(root, file)) / 1024 / 1024
+
+    return float("{:.2f}".format(total_mb))
 
 def distribution_running_times(_app_runtime):
     """
@@ -394,11 +354,18 @@ def distribution_running_times(_app_runtime):
     plt.ylabel("Frequency")
     print(max(running_times))
     plt.xticks(np.arange(min(running_times), max(running_times), 10))
-    plt.savefig(f'{_app_runtime.split("_")[1][:-4]}.png')
+    plt.savefig(f'distribution_runtimes_{_app_runtime.split("_")[1][:-4]}.png')
 
 def number_of_findings(_output, _tool):
     """
     Returns the number of findings in the output file.
+
+    Args:
+        _output: the output file of the tool.
+        _tool: the tool that generated the output file.
+
+    Returns:
+        The number of relevant findings in the output file.
     """
     nr_findings = 0
     
@@ -428,7 +395,12 @@ def number_of_findings(_output, _tool):
         parse_apkleaks = parse_apkleaks_output(_output)
 
         for key in parse_apkleaks.keys():
-            nr_findings += len(parse_apkleaks[key])    
+
+            # This is an outlier having more than 6000 results in < 5 apks, compared to the average of ~30 results.
+            # this only happens when selcting `dex` files, since ovrall they are much rather to include more results within the 
+            # quartile selection method. 
+            if key != "LinkFinder":
+                nr_findings += len(parse_apkleaks[key])
 
     elif _tool == "flowdroid":
 
@@ -439,17 +411,35 @@ def number_of_findings(_output, _tool):
 
         try:
             nr_findings += (len(parsed_flowdroid['DataFlowResults']['Results']['Result']))
+            print(nr_findings)
         except KeyError:
             return
 
+    else:
+        print("Error: unknown tool")
+        return
+
     return nr_findings
 
-def distribution_size_nrfindings(_apk_files, _tool):
+def correlation_size_nrfindings(_apk_files, _tool, _option):
     """
-    Plots the distribution of the number of findings for each app.
+    Plots the correlation of the number of findings to the size of the apk or dex files.
+
+    Args:
+        _apk_files: list of apk files
+        _tool: the tool used to generate the output file
+        _option: apk or dex files that are being used
     """
-    # get the list of all apps
-    size_dict = {f: get_apk_size(f) for f in os.listdir("apps/") if f.endswith(".apk")}
+
+    if _option == "apk":
+        # get the size of apks
+        size_dict = {f: get_apk_size(f) for f in os.listdir("apps/") if f.endswith(".apk")}
+    elif _option == "dex":
+        # get the size of dex files
+        size_dict = {f: get_dex_size(f) for f in os.listdir("apps/") if f.endswith(".apk")}
+    else:
+        print("Invalid option")
+        return
 
     # sort the size_dict based on the value and store it in a size array
     sorted_size_dict = sorted(size_dict.items(), key=lambda x: x[1])
@@ -469,12 +459,12 @@ def distribution_size_nrfindings(_apk_files, _tool):
 
     nr_findings = [number_of_findings(x, _tool) for (x, y) in sorted_size_dict]
 
-    # plot the distribution of the number of findings for each app
+    # plot the correlation of the number of findings for each app
     plt.scatter(size_array, nr_findings, color = 'green', edgecolor = 'black')
-    plt.title(f"Distribution of Number of Findings for {_tool}")
-    plt.xlabel("App Size (MB)")
+    plt.title(f"Correlation size vs number of findings for {_tool}")
+    plt.xlabel(f"{_option} Size (MB)")
     plt.ylabel("Number of Findings")
-    plt.savefig(f"distribution_size_nrfindings_{_tool}.png")
+    plt.savefig(f"correlation_{_option}_size_nrfindings_{_tool}.png")
 
     # calculate Pearson correlation coefficient
     # pearson_corr = np.corrcoef(size_array, nr_findings)
@@ -506,9 +496,43 @@ if __name__ == "__main__":
     # List all the apk files form current working directory.
     apk_files = [f for f in os.listdir("apps/") if f.endswith(".apk")]
 
+    # Don't run all of them at the same time, the matplotlib library is not thread safe.(https://stackoverflow.com/questions/41903300/matplotlib-crashes-when-running-in-parallel)
+    # Essentially, it yields memory corrupted plots; run each function at a time.
+
+    # correlation_size_nrfindings(apk_files, "apkid", "dex")
+    # correlation_size_nrfindings(apk_files, "apkleaks", "dex")
+    # correlation_size_nrfindings(apk_files, "mobsf", "dex")
+    # correlation_size_nrfindings(apk_files, "flowdroid", "dex")
+
+    # correlation_size_nrfindings(apk_files, "apkid", "apk")
+    # correlation_size_nrfindings(apk_files, "apkleaks", "apk")
+    # correlation_size_nrfindings(apk_files, "mobsf", "apk")
+    # correlation_size_nrfindings(apk_files, "flowdroid", "apk")
+
+    # for run_time in ["apkid", "apkleaks", "mobsf", "flowdroid"]:
+        # distribution_running_times(f"runtime_{run_time}.txt")
+    distribution_running_times("runtime_flowdroid.txt")
+
     final_res = {}
 
     start_time = time.time()
+
+    # Create output folders, if they don't exist.
+    # create_output_folders()
+
+    # apk_file = apk_files[23]
+    # print(apk_file)
+    # dex_size = get_dex_size(apk_file)
+    # print(dex_size)
+
+    # dex_sizes = []
+
+    # for apk_file in apk_files:
+    #     dex_sizes.append(get_dex_size(apk_file))
+
+    
+    # print(dex_sizes)
+
 
     # Parsing the outputs into a unified dictionary.
     # for i, apk_name in enumerate(apk_files):
@@ -530,25 +554,18 @@ if __name__ == "__main__":
 
                 
                 # return
-        # dependencycheck_parsed = parse_dependencycheck_output(apk_name)
-        # print(dependencycheck_parsed)
-        # print(f"{apk_name}", dependencycheck_parsed)
         # mobsf_parsed = parse_mobsf_output(apk_name)
 
         # apk_res = {
         #     "apkid": apkid_parsed,
         #     "apkleaks": apkleaks_parsed,
         #     "flowdroid": flowdroid_parsed,
-        #     "dependencycheck": dependencycheck_parsed,
         #     "mobsf": mobsf_parsed
         # }
 
     #     final_res[apk_name] = apk_res
         
     # print(final_res)
-
-    # Create output folders, if they don't exist.
-    # create_output_folders()
     
     # Run the tools.
     # run_tools(apk_tools)
