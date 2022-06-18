@@ -47,7 +47,7 @@ def run_apkid(_name):
         end_time = "{:.2f}".format(float(time.time() - start_time))
 
         # write the amount of time it took to run apkid
-        with open("runtime_apkid.txt", "a") as runtime_file:
+        with open("runtimes/runtime_apkid.txt", "a") as runtime_file:
             runtime_file.write(f"{_name}: {end_time}\n")
 
     # apkid timed out -> add it to the timeouts.txt file
@@ -85,7 +85,7 @@ def run_apkleaks(_name):
         end_time = "{:.2f}".format(float(time.time() - start_time))
         
         # write the amount of time it took to run apkleaks
-        with open("runtime_apkleaks.txt", "a") as runtime_file:
+        with open("runtimes/runtime_apkleaks.txt", "a") as runtime_file:
             runtime_file.write(f"{_name}: {end_time}\n")
 
     # apkleaks timed out -> add it to the timeouts.txt file
@@ -126,7 +126,7 @@ def run_flowdroid(_name):
         end_time = "{:.2f}".format(float(time.time() - start_time))
 
         # write the amount of time it took to run flowdroid
-        with open("runtime_flowdroid.txt", "a") as runtime_file:
+        with open("runtimes/runtime_flowdroid.txt", "a") as runtime_file:
             runtime_file.write(f"{_name}: {end_time}\n")
 
     # flowdroid timed out -> add it to the timeouts.txt file
@@ -164,7 +164,7 @@ def run_mobsf(_name):
     end_time = "{:.2f}".format(float(time.time() - start_time))
 
     # write the amount of time it took to run mobsf
-    with open("runtime_mobsf.txt", "a") as runtime_file:
+    with open("runtimes/runtime_mobsf.txt", "a") as runtime_file:
         runtime_file.write(f"{_name}: {end_time}\n")
 
 def create_output_folders():
@@ -384,7 +384,7 @@ def distribution_running_times(_tool_runtime):
     Returns:
         - The distribution of running times for an app as a png histogram.
     """
-    with open(_tool_runtime, "r") as f:
+    with open(f"runtimes/{_tool_runtime}", "r") as f:
         running_times = f.readlines()
 
     # the structure of the file looks like this:
@@ -410,7 +410,7 @@ def distribution_running_times(_tool_runtime):
     plt.ylabel("Frequency")
     print(max(running_times))
     plt.xticks(np.arange(min(running_times), max(running_times), 10))
-    plt.savefig(f'distribution_runtimes_{_tool_runtime.split("_")[1][:-4]}.png')
+    plt.savefig(f'statistics/distribution_runtimes_{_tool_runtime.split("_")[1][:-4]}.png')
 
 def number_of_findings(_output, _tool):
     """
@@ -524,7 +524,7 @@ def correlation_size_nrfindings(_apk_files, _tool, _option):
     plt.title(f"Correlation size vs number of findings for {_tool}")
     plt.xlabel(f"{_option} Size (MB)")
     plt.ylabel("Number of Findings")
-    plt.savefig(f"correlation_{_option}_size_nrfindings_{_tool}.png")
+    plt.savefig(f"statistics/correlation_{_option}_size_nrfindings_{_tool}.png")
 
     # calculate Pearson correlation coefficient
     # pearson_corr = np.corrcoef(size_array, nr_findings)
