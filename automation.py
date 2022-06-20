@@ -236,32 +236,34 @@ def parse_apkleaks_output(_output):
     """
     result = {}
 
-    with open("apkleaks_output/" + _output[:-4] + "_apkleaks.txt", "r") as f:
-        finding = ""
+    try:
+        with open("apkleaks_output/" + _output[:-4] + "_apkleaks.txt", "r") as f:
+            finding = ""
 
-        # read the file line by line
-        for i, line in enumerate(f):
-            # It's important to note that the lines look like this:
-            # 
-            # [IP_Address]
-            # - 19.3.1.1
-            # - 35.1.1.1
-            # [LinkFinder]
-            # - activity_choser_model_history.xml
-            # ...
+            # read the file line by line
+            for i, line in enumerate(f):
+                # It's important to note that the lines look like this:
+                # 
+                # [IP_Address]
+                # - 19.3.1.1
+                # - 35.1.1.1
+                # [LinkFinder]
+                # - activity_choser_model_history.xml
+                # ...
 
-            # if the line contains `[name_of_finding]`, then we know we found a new type of finding
-            # eg within [IP_Address] until [LinkFinder] is found
-            if line[0] == "[":
-                finding = line.strip("[]\n")
-                result[finding] = []
-            else:
-                # otherwise, we are inside a finding, we will keep appending each line that starts with `-` to it
-                if finding:
-                    line = line.strip("- \n")
-                    if len(line) > 0:
-                        result[finding].append(line)
-
+                # if the line contains `[name_of_finding]`, then we know we found a new type of finding
+                # eg within [IP_Address] until [LinkFinder] is found
+                if line[0] == "[":
+                    finding = line.strip("[]\n")
+                    result[finding] = []
+                else:
+                    # otherwise, we are inside a finding, we will keep appending each line that starts with `-` to it
+                    if finding:
+                        line = line.strip("- \n")
+                        if len(line) > 0:
+                            result[finding].append(line)
+    except FileNotFoundError:
+        print("File not found")
     return result
 
 def parse_flowdroid_output(_output):
@@ -639,7 +641,7 @@ if __name__ == "__main__":
     create_output_folders()
             
     # Run the tools.
-    # run_tools(apk_tools)
+    # run_tools(apk_files)
 
     # Print total running time of the automation procedure.
     # final_time = "{:.2f}".format(float(time.time() - start_time))
@@ -669,4 +671,4 @@ if __name__ == "__main__":
     # distribution_running_times("runtime_mobsf.txt")
 
     # Summarise the results
-    # final_res = summarize_results(apk_files)
+    # final_res = summarize_results()
