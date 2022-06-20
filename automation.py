@@ -671,4 +671,4 @@ if __name__ == "__main__":
     # distribution_running_times("runtime_mobsf.txt")
 
     # Summarise the results
-    # final_res = summarize_results()
+    # final_res = summarise_results()
